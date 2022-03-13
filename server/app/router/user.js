@@ -9,8 +9,19 @@ const router = express.Router()
 //验证身份中间件
 const isAdmin = async (req, res, next)=>{
     //jwt-token
-    const token = req.headers.authorization.split(' ').pop()
-    const { _id, username } = jwt.verify(token, secret)
+    let _id = ""
+    let username = ""
+
+    try {
+        const token = req.headers.authorization.split(' ').pop()
+
+        const jwtDecoded = jwt.verify(token, secret)
+        _id = jwtDecoded._id
+        username = jwtDecoded.username
+    } catch {
+        return  res.status(422).send('token不合法')
+    }
+
     //2.查询用户是否存在
     const user = await User.findById(_id)
     if (!user) {return res.status(422).send('用户错误')}
