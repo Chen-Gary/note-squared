@@ -4,5 +4,7 @@
  */
 
 module.exports = {
+    // the following are just constant strings, used for jwt.sign
     secret : 'register-rule',
+    secretVerification: "bezkoder-secret-key",
 }

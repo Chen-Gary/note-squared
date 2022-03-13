@@ -49,7 +49,7 @@ router.get('/userlist', isAdmin, async (req, res) => {
 router.post('/register', async (req, res)=>{
 
     // generate confirmationCode
-    const token = jwt.sign({email: req.body.email}, "bezkoder-secret-key")  //"bezkoder-secret-key"就是个随便取的字符串
+    const token = jwt.sign({email: req.body.email}, key.secretVerification)
 
     const newUserInfo = {
         username: req.body.username,
@@ -61,8 +61,12 @@ router.post('/register', async (req, res)=>{
         confirmationCode: token,
     }
 
-    const user = await User.findOne({username: newUserInfo.username})
-    if (user) { return res.status(409).send('该用户已存在') }
+    // check `username`
+    const userCheck_1 = await User.findOne({username: newUserInfo.username})
+    if (userCheck_1) { return res.status(409).send('username already exists') }
+    // check `email`
+    const userCheck_2 = await User.findOne({username: newUserInfo.email})
+    if (userCheck_2) { return res.status(409).send('email already registered') }
 
     const newUser = await new User(newUserInfo).save()
     await nodemailer.sendConfirmationEmail(newUserInfo.username, newUserInfo.email, newUserInfo.confirmationCode)
