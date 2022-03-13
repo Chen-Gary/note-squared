@@ -4,5 +4,5 @@
  */
 
 module.exports = {
-    secret : 'register-rule'
+    secret : 'register-rule',
 }

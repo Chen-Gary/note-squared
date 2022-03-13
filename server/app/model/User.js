@@ -6,6 +6,7 @@ const {Schema, model} = mongoose
 
 const UserScheme = new Schema({
     username: { type:String, require:true },
+    email: { type:String, require:true },
     password: {
         type:String,
         require:true,
@@ -14,7 +15,18 @@ const UserScheme = new Schema({
         }
     },
     name: { type:String, require:true },
-    isAdmin: { type:String, default:'0' } // 1->admin, 0->normal user
+    isAdmin: { type:String, default:'0' }, // 1->admin, 0->normal user
+
+    // for email verification
+    status: {
+        type: String,
+        enum: ['Pending', 'Active'],
+        default: 'Pending'
+    },
+    confirmationCode: {
+        type: String,
+        unique: true
+    },
 })
 
 const User = model('User', UserScheme)

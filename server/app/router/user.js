@@ -2,11 +2,12 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../model/User')
-const { secret } = require('../config/key')
+const key = require('../config/key')
+const  nodemailer = require('../config/nodemailer.config')
 const router = express.Router()
 
 
-//验证身份中间件
+// middleware: check if the user is admin
 const isAdmin = async (req, res, next)=>{
     //jwt-token
     let _id = ""
@@ -15,7 +16,7 @@ const isAdmin = async (req, res, next)=>{
     try {
         const token = req.headers.authorization.split(' ').pop()
 
-        const jwtDecoded = jwt.verify(token, secret)
+        const jwtDecoded = jwt.verify(token, key.secret)
         _id = jwtDecoded._id
         username = jwtDecoded.username
     } catch {
@@ -38,30 +39,54 @@ const isAdmin = async (req, res, next)=>{
     }
 }
 
-//获取用户列表
+// Route: get user info list
 router.get('/userlist', isAdmin, async (req, res) => {
     const list = await User.find()
     res.send(list)
 })
 
-//注册
+// Route: register
 router.post('/register', async (req, res)=>{
+
+    // generate confirmationCode
+    const token = jwt.sign({email: req.body.email}, "bezkoder-secret-key")  //"bezkoder-secret-key"就是个随便取的字符串
 
     const newUserInfo = {
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password,
         name: req.body.name,
-        isAdmin: req.body.isAdmin
-    };
+        isAdmin: req.body.isAdmin,
+        status: 'Pending',
+        confirmationCode: token,
+    }
 
     const user = await User.findOne({username: newUserInfo.username})
     if (user) { return res.status(409).send('该用户已存在') }
 
     const newUser = await new User(newUserInfo).save()
+    await nodemailer.sendConfirmationEmail(newUserInfo.username, newUserInfo.email, newUserInfo.confirmationCode)
     res.send(newUser)
 })
 
-//登录
+// Route: confirm registration
+router.get('/confirm/:confirmationCode', async (req, res)=>{
+    User.findOne({confirmationCode: req.params.confirmationCode})
+        .then((user) => {
+            if (!user) {
+                return res.status(404).send({ message: "User Not found." })
+            }
+
+            user.status = "Active"
+            user.save((err) => {
+                if (err) { return res.status(500).send({ message: err }) }
+                else { return res.send("Email confirmed") }
+            })
+        })
+        .catch((e) => console.log("error", e));
+})
+
+// Route: login
 router.post('/login', async (req, res)=>{
     // 1. 查询用户是否存在
     const user = await User.findOne({username: req.body.username})
@@ -71,9 +96,11 @@ router.post('/login', async (req, res)=>{
     let isPassword = await bcrypt.compareSync(req.body.password, user.password)
     if (!isPassword) { return res.status(422).send('密码错误') }
 
+    if (user.status !== "Active") { return res.status(401).send("Pending Account. Please Verify Your Email!") }
+
     // 3. 返回token
     const { _id, username } = user
-    const token = jwt.sign({_id, username}, secret, {expiresIn:'24h'})
+    const token = jwt.sign({_id, username}, key.secret, {expiresIn:'24h'})
     res.send(token)
 })
 
