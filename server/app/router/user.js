@@ -97,7 +97,7 @@ router.get('/confirm/:confirmationCode', async (req, res)=>{
 // Route: login
 router.post('/login', async (req, res)=>{
     // 1. 查询用户是否存在
-    const user = await User.findOne({username: req.body.email})
+    const user = await User.findOne({email: req.body.email})
     if (!user) { return res.status(422).send('该用户不存在') }
 
     // 2. 用户存在，解密并判断密码
