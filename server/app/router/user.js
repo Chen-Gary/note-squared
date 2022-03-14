@@ -11,14 +11,14 @@ const router = express.Router()
 const isAdmin = async (req, res, next)=>{
     //jwt-token
     let _id = ""
-    let username = ""
+    let email = ""
 
     try {
         const token = req.headers.authorization.split(' ').pop()
 
         const jwtDecoded = jwt.verify(token, key.secret)
         _id = jwtDecoded._id
-        username = jwtDecoded.username
+        email = jwtDecoded.email
     } catch {
         return  res.status(422).send('token不合法')
     }
@@ -26,8 +26,8 @@ const isAdmin = async (req, res, next)=>{
     //2.查询用户是否存在
     const user = await User.findById(_id)
     if (!user) {return res.status(422).send('用户错误')}
-    //3. 查看username
-    if (username !== user.username){
+    //3. 查看email
+    if (email !== user.email){
         res.status(422).send('用户错误')
     } else {
         //用户存在，查看权限
@@ -52,7 +52,7 @@ router.post('/register', async (req, res)=>{
     const token = jwt.sign({email: req.body.email}, key.secretVerification)
 
     const newUserInfo = {
-        username: req.body.username,
+        //username: req.body.username,
         email: req.body.email,
         password: req.body.password,
         name: req.body.name,
@@ -61,15 +61,19 @@ router.post('/register', async (req, res)=>{
         confirmationCode: token,
     }
 
-    // check `username`
-    const userCheck_1 = await User.findOne({username: newUserInfo.username})
-    if (userCheck_1) { return res.status(409).send('username already exists') }
+    // // check `username`
+    // const userCheck_1 = await User.findOne({username: newUserInfo.username})
+    // if (userCheck_1) { return res.status(409).send('username already exists') }
     // check `email`
     const userCheck_2 = await User.findOne({username: newUserInfo.email})
     if (userCheck_2) { return res.status(409).send('email already registered') }
 
     const newUser = await new User(newUserInfo).save()
-    await nodemailer.sendConfirmationEmail(newUserInfo.username, newUserInfo.email, newUserInfo.confirmationCode)
+
+    // send verification email
+    // (temporarily removed)
+    //await nodemailer.sendConfirmationEmail(newUserInfo.name, newUserInfo.email, newUserInfo.confirmationCode)
+
     res.send(newUser)
 })
 
@@ -93,18 +97,20 @@ router.get('/confirm/:confirmationCode', async (req, res)=>{
 // Route: login
 router.post('/login', async (req, res)=>{
     // 1. 查询用户是否存在
-    const user = await User.findOne({username: req.body.username})
-    if (!user) {return res.status(422).send('该用户不存在')}
+    const user = await User.findOne({username: req.body.email})
+    if (!user) { return res.status(422).send('该用户不存在') }
 
     // 2. 用户存在，解密并判断密码
     let isPassword = await bcrypt.compareSync(req.body.password, user.password)
     if (!isPassword) { return res.status(422).send('密码错误') }
 
+    // 3. check whether the account is activated
     if (user.status !== "Active") { return res.status(401).send("Pending Account. Please Verify Your Email!") }
 
-    // 3. 返回token
-    const { _id, username } = user
-    const token = jwt.sign({_id, username}, key.secret, {expiresIn:'24h'})
+    // 4. 返回 jwt token
+    const _id = user._id;
+    const email = user.email;
+    const token = jwt.sign({_id, email}, key.secret, {expiresIn:'24h'})
     res.send(token)
 })
 

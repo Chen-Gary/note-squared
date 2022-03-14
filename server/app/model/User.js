@@ -5,8 +5,8 @@ const {Schema, model} = mongoose
 // const model = mongoose.model
 
 const UserScheme = new Schema({
-    username: { type:String, require:true },
-    email: { type:String, require:true },
+    //username: { type:String, require:true },  //removed
+    email: { type:String, require:true },       //unique
     password: {
         type:String,
         require:true,
