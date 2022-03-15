@@ -23,7 +23,7 @@
           <el-form-item prop = "verification_code">
              <el-container>
                <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
-               <el-button style="width: 30%" type="primary" @click="onSubmit" class="form-confirm">Send</el-button> 
+               <el-button style="width: 40%" type="primary" @click="onSubmit" class="form-confirm">Send</el-button> 
             </el-container>
           </el-form-item>
 

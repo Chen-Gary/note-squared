@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-     <!--<nav-menu></nav-menu>-->
-     <svg viewBox="0 0 1000 300">
+     <svg viewBox="0 30 900 300" style="order: 1;">
         <symbol id="line-text">
           <text text-anchor="middle" x="50%" y="50%" dy="0.4em">
             Note² 
@@ -12,7 +11,6 @@
         <use xlink:href="#line-text" class="text"></use>
         <use xlink:href="#line-text" class="text"></use>
       </svg>
-      
     </div>
 </template>
 
@@ -34,8 +32,10 @@ import NavMenu from "./common/NavMenu";
     position: fixed;
     left: 0;
     top:0;
+   /* background-image: url("../../../static/homeMask.png");*/
+    background-image: url('../assets/Home/Header.png');
     /*background-image: url("../../../static/homeMask.png");*/
-    background-size: cover;
+    background-size: 100%;
 
     font-size: 120px;
     font-weight: bolder;
@@ -55,19 +55,19 @@ import NavMenu from "./common/NavMenu";
     stroke-dashoffset: 0;
   }
   .text:nth-child(4n+1){
-    stroke:#FFFFFF;
+    stroke:#ff3f62;
     animation: text1 4s ease-in-out forwards;
   }
   .text:nth-child(4n+2){
-    stroke:#E0E0E0;
+    stroke:#ff3f62;
     animation: text2 4s ease-in-out forwards;
   }
   .text:nth-child(4n+3){
-    stroke:#A8A8A8;
+    stroke:#ff3f62;
     animation: text3 4s ease-in-out forwards;
   }
   .text:nth-child(4n+4){
-    stroke:#787878;
+    stroke:#ff3f62;
     animation: text4 4s ease-in-out forwards;
   }
   @keyframes text1 {
