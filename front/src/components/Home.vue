@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-      <svg viewBox="0 0 1000 300">
+     <!--<nav-menu></nav-menu>-->
+     <svg viewBox="0 0 1000 300">
         <symbol id="line-text">
           <text text-anchor="middle" x="50%" y="50%" dy="0.4em">
             Note² 
@@ -11,16 +12,17 @@
         <use xlink:href="#line-text" class="text"></use>
         <use xlink:href="#line-text" class="text"></use>
       </svg>
+      
     </div>
 </template>
 
 <script>
-    import NavMenu from "./common/NavMenu"
+import NavMenu from "./common/NavMenu";
     export default {
         name: "Home",
-        components:{
-        "NavBar":NavMenu
-        }
+      components:{
+        NavMenu
+      }
     }
 </script>
 
@@ -38,6 +40,7 @@
     font-size: 120px;
     font-weight: bolder;
     text-transform: uppercase;
+    margin-top: 15px;
   }
   svg{
     position: fixed;

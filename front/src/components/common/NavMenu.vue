@@ -14,7 +14,7 @@
         {{ item.name }}
       </el-menu-item>
 
-      <el-submenu index="2" style="float:right;">
+      <el-submenu style="float:right;">
         <template slot="title">{{userFlag.name}}</template>
 
         <el-menu-item v-for="(item,i) in userFlag.menuList" :index="item.url" :key="i">{{item.name}}</el-menu-item>
@@ -22,8 +22,8 @@
                       @click="logout">Log out</el-menu-item>
       </el-submenu>
 
-      <li style="float: right;outline: none;cursor: pointer">
-        <i class="el-icon-full-screen" style="height: 35px;line-height: 35px;" @click="fullScreen"></i>
+    <li style="float: right;outline: none;cursor: pointer">
+        <i class="el-icon-full-screen" style="font-size:30px; top = 0px; margin: 0%; height: 35px; line-height: 35px;" @click="fullScreen"></i>
       </li>
 
 
@@ -33,7 +33,7 @@
 
 <script>
     export default {
-      name: "NavBar",
+      name: "NavMenu",
       data() {
         return {
           url: "../../assets/Logo.png",
@@ -125,15 +125,20 @@
     width: 100%;
     left: 0px;
     top: 0px;
+    margin: 0%;
+    line-height:10px;
+    margin-top: 15px;
   }
   .el-menu-item{
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     font-weight: bolder!important;
-    font-size: 170%;
+    font-size: 100%;
   }
   .el-menu--horizontal>.el-menu-item {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     height: 35px!important;
     line-height: 35px!important;
-    font-size: 170%;
+    font-size: 130%;
     color: #000000;
   }
   .el-menu--horizontal>.el-submenu .el-submenu__title {

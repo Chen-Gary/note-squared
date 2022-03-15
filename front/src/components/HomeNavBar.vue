@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <NavBar></NavBar>
+  <div class="body">
+    <nav-menu></nav-menu>
     <router-view/>
   </div>
 </template>
@@ -10,7 +10,7 @@
     export default {
       name: "HomeNavBar",
       components:{
-        "NavBar":NavMenu
+        NavMenu
       }
     }
 </script>
