@@ -4,14 +4,21 @@ import Register from "../components/Register";
 import Editor from "../components/Editor";
 import Login from "../components/Login";
 import Home from "../components/Home";
-
+import HomeNavBar from "../components/HomeNavBar"
 Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/Home',
-      name:'Home',
-      component: Home
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/Home',
+      children: [
+      {
+        path: '/Home',
+        name: 'Home',
+        component: Home,
+      }]
     },
     {
       path: '/Register',
