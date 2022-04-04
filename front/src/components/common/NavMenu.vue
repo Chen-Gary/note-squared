@@ -6,24 +6,16 @@
       router
       active-text-color="#25567A">
 
-      <el-menu-item  v-for="(item,i) in navList" :index="item.url" :key="i">
+      <el-menu-item   v-for="(item,i) in navList" :index="item.url" :key="i">
         <el-image
-        style="width: 35px; height: 35px"
-        :src="require('@/assets/Logo2.png')"
+        class="logo"
+        :src="require('@/assets/Logo.png')"
         > </el-image>
         {{ item.name }}
       </el-menu-item>
 
-      <el-submenu style="float:right;">
-        <template slot="title">{{userFlag.name}}</template>
-
-        <el-menu-item v-for="(item,i) in userFlag.menuList" :index="item.url" :key="i">{{item.name}}</el-menu-item>
-        <el-menu-item :style="{display:isLogin}"
-                      @click="logout">Log out</el-menu-item>
-      </el-submenu>
-
-    <li style="float: right;outline: none;cursor: pointer">
-        <i class="el-icon-full-screen" style="font-size:30px; top = 0px; margin: 0%; height: 35px; line-height: 35px;" @click="fullScreen"></i>
+    <li style="margin-right:2%; float:right; outline: none;cursor: pointer">
+        <i class="el-icon-full-screen" style="font-size:30px;" @click="fullScreen"></i>
       </li>
 
 
@@ -59,34 +51,17 @@
           ]
           this.isLogin = 'inline-block'
         } else {*/
-        if (window.localStorage.getItem("user") == null){
+        /*if (window.localStorage.getItem("user") == null){
           this.userFlag.name = "Try Note² free"
           this.userFlag.menuList = [
             {url: '/register', name: 'Register'},
             {url: '/login', name: 'Login'},
           ]
           this.isLogin = 'none'
-        }
+        }*/
       },
 
       methods: {
-        handleSelect(key, keyPath) {
-          console.log(key, keyPath)
-        },
-        logout(){
-          var _this = this
-          this.axios.get('/logout')
-          .then(function (response) {
-            if(response.data.status === 200){
-              _this.$store.commit('logout')
-              _this.$router.replace('/login')
-            }
-          })
-          .catch(function (error) {
-            console.log(error)
-          })
-
-        },
         fullScreen(ev) {
           const isFull=!!(document.webkitIsFullScreen || document.mozFullScreen ||
             document.msFullscreenElement || document.fullscreenElement
@@ -146,5 +121,24 @@
     line-height: 35px!important;
     color: #000000;
   }
+  .logo{
+    width: 30px!important;
+    height: 30px!important;
+    bottom: 10%;
+  }
+  .left_cornor_title{
+    top: 0px;
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+
 
 </style>
