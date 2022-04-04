@@ -15,7 +15,9 @@
   "dependencies": {
     "axios": "^0.26.1",
     "cors": "^2.8.5",
+    "el-table-infinite-scroll": "^1.0.10",
     "element-ui": "^2.15.6",
+    "mavon-editor": "^2.10.4",
     "vditor": "^3.8.12",
     "vue": "^2.5.2",
     "vue-axios": "^3.4.1",

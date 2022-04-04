@@ -5,6 +5,8 @@ import Editor from "../components/Editor";
 import Login from "../components/Login";
 import Home from "../components/Home";
 import HomeNavBar from "../components/HomeNavBar"
+import test from "../components/test"
+import NoteEdit from "../components/NoteEdit";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -34,6 +36,17 @@ export default new Router({
       path: '/Editor',
       name: 'Editor',
       component: Editor
-    }
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
+    },
+    {
+      path: '/note/edit',
+      name: 'NoteEdit',
+      component: NoteEdit,
+    },
+
   ]
 })

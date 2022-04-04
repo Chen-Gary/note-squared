@@ -6,10 +6,13 @@ import store from "./store";
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import elTableInfiniteScroll from 'el-table-infinite-scroll';
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 
 axios.defaults.baseURL = 'http://120.78.207.251:3000/api/user'
@@ -17,7 +20,9 @@ axios.defaults.baseURL = 'http://120.78.207.251:3000/api/user'
 
 
 Vue.config.productionTip = false
+Vue.use(elTableInfiniteScroll)
 Vue.use(ElementUI)
+Vue.use(mavonEditor)
 Vue.prototype.$axios = axios
 /*Vue.use(VueAxios,axios)*/
 
