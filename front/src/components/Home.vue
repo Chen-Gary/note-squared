@@ -153,7 +153,19 @@
 
     <!---末尾版面--->
     <div class = "last_text" style="margin-top:20%">
-      <img :src="Logo" class="logo"> Note²
+
+     <!---！！！！！！！对不齐有毛病！！！！！！！！！-->
+      <div class = "same_align">
+      <div>
+      <img :src="Logo" class="logo">
+      </div> 
+      <div>
+        Note²
+      </div>
+      </div>
+
+
+
     </div>
    <div class = "last_text2">
      Shop  •  Reviews  •  Help  •  Returns  •  Story  •  Partnership  •  Refer a Friend
@@ -232,6 +244,11 @@ import NavMenu from "./common/NavMenu";
     text-transform: uppercase;
     margin-top: 15px;
   }*/
+  .same_align{
+    display:flex; 
+    align-items:center;
+    justify-content:center;
+  }
   .supporter{
     width: 18%;
     height: 18%;
