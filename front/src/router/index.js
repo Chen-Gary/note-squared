@@ -6,7 +6,9 @@ import Login from "../components/Login";
 import Home from "../components/Home";
 import HomeNavBar from "../components/HomeNavBar"
 import test from "../components/test"
-import NoteEdit from "../components/NoteEdit";
+import Bookshelf from "../components/bookshelf/Bookshelf";
+import NoteEdit from "../components/note/NoteEdit";
+import NoteDetail from "../components/note/NoteDetail";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -43,9 +45,19 @@ export default new Router({
       component: test
     },
     {
+      path: '/bookshelf',
+      name: 'Bookshelf',
+      component: Bookshelf,
+    },
+    {
       path: '/note/edit',
       name: 'NoteEdit',
       component: NoteEdit,
+    },
+    {
+      path: '/note/detail',
+      name: 'NoteDetail',
+      component: NoteDetail,
     },
 
   ]
