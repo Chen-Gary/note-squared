@@ -12,13 +12,6 @@
           v-model="note.contentMd"
           @save="saveNote"
           @imgAdd="imgAdd">
-          <button
-            type="button"
-            class="op-icon el-icon-s-management"
-            :title="'笔记链接'"
-            slot="left-toolbar-after"
-            @click="getNoteList"
-          ></button>
         </mavon-editor>
       </el-card>
     </el-col>
