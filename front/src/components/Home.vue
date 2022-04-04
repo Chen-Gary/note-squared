@@ -31,7 +31,7 @@
 
 
     <!---三个简介--->
-    <el-row style = "margin-top :3%">
+    <el-row>
       <el-col :span="12" style="margin-top :3%">
         <div class="grid-content bg-purple">
           <el-row :gutter="20">
@@ -282,7 +282,7 @@ import NavMenu from "./common/NavMenu";
     font-weight: bolder;
     margin-top: 5%;
     text-align: center;
-    line-height:51px;
+    line-height:64px;
     letter-spacing:0px;
   }
   .first_text2 {
