@@ -8,6 +8,7 @@
         </div>
         <mavon-editor
           ref="md"
+          language = "en"
           v-model="note.contentMd"
           @save="saveNote"
           @imgAdd="imgAdd">
