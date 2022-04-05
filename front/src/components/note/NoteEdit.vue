@@ -6,9 +6,9 @@
         <img :src="headImg" class="imgpic">
       </div>
     </div>
-    <el-card class="note" v-model="note">
+    <el-card class="note" v-model="note" :body-style="{ padding: '90px' }">
       <div class="title">
-        <div class="frame-header" style="margin-top: 0">Title</div>
+        <div class="frame-header" style="margin-top: 0px">Title</div>
         <div>
           <el-input 
             v-model="note.title" 
@@ -38,7 +38,8 @@
             v-model="note.contentMd"
             @save="saveNote"
             @imgAdd="imgAdd"
-            style="min-height: 500px">
+            style="min-height: 500px;max-height: 500px"
+            >
           </mavon-editor>
         </div>
       </div>
@@ -195,6 +196,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    border-radius: 20px;
   }
   .frame-header {
     text-align: left;
