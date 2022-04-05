@@ -5,7 +5,7 @@ const { isAdmin } = require('../middleware/authentication')
 const router = express.Router()
 
 // get user info list
-router.get('/userlist', isAdmin, require('./admin/userlist'))
+router.get('/userlist/:page', isAdmin, require('./admin/userlist'))
 
 // edit user profile
 router.post('/profile-edit', isAdmin, require('./admin/profile-edit'))
