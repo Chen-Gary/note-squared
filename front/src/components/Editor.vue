@@ -1,5 +1,10 @@
 <template>
-  <div id="vditor" name="description"></div>
+  <div>
+    <div id="vditor" name="description"></div>
+    <div>
+      <button @click="testClick">test</button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -60,7 +65,12 @@ export default {
     //   },
     // }
     )
-  }  
+  },
+  methods: {
+    testClick() {
+      console.log(this.contentEditor)
+    }
+  } 
 }
 </script>
 

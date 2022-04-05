@@ -52,8 +52,6 @@
 </template>
 
 <script>
-  //import Clipboard from 'clipboard'
-  import Programmer from '../../assets/Note/program.png'
   import TypeWriter from '../../assets/Note/typewriter.png'
   export default {
     name: "NoteEdit",
@@ -113,6 +111,24 @@
     methods: {
       postContent(){
         console.log(this.note)
+        alert("ok!")
+      },
+      download(){
+        if ("download" in aElement) {
+          const aElement = document.createElement("a");
+            aElement.download = filename;
+            aElement.style.display = "none";
+            aElement.href = URL.createObjectURL(new Blob([content]));
+
+            document.body.appendChild(aElement);
+            aElement.click();
+            aElement.remove();
+        } else {
+            // vditor.tip.show(window.VditorI18n.downloadTip, 0);
+        }
+      },
+      exportMarkdown(){
+        download(this.note.contentMd, this.note.title + ".md");
       },
       loadNote(id){
         var _this = this
@@ -143,32 +159,6 @@
         .catch(function (error) {
           console.log(error)
         })
-      },
-      read(id){
-        this.$router.push({
-          path:'/note/detail',
-          name:'NoteDetail',
-          query:{
-            noteId:id
-          }
-        })
-      },
-      getTitleList(){
-        this.titleList = []
-        this.noteLink.titleID = ''
-        this.noteLink.link = ''
-        var content = this.noteList[this.noteLink.noteIndex].contentHtml
-        let div = document.createElement("div")
-        div.innerHTML = content
-        let doc = div.children
-        for(var i=0;i<doc.length;i++){
-          if(doc[i].nodeName.indexOf("H") !== -1){
-            this.titleList.push({
-              id:doc[i].children[0].getAttribute("id"),
-              name:doc[i].innerText,
-            })
-          }
-        }
       },
       /** this part is to handle the upload of the pics**/
       imgAdd(pos, $file){
