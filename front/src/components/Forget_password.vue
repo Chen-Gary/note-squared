@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="form-body">
-        <div class = "header_text">Register</div>
+        <div class = "header_text">Forget Pasword</div>
         <el-form ref="form" :model="registerData" :rules = "rules"  label-width="0px">
 
           <el-form-item  class="form-item"  prop = "email">
@@ -16,9 +16,6 @@
             <el-input placeholder="Confirm password" v-model="registerData.password2" show-password></el-input>
           </el-form-item>
 
-          <el-form-item  prop = "name">
-            <el-input placeholder="Nickname" v-model="registerData.name"></el-input>
-          </el-form-item>
 
           <el-form-item prop = "verification_code">
              <el-container>
@@ -31,7 +28,16 @@
           <el-form-item>
             <el-button type="primary" @click="confirm_verfication_code" class="form-confirm">Create account</el-button>
           </el-form-item>
-           <el-link :underline="false" @click="toLogin">Already have an account?</el-link>
+
+          <el-form-item>
+          <div align="left" style="float:left" >
+          <el-link :underline="false"  @click="toLogin">Remember password?</el-link>
+          </div>
+          <div align="right">
+          <el-link :underline="false" @click="toRegister">Have not have an account yet?</el-link>
+          </div>
+          </el-form-item>
+
         </el-form>
       </div>
     </div>
@@ -42,7 +48,7 @@
 
 <script>
     export default {
-      name: "Register",
+      name: "Forget_password",
      
       data() {
          //验证两次密码是否一致
@@ -131,6 +137,10 @@
         //转回登陆界面
         toLogin(){
           this.$router.replace('/login')
+        },
+        toRegister()
+        {
+          this.$router.replace('/register')
         }
 
 
@@ -177,7 +187,7 @@
     font-size: 48px;
     font-weight: bolder;
     margin-top: 10%;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
     text-align: center;
     line-height:64px;
     letter-spacing:0px;
