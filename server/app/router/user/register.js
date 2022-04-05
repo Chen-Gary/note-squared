@@ -26,7 +26,8 @@ module.exports = async (req, res) => {
     // check if the email is verified
     const entry = await EmailVerificationBuffer.findOne({email: newUserInfo.email})
     if (entry) {
-        if (entry.verificationCode === req.body.verificationCode) {
+        if (entry.verificationCode === req.body.verificationCode &&
+            entry.usedFor === 'register') {
             const newUser = await new User(newUserInfo).save()
             await entry.deleteOne()
 
