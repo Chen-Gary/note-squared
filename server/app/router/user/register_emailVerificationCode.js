@@ -1,5 +1,5 @@
 const ShortUniqueId = require('short-unique-id');
-const  nodemailer = require('../../config/nodemailer.config')
+const  nodemailer = require('../../config/nodemailer.config');
 
 const User = require("../../model/User");
 const EmailVerificationBuffer = require("../../model/EmailVerificationBuffer");
@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
 
     // send verification email
     // (temporarily removed)
-    //await nodemailer.sendConfirmationEmail(_email, _email, _verificationCode)
+    //await nodemailer.sendVerificationCode(_email, _email, _verificationCode)
 
     res.status(200).send(newCode)
     //res.status(200).send({message: 'email verification code sent successfully'})

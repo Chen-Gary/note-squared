@@ -31,8 +31,9 @@ module.exports = async (req, res) => {
             await entry.deleteOne()
 
             return res.status(200).send(newUser)
+        } else {
+            return res.status(409).send({message: 'wrong verification code'})
         }
-        await entry.deleteOne()
     }
     return res.status(409).send({message: 'email not verified'})
 }

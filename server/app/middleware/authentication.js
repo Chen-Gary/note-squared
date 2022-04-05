@@ -12,7 +12,7 @@ const isAdmin = async (req, res, next) => {
     try {
         const token = req.headers.authorization.split(' ').pop()
 
-        const jwtDecoded = jwt.verify(token, key.secret)
+        const jwtDecoded = jwt.verify(token, key.secret_jwt)
         _id = jwtDecoded._id
         email = jwtDecoded.email
     } catch {
@@ -28,9 +28,9 @@ const isAdmin = async (req, res, next) => {
         return res.status(422).send({message: 'invalid user'})
     } else {
         // the user exist, check authority
-        if (user.role === 'admin') {
+        if (user.role === 'normal') {
             return res.status(409).send({message: 'do not have authority of admin'})
-        } else if (user.role === 'normal'){
+        } else if (user.role === 'admin'){
             next()
         }
     }
