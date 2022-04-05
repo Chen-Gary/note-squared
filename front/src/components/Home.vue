@@ -1,153 +1,143 @@
 <template>
  <!-- <el-scrollbar style="height:100%">-->
-   <div>
+   <div class="container">
     <!---开头版面 + 登录注册按钮--->
-    <div class = "first_text">
+    <div class="header-title">
+      <div class = "first_text">
         Tame your study.<br>
         Manage your life.
-    </div>
-    <div class = "first_text2">
-      Remember everything and tackle any project with your notes, tasks, and schedule!
-    </div>
-    <el-row>
-      <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <el-button type="primary" @click="toLogin" class="register_button">LOGIN</el-button>
-        </div>
-      </el-col>
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light">
-          <el-button type="primary" @click="toRegister" class="login_button">REGISTER</el-button>
-        </div>
-      </el-col>
-    </el-row>
-     <div>
-          <img :src="imgUrl"   class = "first_pic" >
       </div>
-    <div class = "feature_text">
-        Features
+      <div class = "first_text2 typewriter-animation">
+        Remember everything and tackle any project with your notes, tasks, and schedule!
+      </div>
     </div>
-
-
+    <div class="button-box">
+      <div class="grid-content bg-purple">
+        <el-button type="primary" @click="toLogin" class="register_button">LOGIN</el-button>
+      </div>
+      <div class="grid-content bg-purple-light">
+        <el-button type="primary" @click="toRegister" class="login_button">REGISTER</el-button>
+      </div>
+    </div>
+     <div>
+        <img :src="imgUrl"   class = "first_pic" >
+    </div>
 
     <!---三个简介--->
-    <el-row>
-      <el-col :span="12" style="margin-top :3%">
-        <div class="grid-content bg-purple">
-          <el-row :gutter="20">
-            <el-col :span="4">
-              <div class="grid-content bg-purple">
-                 <img :src="imgIcon1"   class = "icon" >
-              </div>
-            </el-col>
-            <el-col :span="20">
-              <div class="grid-content bg-purple">
-                <div class = "sub_feature_text">
-                Instant Markdown Note
+    <div class="feature-container">
+      <div class = "feature_text">
+          Features
+      </div>
+      <div>
+        <el-col :span="12" style="margin-top :3%">
+          <div class="grid-content bg-purple">
+            <el-row :gutter="20">
+              <el-col :span="4">
+                <div class="grid-content bg-purple">
+                  <img :src="imgIcon1"   class = "icon" >
                 </div>
-              </div>
-            </el-col>
-          </el-row>
-
-        <div class = "introduction">
-          Support left-aligned typing with a wide range of
-          fonts, sizes, and colors as well as a variety of
-          auxiliary tool. Provide formatting for outlines
-          and interactive list. Continuous page scroll inspires
-          you to explore endless ideas.
-        </div>
-
-        </div>
-      </el-col>
-
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light">
-          <div class = "intro_pic">
-            <img :src="imgUrl2" >
-            </div>
-        </div>
-      </el-col>
-    </el-row>
-
-
-
-
-    <el-row style = "margin-top :3%">
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light">
-          <div class = "intro_pic2">
-            <img :src="imgUrl3" >
-            </div>
-        </div>
-      </el-col>
-            <el-col :span="12">
-        <div class="grid-content bg-purple" style="margin-top:2%">
-          <el-row :gutter="20">
-            <el-col :span="4">
-              <div class="grid-content bg-purple">
-                 <img :src="imgIcon2"   class = "icon2" >
-              </div>
-            </el-col>
-            <el-col :span="20">
-              <div class="grid-content bg-purple">
-                <div class = "sub_feature_text2">
-                Note Management
+              </el-col>
+              <el-col :span="20">
+                <div class="grid-content bg-purple">
+                  <div class = "sub_feature_text">
+                  Instant Markdown Note
+                  </div>
                 </div>
+              </el-col>
+            </el-row>
+
+          <div class = "introduction">
+            Support left-aligned typing with a wide range of
+            fonts, sizes, and colors as well as a variety of
+            auxiliary tool. Provide formatting for outlines
+            and interactive list. Continuous page scroll inspires
+            you to explore endless ideas.
+          </div>
+
+          </div>
+        </el-col>
+
+        <el-col :span="12">
+          <div class="grid-content bg-purple-light">
+            <div class = "intro_pic">
+              <img :src="imgUrl2" >
               </div>
-            </el-col>
-          </el-row>
-
-        <div class = "introduction2">
-          Notes can be created, deleted, and <br>sorted easily
-           with minimal steps and a <br>user-friendly UI system. 
-           You can group <br>notes with customizable subjects and<br> 
-           dividers. You can also set their own<br>note permissions,
-           private or public.
-        </div>
-        </div>
-      </el-col>
-    </el-row>
-
-
-
-
-    <el-row style = "margin-top :4%">
-      <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <el-row :gutter="20">
-            <el-col :span="4">
-              <div class="grid-content bg-purple">
-                 <img :src="imgIcon3"   class = "icon" >
+          </div>
+        </el-col>
+      </div>
+      <el-row style = "margin-top :3%">
+        <el-col :span="12">
+          <div class="grid-content bg-purple-light">
+            <div class = "intro_pic2">
+              <img :src="imgUrl3" >
               </div>
-            </el-col>
-            <el-col :span="20">
-              <div class="grid-content bg-purple">
-                <div class = "sub_feature_text">
-                Note Community
+          </div>
+        </el-col>
+              <el-col :span="12">
+          <div class="grid-content bg-purple" style="margin-top:2%">
+            <el-row :gutter="20">
+              <el-col :span="4">
+                <div class="grid-content bg-purple">
+                  <img :src="imgIcon2"   class = "icon2" >
                 </div>
+              </el-col>
+              <el-col :span="20">
+                <div class="grid-content bg-purple">
+                  <div class = "sub_feature_text2">
+                  Note Management
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+
+          <div class = "introduction2">
+            Notes can be created, deleted, and <br>sorted easily
+            with minimal steps and a <br>user-friendly UI system. 
+            You can group <br>notes with customizable subjects and<br> 
+            dividers. You can also set their own<br>note permissions,
+            private or public.
+          </div>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row style = "margin-top :4%">
+        <el-col :span="12">
+          <div class="grid-content bg-purple">
+            <el-row :gutter="20">
+              <el-col :span="4">
+                <div class="grid-content bg-purple">
+                  <img :src="imgIcon3"   class = "icon" >
+                </div>
+              </el-col>
+              <el-col :span="20">
+                <div class="grid-content bg-purple">
+                  <div class = "sub_feature_text">
+                  Note Community
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+
+          <div class = "introduction">
+            Note community is where users can upload 
+            their notes and view others notes. You can 
+            publish  notes for the world to see in the 
+            note community through public note permissions. 
+            You will receive comments and likes from other users. 
+          </div>
+
+          </div>
+        </el-col>
+
+        <el-col :span="12">
+          <div class="grid-content bg-purple-light">
+            <div class = "intro_pic">
+              <img :src="imgUrl4" >
               </div>
-            </el-col>
-          </el-row>
-
-        <div class = "introduction">
-          Note community is where users can upload 
-          their notes and view others notes. You can 
-          publish  notes for the world to see in the 
-          note community through public note permissions. 
-          You will receive comments and likes from other users. 
-        </div>
-
-        </div>
-      </el-col>
-
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light">
-          <div class = "intro_pic">
-            <img :src="imgUrl4" >
-            </div>
-        </div>
-      </el-col>
-    </el-row>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
 
 
 
@@ -242,6 +232,17 @@ import NavMenu from "./common/NavMenu";
     text-transform: uppercase;
     margin-top: 15px;
   }*/
+  .container {
+    width: 100%;
+    overflow: hidden;
+    min-width: 960px;
+  }
+  .button-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
   .same_align{
     display:flex; 
     align-items:center;
@@ -274,11 +275,18 @@ import NavMenu from "./common/NavMenu";
     letter-spacing:0.15px;
     text-align: center;
   }
+  .header-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
   .first_text {
     color:#4F586A ;
     font-size: 48px;
     font-weight: bolder;
-    margin-top: 5%;
+    margin-top: 60px;
+    margin-bottom: 20px;
     text-align: center;
     line-height:64px;
     letter-spacing:0px;
@@ -287,18 +295,17 @@ import NavMenu from "./common/NavMenu";
     color:rgba(0, 0, 0, 0.87);
     font-size: 20px;
     font-weight: normal;
-    margin-top: 30px;
-    line-height:30px;
+    margin: 0 auto;
+    line-height: 30px;
     letter-spacing:0.15px;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #eee;
   }
   .register_button{
     margin-top: 30px;
-    margin-left: 70%;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
+    margin-right: 48px;
     width: 176px;
     height: 48px;
     border-radius: 6px;
@@ -310,11 +317,7 @@ import NavMenu from "./common/NavMenu";
   }
   .login_button{
     margin-top: 30px;
-    margin-right: 70%;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
+    /* margin-right: 70%; */
     width: 176px;
     height: 48px;
     border-radius: 6px;
@@ -422,8 +425,30 @@ import NavMenu from "./common/NavMenu";
     top: -100px;
     align-content: overlap;
   }
+  .typewriter-animation {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: grow 6s steps(80) 1s normal both, 
+    blink 0.8s steps(80) infinite normal;
+  }
+  @keyframes grow {
+    from {
+      width: 0;
+    }
+    to {
+      width: 760px;
+    }
+  }
 
-  ;
+  @keyframes blink {
+    from {
+      border-right-color: #eee;
+    }
+    to {
+      border-right-color: #222;
+    }
+  }
 
 
 
