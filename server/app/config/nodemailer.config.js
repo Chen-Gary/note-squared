@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer")
 
+// config of email sender
 const user = "note-squared@outlook.com"
 const pass = "csc4001note"
 
@@ -20,16 +21,11 @@ module.exports.sendConfirmationEmail = (name, email, confirmationCode) => {
         subject: "Please confirm your account",
         html: `<h1>Email Confirmation</h1>
         <h2>Hello ${name}</h2>
-        <p>Thank you for registering Note^2. Please confirm your email by clicking on the following link</p>
+        <p>Thank you for registering Note^2. Please use the following verification code to confirm your email address: </p>
         <br>
-        <p>Your confirmation code is ${confirmationCode}</p>
+        <p>${confirmationCode}</p>
         <br>
-        <p>Please use the following API to confirm your account: </p>
-        <p>GET: http://localhost:3000/confirm/:confirmationCode</p>
-        <p>i.e.</p>
-        <p>http://localhost:3000/confirm/${confirmationCode}</p>
-        <p>OR</p>
-        <p>http://[IP]:3000/confirm/${confirmationCode}</p>
+        <p>Thank you!</p>
         </div>`,
     }).catch(err => console.log(err));
 };

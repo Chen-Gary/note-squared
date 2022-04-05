@@ -6,7 +6,11 @@ const {Schema, model} = mongoose
 
 const UserScheme = new Schema({
     //username: { type:String, require:true },  //removed
-    email: { type:String, require:true },       //unique
+    email: {
+        type:String,
+        unique: true,
+        require:true
+    },
     password: {
         type:String,
         require:true,
@@ -14,19 +18,27 @@ const UserScheme = new Schema({
             return bcrypt.hashSync(val, 10)
         }
     },
-    name: { type:String, require:true },
-    isAdmin: { type:String, default:'0' }, // 1->admin, 0->normal user
+    name: {
+        type:String,
+        require:true
+    },
+    role: {
+        type:String,
+        require:true,
+        enum: ['admin', 'normal'],
+        default:'normal',
+    },
 
-    // for email verification
-    status: {
-        type: String,
-        enum: ['Pending', 'Active'],
-        default: 'Pending'
-    },
-    confirmationCode: {
-        type: String,
-        unique: true
-    },
+    // for email verification (removed)
+    // status: {
+    //     type: String,
+    //     enum: ['Pending', 'Active'],
+    //     default: 'Pending'
+    // },
+    // confirmationCode: {
+    //     type: String,
+    //     unique: true
+    // },
 })
 
 const User = model('User', UserScheme)
