@@ -14,6 +14,8 @@ import VueAxios from 'vue-axios'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
+import './assets/css/index.css'
+
 
 axios.defaults.baseURL = 'http://120.78.207.251:3000/api/user'
 //axios.defaults.withCredentials = true

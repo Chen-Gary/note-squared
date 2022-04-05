@@ -17,6 +17,8 @@
     "cors": "^2.8.5",
     "el-table-infinite-scroll": "^1.0.10",
     "element-ui": "^2.15.6",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "mavon-editor": "^2.10.4",
     "vditor": "^3.8.12",
     "vue": "^2.5.2",
