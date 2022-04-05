@@ -16,9 +16,7 @@ router.post('/login', require('./user/login'))
 
 // User settings
 // get info of this user
-router.get('/profile', isNormalLogin, (req, res)=>{
-    return res.status(200).send(req.body._id)
-})
+router.get('/profile', isNormalLogin, require('./user/profile'))
 
 
 module.exports = router
