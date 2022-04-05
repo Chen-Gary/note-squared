@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "6a5a51ca-2c1c-47f2-8eca-04daef5e7111",
+		"name": "Note Squared",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "get verivication code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "3096229282@qq.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register/email-verification-code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register",
+								"email-verification-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "3096229282@qq.com",
+									"description": "需要唯一",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "李四chh",
+									"type": "text"
+								},
+								{
+									"key": "verificationCode",
+									"value": "lTQJ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "32432432@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my profile info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNTEwM2VjMjA4MzE3NjljYzJmZDUiLCJlbWFpbCI6IjMwOTYyMjkyODJAcXEuY29tIiwiaWF0IjoxNjQ5MTY4NjU5LCJleHAiOjE2NDkyNTUwNTl9.pCeO9qJvMv2QytZpkTEl8ztdD7SVS9x1n-Ar9GYPkGQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set nickname",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNTEwM2VjMjA4MzE3NjljYzJmZDUiLCJlbWFpbCI6IjMwOTYyMjkyODJAcXEuY29tIiwiaWF0IjoxNjQ5MTY4NjU5LCJleHAiOjE2NDkyNTUwNTl9.pCeO9qJvMv2QytZpkTEl8ztdD7SVS9x1n-Ar9GYPkGQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "newName",
+									"value": "chh233",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with old password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRjNTEwM2VjMjA4MzE3NjljYzJmZDUiLCJlbWFpbCI6IjMwOTYyMjkyODJAcXEuY29tIiwiaWF0IjoxNjQ5MTY4NjU5LCJleHAiOjE2NDkyNTUwNTl9.pCeO9qJvMv2QytZpkTEl8ztdD7SVS9x1n-Ar9GYPkGQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPwd",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abc1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/old-pwd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"old-pwd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with email - get verification code",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "3096229282@qq.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/email/verification-code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"email",
+								"verification-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with email - set",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "3096229282@qq.com",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abcde",
+									"type": "text"
+								},
+								{
+									"key": "verificationCode",
+									"value": "EAAz",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/email/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"email",
+								"set"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin API",
+			"item": [
+				{
+					"name": "Get User List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTE1MDU3OSwiZXhwIjoxNjQ5MjM2OTc5fQ.3Dwfjr27h-Jda-29Exf72fX5TU9GVrUE-KzgZjZTNl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/userlist/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"userlist",
+								"1"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				},
+				{
+					"name": "edit user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTE1MDU3OSwiZXhwIjoxNjQ5MjM2OTc5fQ.3Dwfjr27h-Jda-29Exf72fX5TU9GVrUE-KzgZjZTNl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_id",
+									"value": "624bf445dd5519495c241fab",
+									"description": "用于指定要修改的用户，_id不可修改",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "32432432@test.com",
+									"description": "更新后的值",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "nbnb",
+									"description": "更新后的值",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"description": "更新后的值",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/profile-edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"profile-edit"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				},
+				{
+					"name": "update user password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTE1MDU3OSwiZXhwIjoxNjQ5MjM2OTc5fQ.3Dwfjr27h-Jda-29Exf72fX5TU9GVrUE-KzgZjZTNl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_id",
+									"value": "624bf445dd5519495c241fab",
+									"description": "用于指定要修改的用户，_id不可修改",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abc123",
+									"description": "更新后的值",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/password-edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"password-edit"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[DISCARDED]",
+			"item": [
+				{
+					"name": "[DISCARDED] User APIs",
+					"item": [
+						{
+							"name": "Get User List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmM2E4ZDAwZTI2ZDc1MjVjNzhjMzUiLCJlbWFpbCI6IjAwMDAwMDAwMDBAcXEuY29tIiwiaWF0IjoxNjQ3MjYyNDE0LCJleHAiOjE2NDczNDg4MTR9.r0l9vodsjmLFOYoAYSJt9RLOfucwfY3kKywWEPQOyMg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/userlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"userlist"
+									]
+								},
+								"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+							},
+							"response": []
+						},
+						{
+							"name": "Register Comfirm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/confirm/xxxxxxxxxxxx",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"confirm",
+										"xxxxxxxxxxxx"
+									]
+								},
+								"description": "把\"Register\" API返回的 \"confirmationCode\" 填到 \"/api/user/confirm/\"后面"
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "0000000000@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "[DISCARDED] User APIs - Cloud",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "1223@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "233@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "hello1",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Comfirm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/confirm/xxxxxxxxxxxx",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"confirm",
+										"xxxxxxxxxxxx"
+									]
+								},
+								"description": "把\"Register\" API返回的 \"confirmationCode\" 填到 \"/api/user/confirm/\"后面"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
