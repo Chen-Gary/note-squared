@@ -10,6 +10,7 @@ import test from "../components/test"
 import Bookshelf from "../components/bookshelf/Bookshelf";
 import NoteEdit from "../components/note/NoteEdit";
 import NoteDetail from "../components/note/NoteDetail";
+import Community from "../components/note_community/Community";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -62,6 +63,19 @@ export default new Router({
           path: '/forget',
           name: 'Forget_password',
           component: Forget_password,
+      },
+    ]
+    },
+    {
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/community',
+      children: [
+      {
+          path: '/community',
+          name: 'Community',
+          component: Community,
       },
     ]
     },

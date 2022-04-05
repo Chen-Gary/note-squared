@@ -156,10 +156,8 @@
 
      <!---！！！！！！！对不齐有毛病！！！！！！！！！-->
       <div class = "same_align">
-      <div>
       <img :src="Logo" class="logo">
-      </div> 
-      <div>
+      <div style = "margin-left:1%">
         Note²
       </div>
       </div>
