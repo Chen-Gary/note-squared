@@ -1,4 +1,5 @@
 const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -8,6 +9,9 @@ const routes = require('./router')
 
 const PORT = 3000
 const app = new express()
+
+// 开放静态资源文件 (e.g. avatar image)
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 mongo(app)
 
