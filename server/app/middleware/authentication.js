@@ -32,8 +32,16 @@ async function isJwtValid(jwtStr) {
         userEntry: null
     }
 
+    // if no authentication token is sent
+    if (!jwtStr) {
+        result.statusCode = 403
+        result.message = 'no token received'
+        return result
+    }
+
     const parseResult = parseJwt(jwtStr)
 
+    // parse error
     if (parseResult.status === false) {
         result.statusCode = 422
         result.message = 'invalid token'
@@ -72,7 +80,7 @@ const isAdmin = async (req, res, next) => {
     // the user exist, check authority
     const user = myJwtObj.userEntry
     if (user.role === 'normal') {
-        return res.status(409).send({message: 'do not have authority of admin'})
+        return res.status(403).send({message: 'request rejected since admin permission required'})
     } else if (user.role === 'admin'){
         next()
     }
