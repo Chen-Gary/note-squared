@@ -72,6 +72,7 @@
             password:this.loginForm.password,
           })
           .then(response=>{
+            console.log("status:")
             console.log(response.data.status)
             console.log(response.data)
             if(response.status === 200){
@@ -83,6 +84,7 @@
                 message:'Successfully Login!',
               }*/
               localStorage.setItem('elementToken', response.data)
+              localStorage.setItem("token",response.data)
               //暂且先跳转到笔记编辑
               this.$router.replace('/note/edit')
 

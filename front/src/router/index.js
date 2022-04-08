@@ -11,6 +11,7 @@ import Bookshelf from "../components/bookshelf/Bookshelf";
 import NoteEdit from "../components/note/NoteEdit";
 import NoteDetail from "../components/note/NoteDetail";
 import Community from "../components/note_community/Community";
+import Admin_ChangeProfile from "../components/admin/Admin_ChangeProfile";
 Vue.use(Router)
 export default new Router({
   routes: [

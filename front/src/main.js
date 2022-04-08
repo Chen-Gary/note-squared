@@ -30,9 +30,9 @@ axios.defaults.baseURL = 'http://localhost:3000/api/user'
 Vue.prototype.$axios = axios
 
 //请求拦截?????
-/*
+
 axios.interceptors.request.use (
-  cofig =>{
+  config =>{
   if (localStorage.elementToken){
     config.headers.Authorization = localStorage.elementToken
     }
@@ -44,7 +44,7 @@ axios.interceptors.response.use(res=>{
 },err =>{
     console.log(err.response)
    // Message.error(err.response.data)
-});*/
+});
 
 
 

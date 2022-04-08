@@ -41,6 +41,7 @@
 
 
 <script>
+    import { Message } from 'element-ui';
     export default {
       name: "Register",
      
@@ -111,7 +112,9 @@
              if(res.status === 200){
                 console.log("register info:")
                 console.log(res)
+                Message.success("Successfully Register!")
                 _this.$router.replace('/login')
+                
             }
             else {
               alert("Email has been registered!")
@@ -125,6 +128,7 @@
         //邮箱验证码验证
         confirm_verfication_code(){
           //通过验证       
+          console.log(this.registerData.email);
           this.$axios.post("/register/email-verification-code",{
               email:this.registerData.email
           }).then(res=> {
