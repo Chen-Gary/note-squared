@@ -28,6 +28,10 @@ const UserScheme = new Schema({
         enum: ['admin', 'normal'],
         default:'normal',
     },
+    avatar: {
+        type: String,
+        default: null
+    }
 
     // for email verification (removed)
     // status: {
