@@ -23,13 +23,13 @@
           <el-form-item prop = "verification_code">
              <el-container>
                <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
-               <el-button style="width:30%" type="primary" @click="onSubmit" class="form-confirm">Send</el-button> 
+               <el-button style="width:30%" type="primary" @click="confirm_verfication_code" class="form-confirm">Send</el-button> 
             </el-container>
           </el-form-item>
 
 
           <el-form-item>
-            <el-button type="primary" @click="confirm_verfication_code" class="form-confirm">Create account</el-button>
+            <el-button type="primary" @click="onSubmit" class="form-confirm">Create account</el-button>
           </el-form-item>
            <el-link :underline="false" @click="toLogin">Already have an account?</el-link>
         </el-form>
@@ -97,17 +97,25 @@
           console.log(this.registerData.email)
           console.log(this.registerData.password)
           console.log(this.registerData.name)
+          console.log(this.registerData.verification_code)
           //上传邮箱和密码，根据后端修改
           this.$axios.post("/register",{
             email:this.registerData.email,
             password:this.registerData.password,
             name:this.registerData.name,
-            isAdmin:0
+            verificationCode:this.registerData.verification_code,
           })
           .then(res=> {
-            console.log("register info:")
-            console.log(res)
-           // _this.$router.replace('/login')
+             // console.log("register info1:")
+             // console.log(res)
+             if(res.status === 200){
+                console.log("register info:")
+                console.log(res)
+                _this.$router.replace('/login')
+            }
+            else {
+              alert("Email has been registered!")
+            }
           })
           .catch(function (error) {
             console.log(error)
@@ -116,9 +124,9 @@
         },
         //邮箱验证码验证
         confirm_verfication_code(){
-          //邮箱验证，验证码目前需要手动更改
-          this.$axios.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAcXEuY29tIiwiaWF0IjoxNjQ3MjY3OTU5fQ.3HDaW41Tcb6_czlb6JbA6Y6C-t-ZIRHXlaGYDIGx_Z4", {
-
+          //通过验证       
+          this.$axios.post("/register/email-verification-code",{
+              email:this.registerData.email
           }).then(res=> {
             console.log("register info:")
             console.log(res);
