@@ -12,6 +12,7 @@ import NoteEdit from "../components/note/NoteEdit";
 import NoteDetail from "../components/note/NoteDetail";
 import Community from "../components/note_community/Community";
 import Admin_ChangeProfile from "../components/admin/Admin_ChangeProfile";
+import ViewArticle from "../components/note/ViewArticle";
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -105,6 +106,11 @@ export default new Router({
       name: 'NoteDetail',
       component: NoteDetail,
     },
+    {
+      path: '/note/view',
+      name: 'ViewArticle',
+      component: ViewArticle
+    }
 
   ]
 })

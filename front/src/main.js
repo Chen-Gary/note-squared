@@ -15,7 +15,11 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
 import './assets/css/index.css'
+import 'github-markdown-css/github-markdown.css'
 
+import Highlight from './utils/highlight'
+
+Vue.use(Highlight)
 
 //axios.defaults.withCredentials = true
 
