@@ -38,6 +38,7 @@
 </template>
 
 <script>
+    import { Message } from 'element-ui';
     import NavMenu from "./common/NavMenu";
     export default {
       name: "Login",
@@ -71,11 +72,22 @@
             password:this.loginForm.password,
           })
           .then(response=>{
+            console.log("status:")
             console.log(response.data.status)
             console.log(response.data)
-            if(response.data.status === 200){
-              console.log('success')
-              this.$router.replace('/register')
+            if(response.status === 200){
+              console.log('login success')
+              //弹窗显示
+              Message.success("Successfully Login!")
+             /* this.$message = {
+                type:'success',
+                message:'Successfully Login!',
+              }*/
+              localStorage.setItem('elementToken', response.data)
+              localStorage.setItem("token",response.data)
+              //暂且先跳转到笔记编辑
+              this.$router.replace('/note/edit')
+
               _this.$store.commit('login',response.data)
               // _this.$router.push({path: '/'})
              // var path = _this.$route.query.redirect

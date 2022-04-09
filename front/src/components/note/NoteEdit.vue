@@ -38,7 +38,7 @@
             v-model="note.contentMd"
             @save="saveNote"
             @imgAdd="imgAdd"
-            style="min-height: 500px;max-height: 500px"
+            style="min-height: 500px"
             >
           </mavon-editor>
         </div>

@@ -6,7 +6,7 @@ import store from "./store";
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import elTableInfiniteScroll from 'el-table-infinite-scroll';
+import { Message } from 'element-ui'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -15,28 +15,46 @@ import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
 import './assets/css/index.css'
+import 'github-markdown-css/github-markdown.css'
 
+import Highlight from './utils/highlight'
 
-axios.defaults.baseURL = 'http://120.78.207.251:3000/api/user'
+Vue.use(Highlight)
+
 //axios.defaults.withCredentials = true
 
-
 Vue.config.productionTip = false
-Vue.use(elTableInfiniteScroll)
 Vue.use(ElementUI)
 Vue.use(mavonEditor)
-Vue.prototype.$axios = axios
 /*Vue.use(VueAxios,axios)*/
 
-const http = axios.create({
-  baseURL:'http://120.78.207.251:3000/api/user'
-})
+
+
+axios.defaults.baseURL = 'http://localhost:3000/api/user'
+Vue.prototype.$axios = axios
+
+//请求拦截?????
+
+axios.interceptors.request.use (
+  config =>{
+  if (localStorage.elementToken){
+    config.headers.Authorization = localStorage.elementToken
+    }
+    return config;
+});
+//响应拦截
+axios.interceptors.response.use(res=>{
+  return res
+},err =>{
+    console.log(err.response)
+   // Message.error(err.response.data)
+});
 
 
 
 
 //路由守卫
-router.beforeEach((to,from,next) =>{
+/*router.beforeEach((to,from,next) =>{
   if(to.meta.requireAuth){
     if(store.state.currentUser !== null && store.state.currentUser){
       next()
@@ -51,7 +69,7 @@ router.beforeEach((to,from,next) =>{
   else{
     next()
   }
-})
+})*/
 
 /* eslint-disable no-new */
 new Vue({

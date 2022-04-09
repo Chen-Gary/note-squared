@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="form-body">
-        <div class = "header_text">Forget Pasword</div>
+        <div class = "header_text">Forget Password</div>
         <el-form ref="form" :model="registerData" :rules = "rules"  label-width="0px">
 
           <el-form-item  class="form-item"  prop = "email">
@@ -20,13 +20,13 @@
           <el-form-item prop = "verification_code">
              <el-container>
                <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
-               <el-button style="width:30%" type="primary" @click="onSubmit" class="form-confirm">Send</el-button> 
+               <el-button style="width:30%" type="primary" @click="confirm_verfication_code" class="form-confirm">Send</el-button> 
             </el-container>
           </el-form-item>
 
 
           <el-form-item>
-            <el-button type="primary" @click="confirm_verfication_code" class="form-confirm">Create account</el-button>
+            <el-button type="primary" @click="onSubmit" class="form-confirm">Change password</el-button>
           </el-form-item>
 
           <el-form-item>
@@ -47,6 +47,7 @@
 
 
 <script>
+    import { Message } from 'element-ui';
     export default {
       name: "Forget_password",
      
@@ -104,15 +105,18 @@
           console.log(this.registerData.password)
           console.log(this.registerData.name)
           //上传邮箱和密码，根据后端修改
-          this.$axios.post("/register",{
+          this.$axios.post("/set-pwd/email/set",{
             email:this.registerData.email,
-            password:this.registerData.password,
-            name:this.registerData.name,
-            isAdmin:0
+            newPwd:this.registerData.password,
+            verificationCode:this.registerData.verification_code,
           })
           .then(res=> {
             console.log("register info:")
             console.log(res)
+            if(res.status === 200){
+              Message.success("Successfully change the password!")
+              console.log('change password success')
+            }
            // _this.$router.replace('/login')
           })
           .catch(function (error) {
@@ -122,9 +126,9 @@
         },
         //邮箱验证码验证
         confirm_verfication_code(){
-          //邮箱验证，验证码目前需要手动更改
-          this.$axios.get("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjJAcXEuY29tIiwiaWF0IjoxNjQ3MjY3OTU5fQ.3HDaW41Tcb6_czlb6JbA6Y6C-t-ZIRHXlaGYDIGx_Z4", {
-
+          //通过验证       
+          this.$axios.post("/set-pwd/email/verification-code",{
+              email:this.registerData.email
           }).then(res=> {
             console.log("register info:")
             console.log(res);
