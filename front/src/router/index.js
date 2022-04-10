@@ -110,6 +110,12 @@ export default new Router({
       path: '/note/view',
       name: 'ViewArticle',
       component: ViewArticle
+    },
+    {
+      path:'/admin',
+      name:'/admin',
+      component: Admin_ChangeProfile
+      
     }
 
   ]

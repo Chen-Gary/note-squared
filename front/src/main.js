@@ -38,7 +38,7 @@ Vue.prototype.$axios = axios
 axios.interceptors.request.use (
   config =>{
   if (localStorage.elementToken){
-    config.headers.Authorization = localStorage.elementToken
+    config.headers.Authorization = "Bearer "+localStorage.elementToken
     }
     return config;
 });
