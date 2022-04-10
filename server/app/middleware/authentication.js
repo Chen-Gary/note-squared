@@ -83,21 +83,23 @@ const isAdmin = async (req, res, next) => {
         return res.status(403).send({message: 'request rejected since admin permission required'})
     } else if (user.role === 'admin'){
         next()
+    } else {
+        return res.status(403).send({message: `request rejected, invalid user.role = ${user.role}`})
     }
 }
 
 // middleware: normal user authentication
-// `req.body._id` will be assigned and can be used in `next`, after checking user authentication
+// `req.body.user_id` will be assigned and can be used in `next`, after checking user authentication
 const isNormalLogin = async (req, res, next) => {
 
-    req.body._id = ""   //reset to empty
+    req.body.user_id = ""   //init to empty
 
     const myJwtObj = await isJwtValid(req.headers.authorization)
     if (myJwtObj.status === false) { return res.status(myJwtObj.statusCode).send({message: myJwtObj.message}) }
 
-    // the user exist, write `_id` in `req`
+    // the user exist, write `user_id` in `req`
     const user = myJwtObj.userEntry
-    req.body._id = user._id
+    req.body.user_id = user._id
     next()
 }
 

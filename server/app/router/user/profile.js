@@ -7,6 +7,6 @@ const usersProjection = {
 }
 
 module.exports = async (req, res) => {
-    const user = await User.findOne({_id: req.body._id}, usersProjection)
+    const user = await User.findOne({_id: req.body.user_id}, usersProjection)
     return res.status(200).send(user)
 }
