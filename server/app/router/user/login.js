@@ -17,6 +17,6 @@ module.exports = async (req, res)=>{
     // return jwt token
     const _id = user._id;
     const email = user.email;
-    const token = jwt.sign({_id, email}, key.secret_jwt, {expiresIn:'24h'})
+    const token = jwt.sign({_id, email}, key.secret_jwt, {expiresIn:"365 days"})
     res.status(200).send({jwt: token})
 }
