@@ -1,0 +1,5 @@
+# this folder is used to store images user uploaded (in their notes)
+# all files in this folder are ignored
+
+*
+!.gitignore
