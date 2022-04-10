@@ -67,14 +67,13 @@
           var _this = this
           console.log(this.loginForm.username)
           console.log(this.loginForm.password)
-          this.$axios.post("/login",{
+          this.$axios.post("/user/login",{
             email:this.loginForm.username,
             password:this.loginForm.password,
           })
           .then(response=>{
             console.log("status:")
-            console.log(response.data.status)
-            console.log(response.data)
+            console.log(response.data.jwt)
             if(response.status === 200){
               console.log('login success')
               //弹窗显示
@@ -83,8 +82,8 @@
                 type:'success',
                 message:'Successfully Login!',
               }*/
-              localStorage.setItem('elementToken', response.data)
-              localStorage.setItem("token",response.data)
+              localStorage.setItem('elementToken', response.data.jwt)
+             // localStorage.setItem("token",response.data)
               //暂且先跳转到笔记编辑
               this.$router.replace('/note/edit')
 

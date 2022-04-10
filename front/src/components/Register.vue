@@ -100,7 +100,7 @@
           console.log(this.registerData.name)
           console.log(this.registerData.verification_code)
           //上传邮箱和密码，根据后端修改
-          this.$axios.post("/register",{
+          this.$axios.post("/user/register",{
             email:this.registerData.email,
             password:this.registerData.password,
             name:this.registerData.name,
@@ -129,7 +129,7 @@
         confirm_verfication_code(){
           //通过验证       
           console.log(this.registerData.email);
-          this.$axios.post("/register/email-verification-code",{
+          this.$axios.post("/user/register/email-verification-code",{
               email:this.registerData.email
           }).then(res=> {
             console.log("register info:")
