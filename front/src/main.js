@@ -30,7 +30,7 @@ Vue.use(mavonEditor)
 
 
 
-axios.defaults.baseURL = 'http://localhost:3000/api/user'
+axios.defaults.baseURL = 'http://localhost:3000/api'
 Vue.prototype.$axios = axios
 
 //请求拦截?????

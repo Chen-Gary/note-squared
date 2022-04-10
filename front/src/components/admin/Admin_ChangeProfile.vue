@@ -1,37 +1,38 @@
 .<template>
 <el-card>
+  <h1>User Profile Management </h1>
+  <!--
   <el-row class = "search_box">
     <el-col >
       <el-input v-model="search_keyword" style="width: 30%"></el-input>
       <el-button type="primary" icon="el-icon-search" style="margin-left:1%">Search</el-button>
     </el-col>
-  </el-row>
+  </el-row>-->
   <br>
   <el-table
     :data="tableData"
     border
-    style="width: 100%">
-    <el-table-column
-      prop="date"
-      label="日期"
-      >
+    style="width: 100%" >
+    <el-table-column  
+    :width="item.width"
+    :prop="item.prop" 
+    :label="item.label" 
+    v-for="(item,index) in option" 
+    :key = "index">
+    <template #default v-if="item.prop === 'action' " >
+    <template>
+      <el-button type = "primary" size = 'small' > Edit </el-button>
+      </template> 
+    </template> 
     </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
-      >
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址">
-    </el-table-column>
+    
   </el-table>
 
 
     <el-pagination
     @current-change="handleCurrentChange"
     :current-page="currentPage"
-    :total="20"
+    :total="page.totalPage"
     layout="prev, pager, next"
     >
    </el-pagination>
@@ -39,34 +40,29 @@
 </template>
 
 <script>
+import {options} from './options.js'
 export default {
   name:"Admin_ChangeProfile",
+  created(){
+    this.handleUserList();
+  },
   data() {
       return {
-        search_keyword:"",
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }],
-
+      search_keyword:"",
+      tableData: [],
+      currentPage: 1,
       page:{
             currentPage:1, //当前页
             pagesize:10,    // 每页的数据
             rows:1,         //总条数
             totalPage:5, //总页数
+      },
+      option:options,
+      row_info: {
+        id :"",
+        email:"",
+        name:"",
+        password:"",
       },
       }
     },
@@ -77,27 +73,53 @@ export default {
     },
     
     handleCurrentChange: function(currentPage){
-        console.log(localStorage.elementToken)
         this.page.currentPage = currentPage;
-      //  this.tableData[0].date = "2020-03-01"
-       // this.handleUserList();
-      //  console.log(this.page.currentPage)  //点击第几页
+        this.ChangeUserList();
+        console.log(this.page.currentPage)  //点击第几页
     },
-    
-    handleUserList() {    
+    edit_info:function(row)
+    {
+
+    },
+    ChangeUserList: function() {    
       //等待后端完善所有每个页面
-        console.log(localStorage.elementToken)
-        this.$axios.post("/admin/userlist/1",{
-        //  headers: {Authorization:"Bearer "+localStorage.elementToken},
+       // console.log(localStorage.elementToken)
+        this.$axios.get("/admin/userlist/"+this.page.currentPage,{
+          headers: {Authorization:localStorage.elementToken},
         })
           .then(response=>{
             
             console.log("status:")
-            console.log(response.data.status)
             console.log(response.data)
             if(response.status === 200){
               console.log('login success')
-              //弹窗显示
+              this.tableData = response.data.users;
+            }
+            else {
+              alert("Incorrect email or password")
+            }
+          })
+          .catch(function (error) {
+            alert("some error occur, can not receive")
+            console.log(error)
+          })
+    
+      },
+
+     handleUserList() {    
+      //等待后端完善所有每个页面
+       // console.log(localStorage.elementToken)
+        this.$axios.get("/admin/userlist/1",{
+          headers: {Authorization:localStorage.elementToken},
+        })
+          .then(response=>{
+            
+            console.log("status:")
+            console.log(response.data)
+            if(response.status === 200){
+              console.log('login success')
+              this.tableData = response.data.users;
+              this.page.totalPage = response.data.total * response.data.pagesize;
             }
             else {
               alert("Incorrect email or password")

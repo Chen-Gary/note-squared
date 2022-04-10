@@ -105,7 +105,7 @@
           console.log(this.registerData.password)
           console.log(this.registerData.name)
           //上传邮箱和密码，根据后端修改
-          this.$axios.post("/set-pwd/email/set",{
+          this.$axios.post("/user/set-pwd/email/set",{
             email:this.registerData.email,
             newPwd:this.registerData.password,
             verificationCode:this.registerData.verification_code,
@@ -127,7 +127,7 @@
         //邮箱验证码验证
         confirm_verfication_code(){
           //通过验证       
-          this.$axios.post("/set-pwd/email/verification-code",{
+          this.$axios.post("/user/set-pwd/email/verification-code",{
               email:this.registerData.email
           }).then(res=> {
             console.log("register info:")

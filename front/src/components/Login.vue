@@ -67,7 +67,7 @@
           var _this = this
           console.log(this.loginForm.username)
           console.log(this.loginForm.password)
-          this.$axios.post("/login",{
+          this.$axios.post("/user/login",{
             email:this.loginForm.username,
             password:this.loginForm.password,
           })
