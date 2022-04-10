@@ -47,7 +47,7 @@
       @close="dialogVisible = false">
       <span><el-form ref="form" :model="form" label-width="80px" width:200px>
 
-      <el-tabs v-model="activeName" style="text-align: center" >
+      <el-tabs v-model="activeName" style="text-align: center" stretch>
 
         <el-tab-pane label="Change Password" name="first" >
           <br>
