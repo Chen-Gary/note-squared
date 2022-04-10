@@ -5,7 +5,7 @@ export const options = [
 
   },
   {
-    label:"Name",
+    label:"Nickname",
     prop:"name",
 
   },
@@ -17,7 +17,6 @@ export const options = [
   {
     label:"Role",
     prop:"role",
-
   },
   {
     label:"Action",

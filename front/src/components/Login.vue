@@ -39,7 +39,6 @@
 
 <script>
     import { Message } from 'element-ui';
-    import NavMenu from "./common/NavMenu";
     export default {
       name: "Login",
       data() {
@@ -57,9 +56,6 @@
             ],
           }
         }
-      },
-      components:{
-        NavMenu
       },
       methods: {
         //登陆信息提交
@@ -122,11 +118,11 @@
     height: 100%;
     width: 100%;
     /*background-image: url("../../static/homeMask.png");*/
-    background-size: cover;
+   /* background-size: cover;
     position: fixed;
     left: 0px;
     top:0px;
-    padding-top: 30px;
+    padding-top: 30px;*/
   }
   .form-body{
     position: absolute;
@@ -138,6 +134,7 @@
     width: 27%;
     min-width: 300px;
     padding: 30px 30px 15px 30px;
+    
     /*background-color: rgba(255,255,255,0.8);
     box-shadow: 5px 3px 10px rgba(0,0,0,0.9);*/
   }
