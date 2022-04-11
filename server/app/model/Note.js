@@ -1,17 +1,17 @@
 const mongoose = require('mongoose')
 const {Schema, model} = mongoose
 
-const NoteScheme = new Schema({
+const NoteSchema = new Schema({
 
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        require:true
+    author: { // author is user in the user schema
+        type: mongoose.Schema.Types.ObjectId, // objectID unique datatype in db
+        ref: 'User', // reference the user (similar to foreign key)
+        required:true
     },
 
     title: {
         type: String,
-        require:true
+        required: true
     },
     description: {
         type: String,
@@ -24,7 +24,7 @@ const NoteScheme = new Schema({
 
     visibility: {
         type: String,
-        require: true,
+        required: true,
         enum: ['private', 'public'],
         default:'public',
     },
@@ -34,11 +34,11 @@ const NoteScheme = new Schema({
     },
     like: {
         type: Number,
-        require: true,
+        required: true,
         default: 0,
     }
 })
 
-const Note = model('Note', NoteScheme)
+const Note = model('Note', NoteSchema)
 
 module.exports = Note

@@ -9,24 +9,24 @@ const UserScheme = new Schema({
     email: {
         type:String,
         unique: true,
-        require:true
+        required:true
     },
     password: {
         type:String,
-        require:true,
+        required:true,
         set (val){
             return bcrypt.hashSync(val, 10)
         }
     },
     name: {
         type:String,
-        require:true
+        required:true
     },
     role: {
         type:String,
-        require:true,
+        required:true,
         enum: ['admin', 'normal'],
-        default:'normal',
+        default:'normal'
     },
     avatar: {
         type: String,
