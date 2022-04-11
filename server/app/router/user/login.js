@@ -18,5 +18,10 @@ module.exports = async (req, res)=>{
     const _id = user._id;
     const email = user.email;
     const token = jwt.sign({_id, email}, key.secret_jwt, {expiresIn:"365 days"})
-    res.status(200).send({jwt: token})
+    res.status(200).send({
+        _id: _id,
+        isAdmin: (user.role === "admin"),
+        role: user.role,
+        jwt: token
+    })
 }
