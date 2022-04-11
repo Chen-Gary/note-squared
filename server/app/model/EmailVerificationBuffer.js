@@ -3,18 +3,18 @@ const {Schema, model} = mongoose
 
 const EmailVerificationBufferSchema = new Schema({
     email: {
-        type:String,
+        type: String,
         unique: true,
-        require:true
+        required: true
     },
     usedFor: {
-        type:String,
-        require:true,
+        type: String,
+        required: true,
         enum: ['register', 'resetPwd'],
     },
     verificationCode: {
-        type:String,
-        require:true
+        type: String,
+        required: true
     },
     sendDate: {
         type: Date,

@@ -4,7 +4,7 @@ const {Schema, model} = mongoose
 // const Schema = mongoose.Schema
 // const model = mongoose.model
 
-const UserScheme = new Schema({
+const UserSchema = new Schema({
     //username: { type:String, require:true },  //removed
     email: {
         type:String,
@@ -45,6 +45,6 @@ const UserScheme = new Schema({
     // },
 })
 
-const User = model('User', UserScheme)
+const User = model('User', UserSchema)
 
 module.exports = User
