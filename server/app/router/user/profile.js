@@ -4,6 +4,7 @@ const User = require("../../model/User");
 const usersProjection = {
     password: false,
     __v: false,
+    avatar: false
 }
 
 module.exports = async (req, res) => {

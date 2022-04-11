@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
 
         res.status(200).send({
             user_id: req.body.user_id,
-            avatarUrl: `/static/note-pic/${filename}`
+            url: `/static/note-pic/${filename}`
         });
 
     });
