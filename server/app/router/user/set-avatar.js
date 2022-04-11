@@ -24,11 +24,13 @@ module.exports = async (req, res) => {
         // `files.avatar.filepath` = "E:\...\note-squared\server\app\public\avatar\20b5432fb0939b49e4ccb7300.jpg"
         const filename = files.avatar.filepath.split('avatar')[1].slice(1);     // filename = "20b5432fb0939b49e4ccb7300.jpg"
 
+        //TODO: delete old avatar image if exist
+
         await User.updateOne({_id: req.body.user_id}, {avatar: filename});
 
         res.status(200).send({
             user_id: req.body.user_id,
-            avatarUrl: `/static/avatar/${filename}`
+            url: `/static/avatar/${filename}`
         });
     });
 }

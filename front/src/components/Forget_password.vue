@@ -158,11 +158,11 @@
     height: 100%;
     width: 100%;
     /*background-image: url("../../static/homeMask.png");*/
-    background-size: cover;
+   /* background-size: cover;
     position: fixed;
     left: 0px;
     top:0px;
-    padding-top: 30px;
+    padding-top: 30px;*/
   }
   .form-body{
     position: absolute;

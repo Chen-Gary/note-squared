@@ -3,10 +3,10 @@ import Router from 'vue-router'
 import Register from "../components/Register";
 import Editor from "../components/Editor";
 import Login from "../components/Login";
+//import Login from "../components/Login2";
 import Forget_password from "../components/Forget_password";
 import Home from "../components/Home";
 import HomeNavBar from "../components/HomeNavBar"
-import test from "../components/test"
 import Bookshelf from "../components/bookshelf/Bookshelf";
 import NoteEdit from "../components/note/NoteEdit";
 import NoteDetail from "../components/note/NoteDetail";
@@ -27,13 +27,14 @@ export default new Router({
         name: 'Home',
         component: Home,
       },
+      
     ]
     },
     {
       path: '/',
       name: 'HomeNavBar',
       component: HomeNavBar,
-      redirect:'/login',
+      redirect:'/',
       children: [
       {
         path: '/login',
@@ -87,11 +88,6 @@ export default new Router({
       component: Editor
     },
     {
-      path: '/test',
-      name: 'test',
-      component: test
-    },
-    {
       path: '/bookshelf',
       name: 'Bookshelf',
       component: Bookshelf,
@@ -115,7 +111,7 @@ export default new Router({
       path:'/admin',
       name:'/admin',
       component: Admin_ChangeProfile
-      
+
     }
 
   ]

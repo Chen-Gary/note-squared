@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     await User.updateOne({_id: req.body.user_id}, {name: req.body.newName});
     return res.status(200).send({
         message: 'success',
-        _id: req.body.user_id,
+        user_id: req.body.user_id,
         newName: req.body.newName
     });
 }

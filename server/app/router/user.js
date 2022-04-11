@@ -14,6 +14,10 @@ router.post('/register/email-verification-code', require('./user/register-email-
 // Route: login
 router.post('/login', require('./user/login'))
 
+// validate token (is token valid & is user admin)
+router.get('/validate-token', require('./user/validate-token'))
+
+
 // User settings
 // get info of this user
 router.get('/profile', isNormalLogin, require('./user/profile'))

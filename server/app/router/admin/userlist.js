@@ -10,7 +10,8 @@ const pagesize = 10;
 
 module.exports = async (req, res) => {
     // user input
-    const page = req.params.page || 1;
+    //TODO: check whether `parseInt(req.params.page)` success or not ==> it seems that this is already done by `||`
+    const page = parseInt(req.params.page) || 1;
 
     // total user count
     const count = await User.countDocuments({});
@@ -21,6 +22,7 @@ module.exports = async (req, res) => {
     const start = (page - 1) * pagesize;
 
     // get user info from database
+    // need to make the returned user list reversely ordered?
     const users = await User.find({}).limit(pagesize).skip(start);
 
     res.status(200).send({

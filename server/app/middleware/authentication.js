@@ -105,6 +105,7 @@ const isNormalLogin = async (req, res, next) => {
 
 
 module.exports = {
+    isJwtValid,     // this is not middleware
     isAdmin,
     isNormalLogin,
 }
