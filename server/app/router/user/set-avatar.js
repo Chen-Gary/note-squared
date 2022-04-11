@@ -18,14 +18,19 @@ module.exports = async (req, res) => {
         // 2.fields 对象类型 保存普通表单数据
         // 3.files 对象类型 保存了和上传文件相关的数据
 
+        if (err) { return res.status(500).send(err); }
+        if (files.avatar === undefined) { return res.status(400).send({message: "no avatar image received"}); }
+
         // `files.avatar.filepath` = "E:\...\note-squared\server\app\public\avatar\20b5432fb0939b49e4ccb7300.jpg"
         const filename = files.avatar.filepath.split('avatar')[1].slice(1);     // filename = "20b5432fb0939b49e4ccb7300.jpg"
 
-        await User.updateOne({_id: req.body._id}, {avatar: filename});
+        //TODO: delete old avatar image if exist
+
+        await User.updateOne({_id: req.body.user_id}, {avatar: filename});
 
         res.status(200).send({
-            _id: req.body._id,
-            avatarUrl: `/static/avatar/${filename}`
+            user_id: req.body.user_id,
+            url: `/static/avatar/${filename}`
         });
     });
 }

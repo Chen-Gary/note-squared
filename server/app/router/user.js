@@ -14,6 +14,10 @@ router.post('/register/email-verification-code', require('./user/register-email-
 // Route: login
 router.post('/login', require('./user/login'))
 
+// validate token (is token valid & is user admin)
+router.get('/validate-token', require('./user/validate-token'))
+
+
 // User settings
 // get info of this user
 router.get('/profile', isNormalLogin, require('./user/profile'))
@@ -30,7 +34,7 @@ router.post('/set-pwd/email/verification-code', require('./user/set-pwd-email-ve
 // set new password by email (Step2: set new password)
 router.post('/set-pwd/email/set', require('./user/set-pwd-email-set'))
 
-// TODO: get user avatar image (users do not need to login to get avatar)
+// get user avatar image (users do not need to login to get avatar)
 router.get('/get-avatar', require('./user/get-avatar'))
 
 // set user avatar image

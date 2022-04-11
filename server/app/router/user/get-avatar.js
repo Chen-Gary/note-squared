@@ -7,9 +7,9 @@ module.exports = async (req, res) => {
         if (err) { return res.status(404).send({message: 'user with _id not found'}); }
 
         res.status(200).send({
-            _id: user._id,
+            user_id: user._id,
             avatarExist: (user.avatar !== null),
-            avatarUrl: `/static/avatar/${user.avatar}`
+            url: `/static/avatar/${user.avatar}`
         });
     });
 }

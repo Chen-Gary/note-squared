@@ -39,7 +39,6 @@
 
 <script>
     import { Message } from 'element-ui';
-    import NavMenu from "./common/NavMenu";
     export default {
       name: "Login",
       data() {
@@ -58,47 +57,33 @@
           }
         }
       },
-      components:{
-        NavMenu
-      },
       methods: {
         //登陆信息提交
         onSubmit(){
           var _this = this
           console.log(this.loginForm.username)
           console.log(this.loginForm.password)
-          this.$axios.post("/login",{
+          this.$axios.post("/user/login",{
             email:this.loginForm.username,
             password:this.loginForm.password,
           })
           .then(response=>{
             console.log("status:")
-            console.log(response.data.status)
             console.log(response.data)
             if(response.status === 200){
               console.log('login success')
               //弹窗显示
               Message.success("Successfully Login!")
-             /* this.$message = {
-                type:'success',
-                message:'Successfully Login!',
-              }*/
-              localStorage.setItem('elementToken', response.data)
-              localStorage.setItem("token",response.data)
-              //暂且先跳转到笔记编辑
-              this.$router.replace('/note/edit')
-
-              _this.$store.commit('login',response.data)
-              // _this.$router.push({path: '/'})
-             // var path = _this.$route.query.redirect
-             // _this.$router.replace({path:path === undefined ? '/' : path})
+              localStorage.setItem('elementToken', response.data.jwt)
+              localStorage.setItem('email',this.loginForm.username)
+              localStorage.setItem('password',this.loginForm.password)
+              //分别跳转到笔记编辑或者管理者界面
+              if (response.data.isAdmin) this.$router.replace('admin')
+              else this.$router.replace('/note/edit')
             }
             else {
               alert("Incorrect email or password")
             }
-           // var path = '/bookshelf'
-           // _this.$router.replace({path:path === undefined ? '/' : path})
-            
           })
           .catch(function (error) {
             alert("Incorrect email or password")
@@ -123,11 +108,11 @@
     height: 100%;
     width: 100%;
     /*background-image: url("../../static/homeMask.png");*/
-    background-size: cover;
+   /* background-size: cover;
     position: fixed;
     left: 0px;
     top:0px;
-    padding-top: 30px;
+    padding-top: 30px;*/
   }
   .form-body{
     position: absolute;
@@ -139,6 +124,7 @@
     width: 27%;
     min-width: 300px;
     padding: 30px 30px 15px 30px;
+    
     /*background-color: rgba(255,255,255,0.8);
     box-shadow: 5px 3px 10px rgba(0,0,0,0.9);*/
   }

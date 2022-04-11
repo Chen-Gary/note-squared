@@ -105,7 +105,7 @@
           console.log(this.registerData.password)
           console.log(this.registerData.name)
           //上传邮箱和密码，根据后端修改
-          this.$axios.post("/set-pwd/email/set",{
+          this.$axios.post("/user/set-pwd/email/set",{
             email:this.registerData.email,
             newPwd:this.registerData.password,
             verificationCode:this.registerData.verification_code,
@@ -115,6 +115,7 @@
             console.log(res)
             if(res.status === 200){
               Message.success("Successfully change the password!")
+              this.$router.replace('/login')
               console.log('change password success')
             }
            // _this.$router.replace('/login')
@@ -127,7 +128,7 @@
         //邮箱验证码验证
         confirm_verfication_code(){
           //通过验证       
-          this.$axios.post("/set-pwd/email/verification-code",{
+          this.$axios.post("/user/set-pwd/email/verification-code",{
               email:this.registerData.email
           }).then(res=> {
             console.log("register info:")
@@ -158,11 +159,11 @@
     height: 100%;
     width: 100%;
     /*background-image: url("../../static/homeMask.png");*/
-    background-size: cover;
+   /* background-size: cover;
     position: fixed;
     left: 0px;
     top:0px;
-    padding-top: 30px;
+    padding-top: 30px;*/
   }
   .form-body{
     position: absolute;
