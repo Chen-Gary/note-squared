@@ -69,7 +69,7 @@
           })
           .then(response=>{
             console.log("status:")
-            console.log(response.data.jwt)
+            console.log(response.data)
             if(response.status === 200){
               console.log('login success')
               //弹窗显示
@@ -81,7 +81,8 @@
               localStorage.setItem('elementToken', response.data.jwt)
              // localStorage.setItem("token",response.data)
               //暂且先跳转到笔记编辑
-              this.$router.replace('/note/edit')
+              if (response.data.isAdmin) this.$router.replace('admin')
+              else this.$router.replace('/note/edit')
 
               _this.$store.commit('login',response.data)
               // _this.$router.push({path: '/'})
