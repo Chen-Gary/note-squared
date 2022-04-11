@@ -180,6 +180,7 @@
 
 <script>
 import NavMenu from "./common/NavMenu";
+import { Message } from 'element-ui';
     export default {
         name: "Home",
         data() {
@@ -207,8 +208,54 @@ import NavMenu from "./common/NavMenu";
           this.$router.replace('/register')
         },
         toLogin(){
+          //本地已经登录过
+          if (localStorage.elementToken){
+          this.$axios.get("/user/validate-token",{
+          
+          }).then(response=>{
+            console.log(response)
+             //自动登录，token有效
+            if (response.data.isTokenValid){
+                        if (localStorage.email && localStorage.password){
+               this.$axios.post("/user/login",{
+            email:localStorage.email,
+            password:localStorage.password,
+          })
+          .then(response=>{
+            console.log("status:")
+            console.log(response.status)
+            console.log(response.data)
+            if(response.status === 200){
+              console.log('login success')
+              //弹窗显示
+              Message.success("Successfully Login!")
+              //分别跳转到笔记编辑或者管理者界面
+              if (response.data.isAdmin) this.$router.replace('admin')
+              else this.$router.replace('/note/edit')
+            }
+            else {
+              alert("Incorrect email or password")
+            }
+          })
+          .catch(function (error) {
+            alert("Incorrect email or password")
+            console.log(error)
+          })
+          }
+          //本地没有登录过
+          else this.$router.replace('/login')
+          }
+          //token过期
+          else{
+            this.$router.replace('/login')
+          }
+        })
+        }
+        //本地没有登录过
+        else{
           this.$router.replace('/login')
-        },
+        }
+        }
       }
     }
 </script>
