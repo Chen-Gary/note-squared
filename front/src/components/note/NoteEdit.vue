@@ -166,18 +166,18 @@
         var _this = this
         var formData = new FormData();
         formData.append('image', $file);
-        this.axios({
-          url: 'pic/',
-          method: 'post',
+        this.$axios.post({
+          url: '/note/upload-pic',
           data: formData,
           headers: { 'Content-Type': 'multipart/form-data' },
         }).then((response) => {
-          if(response.status === 200){
-            let url = response.data.object;
-            _this.$refs.md.$img2Url(pos, url);
-          }
-          console.log(url)
-
+          // if(response.status === 200){
+          //   let url = response.data.object;
+          //   _this.$refs.md.$img2Url(pos, url);
+          //   console.log('upload successfully')
+          // }
+          // console.log(url)
+          console.log(response)
         })
       }
     }

@@ -70,10 +70,10 @@
           <div class="grid-content bg-purple-light">
             <div class = "intro_pic2">
               <img :src="imgUrl3" >
-              </div>
+            </div>
           </div>
         </el-col>
-              <el-col :span="12">
+        <el-col :span="12">
           <div class="grid-content bg-purple" style="margin-top:2%">
             <el-row :gutter="20">
               <el-col :span="4">
@@ -144,7 +144,6 @@
     <!---末尾版面--->
     <div class = "last_text" style="margin-top:20%">
 
-     <!---！！！！！！！对不齐有毛病！！！！！！！！！-->
       <div class = "same_align">
       <img :src="Logo" class="logo">
       <div style = "margin-left:1%">
@@ -396,7 +395,7 @@ import NavMenu from "./common/NavMenu";
   }
   .sub_feature_text2{
     margin-top:2%;
-    margin-left:0%;
+    /* margin-left:0%; */
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
