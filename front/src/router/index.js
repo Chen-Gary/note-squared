@@ -13,6 +13,7 @@ import NoteDetail from "../components/note/NoteDetail";
 import Community from "../components/note_community/Community";
 import Admin_ChangeProfile from "../components/admin/Admin_ChangeProfile";
 import ViewArticle from "../components/note/ViewArticle";
+import PersonalCenter from "../pages/UserCenter"
 Vue.use(Router)
 export default new Router({
   routes: [
@@ -112,7 +113,11 @@ export default new Router({
       name:'/admin',
       component: Admin_ChangeProfile
 
+    },
+    {
+      path: '/personal-center',
+      name: 'PersonalCenter',
+      component: PersonalCenter
     }
-
   ]
 })

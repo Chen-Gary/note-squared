@@ -115,6 +115,7 @@
             console.log(res)
             if(res.status === 200){
               Message.success("Successfully change the password!")
+              this.$router.replace('/login')
               console.log('change password success')
             }
            // _this.$router.replace('/login')

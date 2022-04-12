@@ -69,31 +69,21 @@
           })
           .then(response=>{
             console.log("status:")
-            console.log(response.data.jwt)
+            console.log(response.data)
             if(response.status === 200){
               console.log('login success')
               //弹窗显示
               Message.success("Successfully Login!")
-             /* this.$message = {
-                type:'success',
-                message:'Successfully Login!',
-              }*/
               localStorage.setItem('elementToken', response.data.jwt)
-             // localStorage.setItem("token",response.data)
-              //暂且先跳转到笔记编辑
-              this.$router.replace('/note/edit')
-
-              _this.$store.commit('login',response.data)
-              // _this.$router.push({path: '/'})
-             // var path = _this.$route.query.redirect
-             // _this.$router.replace({path:path === undefined ? '/' : path})
+              localStorage.setItem('email',this.loginForm.username)
+              localStorage.setItem('password',this.loginForm.password)
+              //分别跳转到笔记编辑或者管理者界面
+              if (response.data.isAdmin) this.$router.replace('admin')
+              else this.$router.replace('/note/edit')
             }
             else {
               alert("Incorrect email or password")
             }
-           // var path = '/bookshelf'
-           // _this.$router.replace({path:path === undefined ? '/' : path})
-            
           })
           .catch(function (error) {
             alert("Incorrect email or password")

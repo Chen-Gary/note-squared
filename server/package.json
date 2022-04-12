@@ -21,6 +21,7 @@
     "mongoose": "^6.2.4",
     "morgan": "^1.10.0",
     "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
     "short-unique-id": "^4.4.4"
   }
 }
