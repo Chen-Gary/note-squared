@@ -77,6 +77,7 @@ module.exports = async (req, res) => {
         var _visibility = note2Update.visibility;
         if (req.body.visibility !== null && req.body.visibility !== "") _visibility = req.body.visibility;
         console.log(_visibility);
+        
         // update the note in db
         const filter = {_id: _noteId};
         const noteUpdate = {title: _title, description: _description, contentMD: _contentMD, visibility: _visibility};

@@ -9,17 +9,19 @@ const Folder = require("../../model/Folder");
 // -noteId str
 module.exports = async (req, res) => {
     // console.log(req.body);
+    const { folderId, noteId } = req.body;
     // fetch request components
-    const {folderId, noteId} = req.body;
+    const _folderId = mongoose.Types.ObjectId(folderId);
+    const _noteId = mongoose.Types.ObjectId(noteId);
 
     // delete the note in db
-    const noteFilter = {_id: mongoose.Types.ObjectId(noteId)};
+    const noteFilter = {_id: _noteId};
     const deletedNote = await Note.findOneAndDelete(noteFilter);
     if (!deletedNote) return res.status(422).send(`cannot delete note`);
 
     // remove the note from folder notes list
-    const folderFilter = {_id: mongoose.Types.ObjectId(folderId)};
-    const updateInfo = {$pull: {notes: mongoose.Types.ObjectId(noteId)}};
+    const folderFilter = {_id: _folderId};
+    const updateInfo = {$pull: {notes: _noteId}};
     const updateFolder = await Folder.findOneAndUpdate(folderFilter, updateInfo);
     if (!updateFolder) return res.status(422).send(`cannot update note information in folder`);
 
