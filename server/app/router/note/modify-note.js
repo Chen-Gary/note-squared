@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
         // ## create new note when the mode is "new"
         // check folder
         const folder = await Folder.findById(mongoose.Types.ObjectId(folderId));
-        if (!folder) res.status(404).send(`cannot find the folder`);
+        if (!folder) return res.status(404).send(`cannot find the folder`);
         
         // add the note into the Note schema
         const newNote = new Note({
@@ -38,7 +38,7 @@ module.exports = async (req, res) => {
         });
         const saveInfo = await newNote.save();
 
-        if (!saveInfo) {res.status(422).send(`cannot create note`);}
+        if (!saveInfo) { return res.status(422).send(`cannot create note`);}
         const noteId = saveInfo._id;
                
         // ## update the folder [notes] attribute in db
@@ -56,7 +56,7 @@ module.exports = async (req, res) => {
         const updateInfo = await Folder.findOneAndUpdate(
             filter, noteUpdate
         );
-        if (!updateInfo) {res.status(422).send(`cannot update the notes information in folder schema`);}
+        if (!updateInfo) {return res.status(422).send(`cannot update the notes information in folder schema`);}
         
         return res.status(200).send(`create successfully: ${saveInfo}`);
     }
@@ -84,10 +84,10 @@ module.exports = async (req, res) => {
         const updateInfo = await Note.findOneAndUpdate(
             filter, noteUpdate
         );
-        if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
+        if (!updateInfo) {return res.status(422).send(`cannot update the note in db`);}
         return res.status(200).send(`edit successfully: ${updateInfo}`);
     }
     else {
-        res.status(400).send(`incorrect request`);
+        return res.status(400).send(`incorrect request`);
     }
 }
