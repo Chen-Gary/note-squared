@@ -20,4 +20,7 @@ router.post('/delete-folder', isNormalLogin, require('./note/delete-folder'));
 
 // user move the note to another folder
 router.post('/move-note', isNormalLogin, require('./note/move-note'));
+
+// user get the content by passing the note-id to backend
+router.get('/note-get/:noteId', isNormalLogin, require('./note/note-get'));
 module.exports = router;

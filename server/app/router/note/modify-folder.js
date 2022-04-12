@@ -27,8 +27,8 @@ module.exports = async(req, res) => {
             author: user_id
         });
         const updateFolder = await newFolder.save();
-        if (!updateFolder) res.status(422).send(`cannot update folder information`);
-        return res.status(200).send(newFolder._id);
+        if (!updateFolder) return res.status(422).send(`cannot update folder information`);
+        return res.status(200).json({success: true, data: updateFolder});
     }
     // ####EDIT####
     else if (mode === "edit") {
@@ -48,10 +48,10 @@ module.exports = async(req, res) => {
         const updateInfo = await Folder.findOneAndUpdate(
             filter, folderUpdate
         );
-        if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
+        if (!updateInfo) {return res.status(422).send(`cannot update the note in db`);}
         return res.status(200).send(`edit successfully: ${_folderId}`);
     }
     else {
-        res.status(400).send(`incorrect request`);
+        return res.status(400).send(`incorrect request`);
     }
 }

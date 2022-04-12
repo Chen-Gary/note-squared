@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
         );
         if (!updateInfo) {return res.status(422).send(`cannot update the notes information in folder schema`);}
         
-        return res.status(200).send(`create successfully: ${saveInfo}`);
+        return res.status(200).json({success: true, data: saveInfo});
     }
     else if (mode === "edit"){ // ####EDIT####
         console.log(req.body);
