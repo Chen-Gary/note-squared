@@ -24,6 +24,10 @@ module.exports = async (req, res) => {
     if (mode === "new"){ // ####CREATE####
         const {folderId, title, description, contentMD, visibility} = req.body;
         // ## create new note when the mode is "new"
+        // check folder
+        const folder = await Folder.findById(mongoose.Types.ObjectId(folderId));
+        if (!folder) res.status(404).send(`cannot find the folder`);
+        
         // add the note into the Note schema
         const newNote = new Note({
             author: user_id,
@@ -40,9 +44,9 @@ module.exports = async (req, res) => {
         // ## update the folder [notes] attribute in db
         // update the notes attribute in the folder
         // check if the note is already in the db
-        const noteFound = await Folder.find({notes: noteId});
-        if (noteFound === []) { // not very elegant here
-            // console.log(noteFound);
+        const notesUnderFolder = folder.notes;
+        if (notesUnderFolder.includes(noteId)) { // not very elegant here
+            console.log(notesUnderFolder);
             return res.status(422).send('cannot update for duplicated note')};
         
         // add the note into the folder db
@@ -57,20 +61,30 @@ module.exports = async (req, res) => {
         return res.status(200).send(`create successfully: ${saveInfo}`);
     }
     else if (mode === "edit"){ // ####EDIT####
-        const {noteId, title, description, contentMD, visibility} = req.body;
-
+        console.log(req.body);
+        // set values
+        const _noteId = mongoose.Types.ObjectId(req.body.noteId);
         // find the note
-        const note2Update = await Note.findOne({_id: mongoose.Types.ObjectId(noteId)});
+        const note2Update = await Note.findOne({_id: _noteId});
         if (!note2Update) return res.status(404).send("cannot find the note by id");
-
+        // set the values
+        var _title = note2Update.title;
+        if (req.body.title !== null && req.body.title !== "") _title = req.body.title;
+        var _description = note2Update.description;
+        if (req.body.description !== null && req.body.description !== "") _description = req.body.description;
+        var _contentMD = note2Update.contentMD;
+        if (req.body.contentMD !== null && req.body.contentMD !== "") _contentMD = req.body.contentMD;
+        var _visibility = note2Update.visibility;
+        if (req.body.visibility !== null && req.body.visibility !== "") _visibility = req.body.visibility;
+        console.log(_visibility);
         // update the note in db
-        const filter = {_id: mongoose.Types.ObjectId(noteId)};
-        const noteUpdate = {title: title, description:description, contentMD: contentMD, visibility: visibility};
+        const filter = {_id: _noteId};
+        const noteUpdate = {title: _title, description: _description, contentMD: _contentMD, visibility: _visibility};
         const updateInfo = await Note.findOneAndUpdate(
             filter, noteUpdate
         );
         if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
-        return res.status(200).send(`edit successfully: ${noteUpdate}`);
+        return res.status(200).send(`edit successfully: ${updateInfo}`);
     }
     else {
         res.status(400).send(`incorrect request`);

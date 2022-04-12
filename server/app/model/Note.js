@@ -17,7 +17,7 @@ const NoteSchema = new Schema({
         type: String,
         default: ""
     },
-    contentMd: {
+    contentMD: {
         type: String,
         default: ""
     },

@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
 
     // find all the notes under the folder
     const foler2Delete = await Folder.findById(mongoose.Types.ObjectId(folderId));
+    if (!foler2Delete) res.status(404).send(`cannot find the folder`);
     const notes2Delete = foler2Delete.notes;
     
     // delete the notes in the folder from the db

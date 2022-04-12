@@ -32,20 +32,24 @@ module.exports = async(req, res) => {
     }
     // ####EDIT####
     else if (mode === "edit") {
-        const {title, description, folderId} = req.body;
-
+        const _folderId = mongoose.Types.ObjectId(req.body.folderId);
         // find the folder
-        const note2Update = await Folder.findOne({_id: mongoose.Types.ObjectId(folderId)});
+        const note2Update = await Folder.findOne({_id: _folderId});
         if (!note2Update) return res.status(404).send("cannot find the folder by id");
 
-        // update the note in db
-        const filter = {_id: mongoose.Types.ObjectId(folderId)};
-        const folderUpdate = {title: title, description:description};
-        const updateInfo = await Note.findOneAndUpdate(
+        // update the folder in db
+        var _title = note2Update.title;
+        if (req.body.title !== null && req.body.title !== "") _title = req.body.title;
+        var _description = note2Update.description;
+        if (req.body.description !== null && req.body.description !== "") _description = req.body.description;
+        
+        const filter = {_id: _folderId};
+        const folderUpdate = {title: _title, description: _description};
+        const updateInfo = await Folder.findOneAndUpdate(
             filter, folderUpdate
         );
         if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
-        return res.status(200).send(`edit successfully: ${folderId}`);
+        return res.status(200).send(`edit successfully: ${_folderId}`);
     }
     else {
         res.status(400).send(`incorrect request`);
