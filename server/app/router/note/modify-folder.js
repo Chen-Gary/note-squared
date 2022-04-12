@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const Folder = require("../../model/Folder");
 
 // the request body to modify a folder
-// -mode str (new, edit, delete)
+// -mode str (new, edit)
 // -title
 // -description
 // -folderId
@@ -13,9 +13,9 @@ module.exports = async(req, res) => {
     console.log(req.body);
     // fetch request components
     const {mode, user_id} = req.body;
-    // check the author
-    const userCheck = await User.findOne({_id: user_id});
-    if (!userCheck) {return res.status(404).send({message: 'user not found'});}
+    // // check the author
+    // const userCheck = await User.findOne({_id: user_id});
+    // if (!userCheck) {return res.status(404).send({message: 'user not found'});}
 
     // ####CREATE####
     if (mode === "new") {
@@ -26,12 +26,8 @@ module.exports = async(req, res) => {
             description: description,
             author: user_id
         });
-        await newFolder.save(function (err){
-            if (err){
-                console.log(err);
-                return res.status(422).send("the folder form is not correct");
-            }
-        });
+        const updateFolder = await newFolder.save();
+        if (!updateFolder) res.status(422).send(`cannot update folder information`);
         return res.status(200).send(newFolder._id);
     }
     // ####EDIT####
@@ -50,5 +46,8 @@ module.exports = async(req, res) => {
         );
         if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
         return res.status(200).send(`edit successfully: ${folderId}`);
+    }
+    else {
+        res.status(400).send(`incorrect request`);
     }
 }

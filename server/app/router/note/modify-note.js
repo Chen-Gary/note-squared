@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const Folder = require("../../model/Folder");
 
 // the request body to modify a note:
-// -mode str (new, edit, delete)
+// -mode str (new, edit)
 // -folderId str
 // -noteId str
 // -title str
@@ -17,9 +17,9 @@ module.exports = async (req, res) => {
     // console.log(req.body);
     // fetch request components
     const {mode, user_id} = req.body;
-    // check the author
-    const userCheck = await User.findOne({_id: user_id});
-    if (!userCheck) {return res.status(404).send({message: 'user not found'});}
+    // // check the author
+    // const userCheck = await User.findOne({_id: user_id});
+    // if (!userCheck) {return res.status(404).send({message: 'user not found'});}
 
     if (mode === "new"){ // ####CREATE####
         const {folderId, title, description, contentMD, visibility} = req.body;
@@ -54,7 +54,7 @@ module.exports = async (req, res) => {
         );
         if (!updateInfo) {res.status(422).send(`cannot update the notes information in folder schema`);}
         
-        return res.status(200).send(`create successfully: ${noteId}`);
+        return res.status(200).send(`create successfully: ${saveInfo}`);
     }
     else if (mode === "edit"){ // ####EDIT####
         const {noteId, title, description, contentMD, visibility} = req.body;
@@ -70,6 +70,9 @@ module.exports = async (req, res) => {
             filter, noteUpdate
         );
         if (!updateInfo) {res.status(422).send(`cannot update the note in db`);}
-        return res.status(200).send(`edit successfully: ${noteId}`);
+        return res.status(200).send(`edit successfully: ${noteUpdate}`);
+    }
+    else {
+        res.status(400).send(`incorrect request`);
     }
 }
