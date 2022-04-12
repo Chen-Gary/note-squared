@@ -17,4 +17,7 @@ router.post('/delete-note', isNormalLogin, require('./note/delete-note'));
 
 // user deleter the folder
 router.post('/delete-folder', isNormalLogin, require('./note/delete-folder'));
+
+// user move the note to another folder
+router.post('/move-note', isNormalLogin, require('./note/move-note'));
 module.exports = router;
