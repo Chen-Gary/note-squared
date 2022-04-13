@@ -23,4 +23,8 @@ router.post('/move-note', isNormalLogin, require('./note/move-note'));
 
 // user get the content by passing the note-id to backend
 router.get('/note-get/:noteId', isNormalLogin, require('./note/note-get'));
+
+// user likes a particular note
+router.post('/like-note', isNormalLogin, require('./note/like-note'));
+
 module.exports = router;

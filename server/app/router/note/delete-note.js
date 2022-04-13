@@ -3,6 +3,7 @@ const User = require("../../model/User");
 const Note = require("../../model/Note");
 const mongoose = require("mongoose");
 const Folder = require("../../model/Folder");
+const {deleteOneNote} = require("../../functions/noteDeletion");
 
 // the request body to delete a note
 // -folderId str
@@ -14,16 +15,19 @@ module.exports = async (req, res) => {
     const _folderId = mongoose.Types.ObjectId(folderId);
     const _noteId = mongoose.Types.ObjectId(noteId);
 
-    // delete the note in db
-    const noteFilter = {_id: _noteId};
-    const deletedNote = await Note.findOneAndDelete(noteFilter);
-    if (!deletedNote) return res.status(422).send(`cannot delete note`);
+    const deleteInfo = await deleteOneNote(_noteId, _folderId, req.body.user_id);
+    if (!deleteInfo.status) return res.status(422).send(`delete failed: ${deleteInfo.deleteInfo}`);
 
-    // remove the note from folder notes list
-    const folderFilter = {_id: _folderId};
-    const updateInfo = {$pull: {notes: _noteId}};
-    const updateFolder = await Folder.findOneAndUpdate(folderFilter, updateInfo);
-    if (!updateFolder) return res.status(422).send(`cannot update note information in folder`);
+    // // delete the note in db
+    // const noteFilter = {_id: _noteId};
+    // const deletedNote = await Note.findOneAndDelete(noteFilter);
+    // if (!deletedNote) return res.status(422).send(`cannot delete note`);
 
-    return res.status(200).send(`successfully deleted ${deletedNote}`);
+    // // remove the note from folder notes list
+    // const folderFilter = {_id: _folderId};
+    // const updateInfo = {$pull: {notes: _noteId}};
+    // const updateFolder = await Folder.findOneAndUpdate(folderFilter, updateInfo);
+    // if (!updateFolder) return res.status(422).send(`cannot update note information in folder`);
+
+    return res.status(200).send(`successfully deleted: ${deleteInfo.deleteInfo}`);
 }

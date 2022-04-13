@@ -65,7 +65,7 @@ module.exports = async (req, res) => {
         // set values
         const _noteId = mongoose.Types.ObjectId(req.body.noteId);
         // find the note
-        const note2Update = await Note.findOne({_id: _noteId});
+        const note2Update = await Note.findOne({_id: _noteId, author: req.body.user_id});
         if (!note2Update) return res.status(404).send("cannot find the note by id");
         // set the values
         var _title = note2Update.title;
@@ -79,7 +79,7 @@ module.exports = async (req, res) => {
         console.log(_visibility);
         
         // update the note in db
-        const filter = {_id: _noteId};
+        const filter = {_id: _noteId, author: req.body.user_id};
         const noteUpdate = {title: _title, description: _description, contentMD: _contentMD, visibility: _visibility};
         const updateInfo = await Note.findOneAndUpdate(
             filter, noteUpdate

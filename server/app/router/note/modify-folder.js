@@ -5,9 +5,8 @@ const mongoose = require("mongoose");
 const Folder = require("../../model/Folder");
 
 // the request body to modify a folder
-// -mode str (new, edit)
+// -mode (new, edit)
 // -title
-// -description
 // -folderId
 module.exports = async(req, res) => {
     console.log(req.body);
@@ -23,7 +22,6 @@ module.exports = async(req, res) => {
         // ## create new folder
         const newFolder = new Folder({
             title: title,
-            description: description,
             author: user_id
         });
         const updateFolder = await newFolder.save();
@@ -34,17 +32,15 @@ module.exports = async(req, res) => {
     else if (mode === "edit") {
         const _folderId = mongoose.Types.ObjectId(req.body.folderId);
         // find the folder
-        const note2Update = await Folder.findOne({_id: _folderId});
+        const note2Update = await Folder.findOne({_id: _folderId, author: req.body.user_id});
         if (!note2Update) return res.status(404).send("cannot find the folder by id");
 
         // update the folder in db
         var _title = note2Update.title;
         if (req.body.title !== null && req.body.title !== "") _title = req.body.title;
-        var _description = note2Update.description;
-        if (req.body.description !== null && req.body.description !== "") _description = req.body.description;
         
         const filter = {_id: _folderId};
-        const folderUpdate = {title: _title, description: _description};
+        const folderUpdate = {title: _title};
         const updateInfo = await Folder.findOneAndUpdate(
             filter, folderUpdate
         );

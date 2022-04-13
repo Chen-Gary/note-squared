@@ -40,5 +40,4 @@ router.get('/get-avatar', require('./user/get-avatar'))
 // set user avatar image
 router.post('/set-avatar', isNormalLogin, require('./user/set-avatar'))
 
-
 module.exports = router

@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     const _noteId = mongoose.Types.ObjectId(noteId);
 
     // get the contentMD from the database
-    const note = await Note.findById(_noteId);
+    const note = await Note.findOne({_id: _noteId, author: req.body.user_id});
     if (!note) return res.status(404).send('invalid id, cannot find the note');
     res.status(200).json({success: true, noteData: note});
 }
