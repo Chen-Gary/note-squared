@@ -36,6 +36,11 @@ const NoteSchema = new Schema({
         type: Number,
         required: true,
         default: 0,
+    },
+    fork: {
+        type: Number,
+        required: true,
+        default: 0
     }
 })
 

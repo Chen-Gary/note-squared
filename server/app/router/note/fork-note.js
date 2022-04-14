@@ -39,5 +39,11 @@ module.exports = async (req, res) => {
     const updateInfo = await Folder.findOneAndUpdate(filter, forkUpdate);
     if (!updateInfo) return res.status(422).send(`cannot add the note to the folder`);
 
+    // update the fork info of the original note
+    const forkFilter = {_id: note2Fork._id};
+    const increaseFork = {$inc: {fork: 1}};
+    const incForkUpdate = await Note.findOneAndUpdate(forkFilter, increaseFork);
+    if (!incForkUpdate) return res.status(422).send('cannot increase the fork number of the original note');
+    
     return res.status(200).json({success: true, newNote: saveInfo});
 }
