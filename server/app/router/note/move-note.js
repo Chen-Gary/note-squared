@@ -16,12 +16,12 @@ module.exports = async (req, res) => {
     const _noteId = mongoose.Types.ObjectId(noteId);
     // check if the request is valid
     // find the note
-    const note2Move = await Note.findById(_noteId);
+    const note2Move = await Note.findOne({_id: _noteId, author: req.body.user_id});
     if (!note2Move) return res.status(404).send(`cannot find the note file`);
     // find the folder
-    const startFolder = await Folder.findById(_oldFolderId);
+    const startFolder = await Folder.findOne({_id: _oldFolderId, author: req.body.user_id});
     if (!startFolder) return res.status(404).send(`cannot find the old folder`);
-    const destFolder = await Folder.findById(_newFolderId);
+    const destFolder = await Folder.findOne({_id: _newFolderId, author: req.body.user_id});
     if (!destFolder) return res.status(404).send(`cannot find the new folder`);
     // check if the note is in older folder and in the new folder
     const noteInOldFolder = startFolder.notes;
