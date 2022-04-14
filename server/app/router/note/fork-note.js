@@ -14,9 +14,9 @@ module.exports = async (req, res) => {
     const _folderId = mongoose.Types.ObjectId(folderId);
     
     // find the note to be forked
-    const note2Fork = await Note.findOne({_id: _noteId, visibility: 'public'});
-    if (!note2Fork) return res.status(404).send(`cannot find the note, the note has to be public note`);
-    
+    const note2Fork = await Note.findOne({_id: _noteId, visibility: 'public', author: {$ne: req.body.user_id}});
+    if (!note2Fork) return res.status(404).send(`cannot find the note, the note has to be other's public note`);
+
     // find the folder to which the note is to be added
     const folder2Add = await Folder.findOne({_id: _folderId, author: req.body.user_id});
     if (!folder2Add) return res.status(404).send(`cannot find the folder`);
@@ -44,6 +44,6 @@ module.exports = async (req, res) => {
     const increaseFork = {$inc: {fork: 1}};
     const incForkUpdate = await Note.findOneAndUpdate(forkFilter, increaseFork);
     if (!incForkUpdate) return res.status(422).send('cannot increase the fork number of the original note');
-    
+
     return res.status(200).json({success: true, newNote: saveInfo});
 }
