@@ -30,4 +30,7 @@ router.get('/local-folder-notes-get', isNormalLogin, require('./note/local-folde
 // user likes a particular note
 router.post('/like-note', isNormalLogin, require('./note/like-note'));
 
+// user fork the note
+router.post('/fork-note', isNormalLogin, require('./note/fork-note'));
+
 module.exports = router;
