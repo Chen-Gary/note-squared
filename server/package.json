@@ -1,12 +1,16 @@
 {
   "name": "server",
   "version": "0.0.0",
-  "description": "",
+  "description": "Server part of Note Squared",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chen-Gary/note-squared.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app",
-    "server": "node app"
+    "start": "node app"
   },
   "keywords": [],
   "author": "",
