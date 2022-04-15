@@ -6,30 +6,30 @@ const usersProjection = {
     __v: false,
 }
 
-const pagesize = 10;
+const PAGE_SIZE = 10;
 
 module.exports = async (req, res) => {
     // user input
-    //TODO: check whether `parseInt(req.params.page)` success or not ==> it seems that this is already done by `||`
+    //check whether `parseInt(req.params.page)` success or not ==> it seems that this is already done by `||`
     const page = parseInt(req.params.page) || 1;
 
     // total user count
     const count = await User.countDocuments({});
 
     // total page count
-    const total = Math.ceil(count / pagesize);
+    const total = Math.ceil(count / PAGE_SIZE);
 
-    const start = (page - 1) * pagesize;
+    const start = (page - 1) * PAGE_SIZE;
 
     // get user info from database
     // need to make the returned user list reversely ordered?
-    const users = await User.find({}).limit(pagesize).skip(start);
+    const users = await User.find({}).limit(PAGE_SIZE).skip(start);
 
     res.status(200).send({
         page: page,
         total: total,
         entriesInCurrentPage: users.length,
-        pagesize: pagesize,
+        pagesize: PAGE_SIZE,
         users: users
     });
 }
