@@ -13,7 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.24.0",
     "cors": "^2.8.5",
     "el-table-infinite-scroll": "^1.0.10",
     "element-ui": "^2.15.6",

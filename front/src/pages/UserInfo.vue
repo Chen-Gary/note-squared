@@ -138,13 +138,8 @@
       {
         var formdata = new FormData()
         formdata.append('avatar',this.file_info)
-        this.$axios.post({
-          url:"/user/set-avatar",
-          data: formdata,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }).then(response=>{
+        this.$axios.post( '/user/set-avatar', formdata )
+        .then(response=>{
           console.log("response")
           console.log(response)
           if (response.status === 200)
