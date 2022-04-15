@@ -36,7 +36,8 @@ router.post('/fork-note', isNormalLogin, require('./note/fork-note'));
 // search all public notes (user do not have to login)
 router.get('/search-public', require('./note/search-public'));
 
-// TODO: search public/private notes of current user
+// search public/private notes of current user
+router.get('/search-self', isNormalLogin, require('./note/search-self'));
 
 
 module.exports = router;
