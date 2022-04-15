@@ -46,10 +46,8 @@ axios.interceptors.request.use (
 axios.interceptors.response.use(res=>{
   return res
 },err =>{
-    console.log(err.response)
-   // Message.error(err.response.data)
+    console.log(err)
 });
-
 
 
 

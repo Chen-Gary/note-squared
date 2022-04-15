@@ -14,14 +14,14 @@
              
             </div>
           </el-col>
-          <el-col :span="1">
+          <el-col :span="18">
             <div class="grid-content bg-purple">
-             
+             <br>
             </div>
           </el-col>
-          <el-col :span="2"><div class="grid-content bg-purple-light"></div></el-col>
-          <el-col :span="2"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="2"><div class="grid-content bg-purple-light"></div></el-col>
+          <el-col :span="1"><div class="grid-content bg-purple-light">
+            <el-button class="note-operation" type="info" plain @click="log_out" style="margin-left:10px">Log out</el-button>
+            </div></el-col>
       </el-row>
 
     <div>
@@ -75,8 +75,12 @@
 </template>
 
 <script>
+  import qs from 'qs'
   export default {
     name: "UserInfo",
+    created(){
+    this.update_nickname();
+    },
     data() {
       return {
         imageUrl: '',
@@ -132,18 +136,17 @@
       },
       handleConfirmNickname()
       {
-        
+        this.upload_newNickname();
+        this.nickname_dialogVisible = false;
       },
+
+      //头像有点问题
       uploadAvatar()
       {
-        var formdata = new FormData()
-        formdata.append('avatar',this.file_info)
+        let formdata = new URLSearchParams();
+        formdata.append('avatar', this.file_info)
         this.$axios.post({
-          url:"/user/set-avatar",
-          data: formdata,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          url:"/user/set-avatar",        
         }).then(response=>{
           console.log("response")
           console.log(response)
@@ -153,7 +156,6 @@
               message: 'Successfully change the avater!',
               type: 'success'
               });
-              this.ChangeUserList()
           }
           else{
             this.$message.error({
@@ -162,6 +164,43 @@
           }
 
         })
+      },
+      //上传新的用户名
+      upload_newNickname()
+      {
+          this.$axios.post("/user/set-name",{
+          newName :this.new_username,
+        }).then(response=>{
+          console.log("response")
+          console.log(response)
+          if (response.status === 200)
+          {
+              this.$message({
+              message: 'Successfully change the nickname!',
+              type: 'success'
+              });
+              this.update_nickname();
+          }
+          else{
+            this.$message.error({
+              message: 'Fail to change the nickname!',
+              });
+          }
+
+        })
+      },
+      //更新用户名
+      update_nickname()
+      {
+         this.$axios.get("/user/profile")
+          .then(response=>{
+            console.log(response)
+            this.username = response.data.name;
+          })
+          .catch(function (error) {
+            alert("some error occur, can not receive")
+            console.log(error)
+          })
       },
       handleConfirmAvatar()
       {
@@ -173,6 +212,7 @@
         this.squareUrl = this.imageUrl;
         this.avatar_dialogVisible = false;
       },
+
       onchange(file,fileList){
           var _this = this;
           var event = event || window.event;
@@ -185,7 +225,11 @@
           console.log(reader);
 
       },
-      
+      log_out()
+      {
+        localStorage.clear();
+        this.$router.replace('/home');
+      }
     }
   }
 </script>
