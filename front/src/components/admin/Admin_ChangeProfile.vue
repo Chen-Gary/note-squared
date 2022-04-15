@@ -1,7 +1,10 @@
 .<template>
 <div>
 <el-card>
-  <h1>User Profile Management </h1>
+  <span>
+  <h1>User Profile Management </h1> </span>
+   <span><el-button type = "primary" > </el-button>
+  </span>
   <!--
   <el-row class = "search_box">
     <el-col >
