@@ -1,10 +1,8 @@
 .<template>
 <div>
 <el-card>
-  <span>
-  <h1>User Profile Management </h1> </span>
-   <span><el-button type = "primary" > </el-button>
-  </span>
+  <el-button class="note-operation" type="info" plain @click="log_out" style="margin-right:-90%">Log out</el-button>
+  <h1>User Profile Management</h1>
   <!--
   <el-row class = "search_box">
     <el-col >
@@ -273,6 +271,11 @@ export default {
           })
     
       },
+    },
+    log_out()
+    {
+        localStorage.clear();
+        this.$router.replace('/home');
     }
 }
 </script>
