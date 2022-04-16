@@ -16,6 +16,19 @@
           ></el-input>
         </div>
       </div>
+      <div class="folder">
+        <div class="frame-header">Folder</div>
+        <div class="folder-selection">
+          <el-select v-model="note.selectedFolder" placeholder="Please select">
+            <el-option
+              v-for="item in userFolder"
+              :key="item.folder_id"
+              :label="item.folder_title"
+              :value="item.folder_id">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
       <div class="description">
         <div class="frame-header">Description</div>
         <div >
@@ -37,7 +50,7 @@
             :toolbars="this.toolbars"
             v-model="note.contentMd"
             @save="saveNote"
-            @imgAdd="imgAdd"
+            @imgAdd="$imgAdd"
             style="min-height: 500px"
             >
           </mavon-editor>
@@ -45,6 +58,10 @@
       </div>
     </el-card>
     <div class="button-box">
+      <el-select v-model="note.visibility">
+        <el-option key="public" value="public" label="public"></el-option>
+        <el-option key="private" value="private" label="private"></el-option>
+      </el-select>
       <el-button type="primary" @click="postContent">
         Post
       </el-button>
@@ -61,10 +78,13 @@
         dialogFormVisible: false,
         noteList: [],
         titleList: [],
+        userFolder: [],
         note:{
           title: '',
           description: '',
-          contentMd: ''
+          contentMd: '',
+          selectedFolder: '',
+          visibility: 'public',
         },
         toolbars: {
           bold: true, // 粗体
@@ -103,6 +123,13 @@
         },
         headImg: TypeWriter,
       }
+    },
+    created() {
+      this.$axios.post("/note/local-folder-notes-get", { withNote: false })
+      .then (res => {
+        this.userFolder = res.data.data;
+        console.log(this.userFolder)
+      })
     },
     mounted() {
       if(this.$route.query.noteId){
@@ -162,22 +189,19 @@
         })
       },
       /** this part is to handle the upload of the pics**/
-      imgAdd(pos, $file){
-        var _this = this
+      $imgAdd(pos, $file){
         var formData = new FormData();
-        formData.append('image', $file);
-        this.$axios.post({
-          url: '/note/upload-pic',
-          data: formData,
-          headers: { 'Content-Type': 'multipart/form-data' },
-        }).then((response) => {
-          // if(response.status === 200){
-          //   let url = response.data.object;
-          //   _this.$refs.md.$img2Url(pos, url);
-          //   console.log('upload successfully')
-          // }
-          // console.log(url)
-          console.log(response)
+        formData.append('picture', $file);
+        this.$axios.post('/note/upload-pic', formData)
+        .then((response) => {
+          if(response.status === 200){
+            // 之后需要改掉
+            let url = "http://localhost:3000" + response.data.url;
+            this.$refs.md.$img2Url(pos, url);
+          }
+          else {
+            alert("Upload failed")
+          }
         })
       }
     }
@@ -239,6 +263,17 @@
     margin-top: 30px;
     display: flex;
     justify-content: right;
+  }
+  .folder {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    &-selection {
+      margin-left: 30px;
+      margin-top: 16px;
+    }
   }
 </style>
 
