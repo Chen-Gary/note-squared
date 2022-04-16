@@ -15,10 +15,14 @@
             :name="item.folder_id"
           >
             <div class="articles">
+              <el-button class="create-btn" @click="navigateToCreate">Create New Note</el-button>
               <div>
-                <el-button @click="navigateToCreate">Create New Note</el-button>
+                <div class="single-article" v-for="(item, i) in currentNotes" :key = "i">
+                  <div class="single-article-title">{{item.note_title}}</div>
+                  <div class="single-article-description">{{item.note_description}}</div>
+                </div>
+                <!-- <div>{{currentNotes}}</div> -->
               </div>
-              <div>Put some notes here</div>
             </div>
           </el-tab-pane>
         </el-tabs>
@@ -61,7 +65,7 @@
 export default {
   name: "Folders",
   created() {
-    this.$axios.post("/note/local-folder-notes-get", {withNote: true})
+    this.$axios.post("/note/local-folder-notes-get", {withNote: "true"})
     .then( res => {
       console.log("created res is ", res.data.data)
       if(res.status == "200") {
@@ -79,6 +83,20 @@ export default {
       dialogVisibleRename: false,
       newFolderName: '',
     };
+  },
+  computed: {
+    currentNotes() {
+      let curNotes = []
+      this.folders.forEach((folder) => {
+        if (folder.folder_id === this.currentFolder) {
+          curNotes = folder.note
+          console.log("current id is ", folder.folder_id)
+          console.log(folder.note)
+        }
+      })
+      console.log('cur note is ', curNotes)
+      return curNotes
+    }
   },
   methods: {
     showConfirmRemove() {
@@ -126,7 +144,7 @@ export default {
           let newFolderItem = {
             folder_id: res.data.data._id,
             folder_title: res.data.data.title,
-            notes: res.data.data.notes
+            note: res.data.data.notes
           }
           this.folders.push(newFolderItem)
         })
@@ -145,7 +163,7 @@ export default {
             newFolderItem = {
               folder_title: this.newFolderName,
               folder_id: this.folders[i].folder_id,
-              notes: this.folders[i].notes
+              note: this.folders[i].notes
             }
             newFolders.push(newFolderItem)
           } else {
@@ -186,10 +204,34 @@ export default {
   flex-direction: row;
     
 }
-.folder{
+/* .folder{ */
     /* width: 200px; */
-}
+/* } */
 .articles {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: left; */
+    justify-content: left;
+    overflow: wrap;
+}
+.single-article {
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 12px 20px;
+  text-align: left;
+  width: 225px;
+  height: 175px;
+}
+.single-article-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.single-article-description {
+  font-size: 15px;
+}
+.create-btn {
+  width: 170px;
+  font-size: 16px;
 }
 </style>

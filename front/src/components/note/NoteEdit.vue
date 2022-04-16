@@ -125,7 +125,7 @@
       }
     },
     created() {
-      this.$axios.post("/note/local-folder-notes-get", { withNote: false })
+      this.$axios.post("/note/local-folder-notes-get", { withNote: "false" })
       .then (res => {
         this.userFolder = res.data.data;
         console.log(this.userFolder)
