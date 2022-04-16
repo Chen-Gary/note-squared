@@ -74,6 +74,7 @@
               console.log('login success')
               //弹窗显示
               Message.success("Successfully Login!")
+              localStorage.setItem('id',response.data._id)
               localStorage.setItem('elementToken', response.data.jwt)
               localStorage.setItem('email',this.loginForm.username)
               localStorage.setItem('password',this.loginForm.password)

@@ -143,7 +143,6 @@ export default {
         console.log(this.form._id)
         console.log(this.form.password)
           this.$axios.post("/admin/password-edit",{
-          headers: {Authorization:localStorage.elementToken},
           _id : this.form._id,
           newPwd: this.form.password,
         }).then(response=>{

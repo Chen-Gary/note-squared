@@ -1,6 +1,8 @@
 <template>
   <div class="personal-center">
-    <div class="user-info"></div>
+    <div class="user-info">
+      <UserInfo/>
+    </div>
     <el-tabs type="card" v-model="activeName">
       <el-tab-pane label="My Articles" name="first">
         <Folders />
@@ -13,10 +15,12 @@
 
 <script>
 import Folders from "../components/usercenter/Folders.vue"
+import UserInfo from "./UserInfo.vue"
 export default {
   name: "UserCenter",
   components:{
-    Folders
+    Folders,
+    UserInfo,
   },
   data() {
     return {
