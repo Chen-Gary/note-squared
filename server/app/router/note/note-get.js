@@ -27,5 +27,18 @@ module.exports = async (req, res) => {
         console.log(findLike);
     }
 
-    res.status(200).json({success: true, noteData: note, isMe: isMine, isLiked: liked});
+    // get the user information
+    const userFound = await User.findById(req.body.user_id);
+    var userInfo = {
+        name: userFound.name,
+        avatar: userFound.avatar
+    }
+
+    res.status(200).json({
+        success: true, 
+        noteData: note, 
+        isMe: isMine, 
+        isLiked: liked,
+        user: userInfo
+    });
 }
