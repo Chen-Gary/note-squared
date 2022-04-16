@@ -43,7 +43,12 @@ async function returnRecommendation(limit) {
         return 0;
     }
     const recommend = noteByDate.sort(compare).reverse();
-    result.data = recommend.slice(0, limit);
+    for (var i=0; i<limit; i++) {
+        result.data.push({
+            noteId: recommend[i]._id,
+            title: recommend[i].title
+        });
+    }
     return result;
 }
 
