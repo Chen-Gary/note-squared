@@ -1,7 +1,13 @@
 .<template>
 <div>
 <el-card>
-  <el-button class="note-operation" type="info" plain @click="log_out" style="margin-right:-90%">Log out</el-button>
+  <el-button 
+    class="note-operation" 
+    type="info" 
+    plain 
+    @click="log_out" 
+    style="margin-right:-90%"
+  >Log out</el-button>
   <h1>User Profile Management</h1>
   <!--
   <el-row class = "search_box">
@@ -120,6 +126,11 @@ export default {
         this.page.currentPage = currentPage;
         this.ChangeUserList();
         console.log(this.page.currentPage)  //点击第几页
+    },
+
+    log_out: function() {
+        localStorage.clear();
+        this.$router.replace('/home');
     },
 
     handleDialogValue:function(row)
@@ -270,11 +281,6 @@ export default {
           })
     
       },
-    },
-    log_out()
-    {
-        localStorage.clear();
-        this.$router.replace('/home');
     }
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
 <div >
-      <el-row type="flex" class="row-bg">
-          <el-col :span="1" style="margin-left:3%">
+      <el-row>
+          <el-col :span="1" style="margin-left:20px">
             <div class="grid-content bg-purple">
               <el-avatar shape="square" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
             </div>
           </el-col>
-          <el-col :span="3" style="margin-left:-3%">
+          <el-col :span="3">
             <div class="grid-content bg-purple-light" style="margin-left:0px">
               <p>{{username}} 
               <el-button class="note-operation" type="text" @click="open_nickname_window" style="margin-left:10px"><i class="el-icon-edit"></i></el-button>
@@ -19,7 +19,7 @@
              <br>
             </div>
           </el-col>
-          <el-col :span="1" style="margin-left:-2%"><div class="grid-content bg-purple-light">
+          <el-col :span="1"><div class="grid-content bg-purple-light">
             <el-button class="note-operation" type="info" plain @click="log_out" style="margin-left:10px">Log out</el-button>
             </div></el-col>
       </el-row>
@@ -75,10 +75,10 @@
 </template>
 
 <script>
+  import qs from 'qs'
   export default {
     name: "UserInfo",
     created(){
-    this.upate_avatar();
     this.update_nickname();
     },
     data() {
@@ -104,7 +104,7 @@
       },
       handleAvatarFail(res,file, fileList)
       {
-        console.log("intentially file fail")
+        console.log("file fail")
         console.log(file);
         this.imageUrl = URL.createObjectURL(file.raw);
         this.file_info = file.raw;
@@ -121,24 +121,26 @@
         }
         return isJPG && isLt2M;
       },
-       //打开修改用户名弹窗
       open_nickname_window()
       {
         this.nickname_dialogVisible = true;
       },
-      //打开修改头像弹窗
       open_avatar_window()
       {
         this.imageUrl = "";
         this.avatar_dialogVisible = true;
       },
-      //确认修改用户名
+      change_nickname()
+      {
+
+      },
       handleConfirmNickname()
       {
         this.upload_newNickname();
         this.nickname_dialogVisible = false;
       },
-      //上传头像
+
+      //头像有点问题
       uploadAvatar()
       {
         var formdata = new FormData()
@@ -161,27 +163,6 @@
           }
 
         })
-      },
-      //更新头像
-      upate_avatar()
-      {
-        console.log("id")
-        console.log(localStorage.id)
-        
-        this.$axios.get("/user/get-avatar?uid="+ localStorage.id).then(response=>{
-            console.log(response)
-            //存在头像
-            if (response.data.avatarExist)
-            {
-              this.imageUrl = 'http://localhost:3000'+response.data.url
-              this.squareUrl = this.imageUrl;
-            }
-           // this.username = response.data.name;
-          })
-          .catch(function (error) {
-            alert("some error occur, can not receive")
-            console.log(error)
-          })
       },
       //上传新的用户名
       upload_newNickname()
@@ -278,12 +259,5 @@
   }
   .image{
     left: 0ch;
-  }
-  .el-row {
-    margin-bottom: 20px;
-    margin-left: 0;
-  }
-  .row-bg {
-    padding: 10px 0;
   }
 </style>
