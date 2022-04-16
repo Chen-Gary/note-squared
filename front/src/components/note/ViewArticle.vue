@@ -16,7 +16,7 @@
             <el-image
               style="width: 50px; height: 50px"
               :src="url"
-              :fit="fit"></el-image>
+            ></el-image>
             <div class="coments-textarea">
               <el-input 
                 class="comment-input"
@@ -47,7 +47,7 @@ export default {
   },
   data () {
     return {
-      fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
+      fit: ['fill', 'contain', 'cover', 'none', 'scale-down'],
       url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', 
       comment: "",
       value: "# test\n```java\npublic class Test {\n\tpublic static void testFunc() {\n\t\tSystem.out.println(\"hi\");\n\t}\n}\n```\ntest content" // value的值是要解析的markdown数据

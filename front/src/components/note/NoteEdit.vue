@@ -58,7 +58,7 @@
       </div>
     </el-card>
     <div class="button-box">
-      <el-select v-model="note.visibility">
+      <el-select v-model="note.visibility" class="permission-setting">
         <el-option key="public" value="public" label="public"></el-option>
         <el-option key="private" value="private" label="private"></el-option>
       </el-select>
@@ -139,6 +139,17 @@
     methods: {
       postContent(){
         console.log(this.note)
+        this.$axios.post('/note/modify-note', {
+          mode: "new",  // 之后需要改成动态的
+          folderId: this.note.selectedFolder,
+          // note ID (edit mode)
+          title: this.note.title,
+          description: this.note.description,
+          contentMD: this.note.contentMd,
+          visibility: this.note.visibility
+        }).then(res => {
+          console.log(res)
+        })
         alert("ok!")
       },
       download(){
@@ -274,6 +285,10 @@
       margin-left: 30px;
       margin-top: 16px;
     }
+  }
+  .permission-setting {
+    width: 100px;
+    margin-right: 30px;
   }
 </style>
 

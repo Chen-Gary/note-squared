@@ -9,10 +9,10 @@
       <div class="folder">
         <el-tabs v-model="currentFolder" tab-position="left">
           <el-tab-pane
-            :key="item.name"
+            :key="item.folder_id"
             v-for="(item) in folders"
-            :label="item.title"
-            :name="item.name"
+            :label="item.folder_title"
+            :name="item.folder_id"
           >
             <div class="articles">
               <div>
@@ -61,26 +61,19 @@
 export default {
   name: "Folders",
   created() {
-    this.$axios.get('/note/local-folder-notes-get').then( res => {
-      console.log("created res is ", res)
+    this.$axios.post("/note/local-folder-notes-get", {withNote: true})
+    .then( res => {
+      console.log("created res is ", res.data.data)
+      if(res.status == "200") {
+        this.folders = res.data.data;
+        this.currentFolder = this.folders[0].folder_id
+      }
     })
   },
   data() {
     return {
-      currentFolder: '1',
-      folders: [{
-        title: 'Folder 1',
-        name: '1',
-        content: 'Tab 1 content'
-      }, {
-        title: 'Folder 2',
-        name: '2',
-        content: 'Tab 2 content'
-      }, {
-        title: 'Folder 3',
-        name: '3',
-        content: 'Tab 3 content'
-      }],
+      currentFolder: '',
+      folders: [],
       dialogVisibleDel: false,
       dialogVisibleCreate: false,
       dialogVisibleRename: false,
@@ -100,63 +93,76 @@ export default {
       let tabs = this.folders;
       let activeName = this.currentFolder;
       tabs.forEach((tab, index) => {
-        if (tab.name === this.currentFolder) {
+        if (tab.folder_id === this.currentFolder) {
           let nextTab = tabs[index + 1] || tabs[index - 1];
           if (nextTab) {
-            activeName = nextTab.name;
+            activeName = nextTab.folder_id;
           }
         }
       });
       console.log("current folder is ", this.currentFolder)
-      this.folders = tabs.filter(tab => tab.name !== this.currentFolder);
+      this.folders = tabs.filter(tab => tab.folder_id !== this.currentFolder);
       this.currentFolder = activeName;
       console.log(this.folders)
-
-      // 这里需要一个post函数
+      this.$axios.post("/note/delete-folder", {
+        folderId: activeName
+      }).then(res => {
+        console.log("delete res is ", res)
+      })
       
 
       this.dialogVisibleDel = false
     },
     createFolder() {
       // 缺一个非空检查
-      let newTabName = this.folders.length + 1 + '';
-      this.folders.push({
-        title: this.newFolderName,
-        name: newTabName,
-        content: 'New Tab content'
-      });
-      this.currentFolder = newTabName
-      // post request
-      console.log("post")
-      this.$axios.post("/note/modify-folder",{
-        title: this.newFolderName,
-        mode: "new"
-      }).then(res => {
-        console.log("response is ,", res)
-      })
-
-      this.newFolderName = ''
-      this.dialogVisibleCreate = false
+      if (this.newFolderName) {
+        // post request
+        console.log("post")
+        this.$axios.post("/note/modify-folder",{
+          title: this.newFolderName,
+          mode: "new"
+        }).then(res => {
+          console.log("response is ,", res)
+          let newFolderItem = {
+            folder_id: res.data.data._id,
+            folder_title: res.data.data.title,
+            notes: res.data.data.notes
+          }
+          this.folders.push(newFolderItem)
+        })
+        this.newFolderName = ''
+        this.dialogVisibleCreate = false
+      } else {
+        alert ("the folder name cannot be empty")
+      }
     },
     renameFolder() {
-      let newFolders = []
-      // 缺一个非空检查
-      for (let i=0; i<this.folders.length; i++) {
-        if (this.folders[i].name === this.currentFolder) {
-          let newFolderItem = {
-            title: this.newFolderName,
-            name: this.folders[i].name,
-            content: this.folders[i].content
+      if (this.newFolderName) {
+        let newFolders = []
+        let newFolderItem
+        for (let i=0; i<this.folders.length; i++) {
+          if (this.folders[i].folder_id === this.currentFolder) {
+            newFolderItem = {
+              folder_title: this.newFolderName,
+              folder_id: this.folders[i].folder_id,
+              notes: this.folders[i].notes
+            }
+            newFolders.push(newFolderItem)
+          } else {
+            newFolders.push(this.folders[i])
           }
-          newFolders.push(newFolderItem)
-        } else {
-          newFolders.push(this.folders[i])
         }
+        this.$axios.post("/note/modify-folder", {
+          mode: "edit",
+          title: newFolderItem.folder_title,
+          folderId: newFolderItem.folder_id
+        }).then(res => {
+          console.log("res from rename is ", res)
+        })
+        this.folders = newFolders
+        this.newFolderName = ''
+        this.dialogVisibleRename = false
       }
-      console.log(newFolders)
-      this.folders = newFolders
-      this.newFolderName = ''
-      this.dialogVisibleRename = false
     },
     navigateToCreate() {
       this.$router.push('/note/edit')
