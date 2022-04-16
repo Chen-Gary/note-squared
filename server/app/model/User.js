@@ -31,6 +31,10 @@ const UserSchema = new Schema({
     avatar: {
         type: String,
         default: null
+    },
+    defaultFolder: {
+        type: mongoose.Types.ObjectId,
+        default: null
     }
 
     // for email verification (removed)

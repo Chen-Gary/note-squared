@@ -18,7 +18,7 @@ module.exports = async(req, res) => {
 
     // ####CREATE####
     if (mode === "new") {
-        const {title, description} = req.body;
+        const {title} = req.body;
         // ## create new folder
         const newFolder = new Folder({
             title: title,
