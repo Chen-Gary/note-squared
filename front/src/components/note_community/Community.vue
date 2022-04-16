@@ -43,6 +43,7 @@ export default {
   },
   created()
   {
+    this.show_all_note();
     //更新数据库的notes列表
      let obj = {title:"note1", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" }
      this.notes_info.note_obj.list.push(obj);
@@ -64,7 +65,7 @@ export default {
             rows:1,         //总条数
             totalPage:5,  //总条数
       },
-      mode:"search", //当前搜索模式search，当前所有数据库模式all
+      mode:"all", //当前搜索模式search，当前所有数据库模式all
     }
   },
   methods: {
@@ -122,14 +123,40 @@ export default {
     },
     
     UpdatePage() {    
-      if (this.mode == "search"){
+      if (this.mode === "search"){
         this.search();
       }
       //等待后端完善所有数据库的返回
       else{
-
+        this.show_all_note();
       }
         
+    },
+    show_all_note()
+    {
+        this.$axios.get("/admin/notelist/"+this.page.currentPage,{
+        })
+          .then(response=>{
+            console.log("status:")
+            console.log(response.data)
+            let note_list = {}
+            if(response.status === 200){
+              this.tableData = []
+              this.page.totalPage = response.data.pagesize * response.data.total;
+              for (let i=0; i<response.data.notes.length; i++){
+                let obj = response.data.notes[i];
+                note_list[i] =  {title:obj.title, description:obj.description, thumb:obj.like,username:obj.publishDate.slice(0,10),url:obj._id };
+              }
+               this.notes_info.note_obj.list = note_list;
+            }
+            else {
+              alert("Incorrect search operation")
+            }
+          })
+          .catch(function (error) {
+            alert("Incorrect search operation")
+            console.log(error)
+          })
     },
     //重新返回最开始所有数据库的页面，清空搜索栏
     refreshNote(){
@@ -137,7 +164,10 @@ export default {
       this.keyword = "";
       //清空回到数据库的第一页
       this.page.currentPage = 1;
-      //等待后端完善所有数据库的返回
+      //模式转为所有笔记的返回
+      this.mode = "all";
+      //所有数据库的返回
+      this.show_all_note();
     }
 
   },
