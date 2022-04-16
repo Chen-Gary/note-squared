@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 // the request read the params and display give the content of the note
 module.exports = async (req, res) => {
-    console.log('get contentMD');
+    // console.log('get contentMD');
     // fetch the id from the params
     const {noteId} = req.params;
     const _noteId = mongoose.Types.ObjectId(noteId);
