@@ -1,7 +1,21 @@
 <template>
   <div class="page-container">  
       <div class="main-content">
-        <div class="user-info">Some User Info Here</div>
+                
+        <el-row>
+        <el-col :span="1" style="margin-left:0px">
+            <div class="grid-content bg-purple">
+              <el-avatar shape="circle" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
+            </div>
+          </el-col>
+          <el-col :span="2">
+            <div class="grid-content bg-purple-light" style="margin-left:0px">
+              <p style="font-weight:bold">{{this.note_author}} </p>
+             
+            </div>
+          </el-col>
+        </el-row>
+
         <div class="markdown-body" id="markdown-content">
           <VueMarkdown :source="value" v-highlight></VueMarkdown>
         </div>
@@ -49,7 +63,7 @@ export default {
   created()
   {
     //更新当前页面note信息
-   // this.get_note_info();
+    this.get_note_info();
     this.get_note_recommendation();
   },
   data () {
@@ -57,13 +71,14 @@ export default {
       liked_status :"Like\xa0\xa0\xa0\xa0\xa0\xa0Fork",
       note_id:"625a74502f879603b077f003",//note id暂时是这个！！会更改
       note_author:"",
-      note_avatar:"",
+      note_author_id:"",
       note_title:"",
       note_description:"",
       note_content:"",
       note_like:0,
       note_isLiked:false,
       note_isMe:false,
+      squareUrl:"https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",//头像
       button_color_index:"button_bgcolor",//0默认，1有数值
       recommendation_list:[],
       fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
@@ -80,14 +95,15 @@ export default {
           if (response.status === 200)
           {
               this.note_author = response.data.user.name;
+              this.note_author_id = response.data.noteData.author;
               this.note_description = response.data.noteData.description;
               this.note_like = response.data.noteData.like;
               this.note_title = response.data.noteData.title;
               this.note_isMe = response.data.noteData.isMe;
               this.note_isLiked = response.data.isLiked;
               this.note_id = response.data.noteData._id;//id应该原来就有，可以删除
-              this.avatar = 'http://localhost:3000' + response.data.user.avatar;
-              console.log(this.isLiked)
+              console.log(this.note_isLiked)
+              console.log(this.note_author_id)
               if (this.note_isLiked) 
               {
                 this.button_color_index = "button_bgcolor2"//已经喜欢过了
@@ -97,6 +113,7 @@ export default {
                 this.button_color_index = "button_bgcolor"
                 this.liked_status = "Like\xa0\xa0\xa0\xa0\xa0\xa0Fork"
               }
+              this.get_avatar()
           }
           else{
             this.$message.error({
@@ -104,6 +121,22 @@ export default {
             });
           }
         })
+      },
+      get_avatar(){
+        console.log("author_id")
+        console.log(this.note_author_id);
+        this.$axios.get("/user/get-avatar?uid="+ this.note_author_id).then(response=>{
+            console.log(response)
+            //存在头像
+            if (response.data.avatarExist)
+            {
+              this.squareUrl = 'http://localhost:3000'+response.data.url
+            }
+          })
+          .catch(function (error) {
+            alert("some error occur, can not receive")
+            console.log(error)
+          })
       },
       like_notes(){
       //this.get_note_info()

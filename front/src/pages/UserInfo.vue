@@ -8,7 +8,7 @@
           </el-col>
           <el-col :span="3">
             <div class="grid-content bg-purple-light" style="margin-left:0px">
-              <p>{{username}} 
+              <p style = "font-weight:bold">{{username}} 
               <el-button class="note-operation" type="text" @click="open_nickname_window" style="margin-left:10px"><i class="el-icon-edit"></i></el-button>
               </p>
              
