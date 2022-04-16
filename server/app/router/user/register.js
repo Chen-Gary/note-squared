@@ -2,8 +2,19 @@ const jwt = require("jsonwebtoken");
 
 const key = require("../../config/key");
 const User = require("../../model/User");
+const Folder = require("../../model/Folder");
 const EmailVerificationBuffer = require("../../model/EmailVerificationBuffer");
 
+async function createDefaultFolder(user_id) {
+    // create folder
+    const newFolder = new Folder({
+        title: "default",
+        author: user_id
+    });
+    const folderInfo = await newFolder.save();
+    // return the folderId
+    return folderInfo._id;
+}
 
 module.exports = async (req, res) => {
 
@@ -12,7 +23,7 @@ module.exports = async (req, res) => {
         email: req.body.email,
         password: req.body.password,
         name: req.body.name,
-        role: 'normal',
+        role: 'normal'
     }
 
     // // check `username`
@@ -29,6 +40,9 @@ module.exports = async (req, res) => {
         if (entry.verificationCode === req.body.verificationCode &&
             entry.usedFor === 'register') {
             const newUser = await new User(newUserInfo).save()
+            // update the default folder
+            const folderId = await createDefaultFolder(newUser._id);
+            await User.findOneAndUpdate({_id: newUser._id}, {defaultFolder: folderId});
             await entry.deleteOne()
 
             return res.status(200).send(newUser)
