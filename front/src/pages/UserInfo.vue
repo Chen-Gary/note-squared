@@ -79,6 +79,7 @@
   export default {
     name: "UserInfo",
     created(){
+    this.upate_avatar();
     this.update_nickname();
     },
     data() {
@@ -121,26 +122,24 @@
         }
         return isJPG && isLt2M;
       },
+      //打开修改用户名弹窗
       open_nickname_window()
       {
         this.nickname_dialogVisible = true;
       },
+      //打开修改头像弹窗
       open_avatar_window()
       {
         this.imageUrl = "";
         this.avatar_dialogVisible = true;
       },
-      change_nickname()
-      {
-
-      },
+      //确认修改用户名
       handleConfirmNickname()
       {
         this.upload_newNickname();
         this.nickname_dialogVisible = false;
       },
-
-      //头像有点问题
+       //上传头像
       uploadAvatar()
       {
         var formdata = new FormData()
@@ -163,6 +162,27 @@
           }
 
         })
+      },
+      //更新头像
+      upate_avatar()
+      {
+        console.log("id")
+        console.log(localStorage.id)
+        
+        this.$axios.get("/user/get-avatar?uid="+ localStorage.id).then(response=>{
+            console.log(response)
+            //存在头像
+            if (response.data.avatarExist)
+            {
+              this.imageUrl = 'http://localhost:3000'+response.data.url
+              this.squareUrl = this.imageUrl;
+            }
+           // this.username = response.data.name;
+          })
+          .catch(function (error) {
+            alert("some error occur, can not receive")
+            console.log(error)
+          })
       },
       //上传新的用户名
       upload_newNickname()
