@@ -39,5 +39,7 @@ router.get('/search-public', require('./note/search-public'));
 // search public/private notes of current user
 router.get('/search-self', isNormalLogin, require('./note/search-self'));
 
+// get the recommendation note list (no need to login)
+router.get('/recommendation-get', require('./note/recommendation-get'));
 
 module.exports = router;

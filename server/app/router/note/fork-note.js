@@ -2,6 +2,7 @@
 const Note = require("../../model/Note");
 const Folder = require("../../model/Folder");
 const mongoose = require("mongoose");
+const { updateScore } = require("../../functions/recommendation");
 
 // the request body to fork a note
 // the forked note is by default public, the like attribute of the note will be eliminated
@@ -44,6 +45,9 @@ module.exports = async (req, res) => {
     const increaseFork = {$inc: {fork: 1}};
     const incForkUpdate = await Note.findOneAndUpdate(forkFilter, increaseFork);
     if (!incForkUpdate) return res.status(422).send('cannot increase the fork number of the original note');
+
+    // update score
+    await updateScore(_noteId);
 
     return res.status(200).json({success: true, newNote: saveInfo});
 }
