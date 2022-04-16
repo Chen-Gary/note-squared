@@ -57,6 +57,7 @@ module.exports = async(req, res) => {
         const likeUpdateInfo = await Note.findOneAndUpdate(likeFilter, noteUpdate);
         if (!likeUpdateInfo) return res.status(422).send(`cannot decrease the like count`);
 
+
         // update score
         await updateScore(_noteId);
         res.status(200).json({success: true, deletedLikeRelation: likeDeletion});
