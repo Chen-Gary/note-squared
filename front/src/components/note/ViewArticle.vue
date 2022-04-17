@@ -1,7 +1,9 @@
 <template>
   <div class="page-container">  
       <div class="main-content">
-                
+        <div class="article-title">
+          {{this.note_title}}  
+        </div>      
         <el-row>
         <el-col :span="1" style="margin-left:0px">
             <div class="grid-content bg-purple">
@@ -17,9 +19,9 @@
         </el-row>
 
         <div class="markdown-body" id="markdown-content">
-          <VueMarkdown :source="value" v-highlight></VueMarkdown>
+          <VueMarkdown :source="note_content" v-highlight></VueMarkdown>
         </div>
-        <div class="interface-box">
+        <div v-if="note_isMe == false" class="interface-box">
           <!-- 添加v-if 如果是自己的文章则没有 -->
           <el-button type="primary" :class = "button_color_index" @click="like_notes" icon ="el-icon-caret-top" circle style="font-size: 15px;"></el-button>
           <el-button type="warning" icon="el-icon-star-off" circle></el-button>
@@ -84,7 +86,6 @@ export default {
       fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
       url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', 
       comment: "",
-      value: "# test\n```java\npublic class Test {\n\tpublic static void testFunc() {\n\t\tSystem.out.println(\"hi\");\n\t}\n}\n```\ntest content" // value的值是要解析的markdown数据
     }
   },
   methods:{
@@ -102,6 +103,7 @@ export default {
               this.note_isMe = response.data.noteData.isMe;
               this.note_isLiked = response.data.isLiked;
               this.note_id = response.data.noteData._id;//id应该原来就有，可以删除
+              this.note_content = response.data.noteData.contentMD;
               console.log(this.note_isLiked)
               console.log(this.note_author_id)
               if (this.note_isLiked) 
@@ -214,7 +216,11 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
+.article-title {
+  font-size: 32px;
+  font-weight: 700;
+}
 .button_bgcolor {
      background-color: #cce0ff;
      color:#3d83ec;
@@ -234,9 +240,9 @@ export default {
     width: 200px;
     background-color: aquamarine;
 }
-.sidebar {
+/* .sidebar {
     display: none !important;
-}
+} */
 .page-container {
   display: flex;
   flex-direction: row;

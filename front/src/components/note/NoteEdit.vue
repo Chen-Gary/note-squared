@@ -149,8 +149,17 @@
           visibility: this.note.visibility
         }).then(res => {
           console.log(res)
+          alert("post successfully!")
+          this.$router.push({
+            path:"/note/view",
+            query:{
+              id: res.data.data._id,
+            }
+          })
+        }).catch(err => {
+          alert("some error occur: ", err)
         })
-        alert("ok!")
+        
       },
       download(){
         if ("download" in aElement) {

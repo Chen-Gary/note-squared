@@ -19,7 +19,7 @@
               <div class="article-cards-box">
                 <div class="single-article" v-for="(item, i) in currentNotes" :key = "i">
                   <div>
-                    <div class="single-article-title">
+                    <div @click="navigateToView(item.note_id)" class="single-article-title">
                       <i v-if="item.note_visibility === 'private'" class="el-icon-lock"></i>
                       {{item.note_title}}
                     </div>
@@ -27,10 +27,6 @@
                   </div>
                   <div class="article-management-box">
                     <div class="article-management-box-btn">
-                      <!-- <el-button type="text" slot="reference">
-                          <i class="el-icon-folder" style="color:#909399;"></i>
-                      </el-button> -->
-                      <!-- @click="moveArticle(item.note_id)" -->
                       <el-dropdown @command="(command) => {moveArticle(command, item.note_id)}">
                         <span class="el-dropdown-link">
                           <i class="el-icon-folder" style="color:#909399;"></i>
@@ -274,6 +270,14 @@ export default {
         alert("delete successfully! ")
       })
       this.folders = modifiedFolder
+    },
+    navigateToView(id) {
+      this.$router.push({
+        path:"/note/view",
+        query:{
+          id: id,
+        }
+      })
     }
   }
 }
