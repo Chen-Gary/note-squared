@@ -42,4 +42,6 @@ router.get('/search-self', isNormalLogin, require('./note/search-self'));
 // get the recommendation note list (no need to login)
 router.get('/recommendation-get', require('./note/recommendation-get'));
 
+// get the like note list of a user
+router.get('/likeNote-get', isNormalLogin, require('./note/likeNote-get'));
 module.exports = router;
