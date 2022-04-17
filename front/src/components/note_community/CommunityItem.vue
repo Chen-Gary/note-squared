@@ -46,7 +46,7 @@ export default {
     }
   },
   methods:{
-    handle_router_change(id){
+    handle_router_change(){
       this.$router.push({
         path:"/note/view",
         query:{

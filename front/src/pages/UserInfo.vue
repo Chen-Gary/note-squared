@@ -14,14 +14,19 @@
              
             </div>
           </el-col>
-          <el-col :span="18">
+          <el-col :span="17">
             <div class="grid-content bg-purple">
              <br>
             </div>
           </el-col>
           <el-col :span="1"><div class="grid-content bg-purple-light">
+            <el-button class="note-operation" type="primary" @click="to_note_community" style="margin-left:-70px">Community</el-button>
+            </div>
+          </el-col>
+          <el-col :span="1"><div class="grid-content bg-purple-light">
             <el-button class="note-operation" type="info" plain @click="log_out" style="margin-left:10px">Log out</el-button>
-            </div></el-col>
+            </div>
+            </el-col>
       </el-row>
 
     <div>
@@ -248,7 +253,12 @@
       {
         localStorage.clear();
         this.$router.replace('/home');
+      },
+      to_note_community()
+      {
+        this.$router.replace('/community');
       }
+
     }
   }
 </script>
