@@ -16,12 +16,52 @@
           >
             <div class="articles">
               <el-button class="create-btn" @click="navigateToCreate">Create New Note</el-button>
-              <div>
+              <div class="article-cards-box">
                 <div class="single-article" v-for="(item, i) in currentNotes" :key = "i">
-                  <div class="single-article-title">{{item.note_title}}</div>
-                  <div class="single-article-description">{{item.note_description}}</div>
+                  <div>
+                    <div class="single-article-title">
+                      <i v-if="item.note_visibility === 'private'" class="el-icon-lock"></i>
+                      {{item.note_title}}
+                    </div>
+                    <div class="single-article-description">{{item.note_description}}</div>
+                  </div>
+                  <div class="article-management-box">
+                    <div class="article-management-box-btn">
+                      <!-- <el-button type="text" slot="reference">
+                          <i class="el-icon-folder" style="color:#909399;"></i>
+                      </el-button> -->
+                      <!-- @click="moveArticle(item.note_id)" -->
+                      <el-dropdown @command="(command) => {moveArticle(command, item.note_id)}">
+                        <span class="el-dropdown-link">
+                          <i class="el-icon-folder" style="color:#909399;"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                          <el-dropdown-item 
+                            v-for="(item) in folders"
+                            :key="item.folder_id"
+                            :command="item.folder_id"
+                          >{{item.folder_title}}</el-dropdown-item>
+                          <el-dropdown-item divided disabled>Move to ...</el-dropdown-item>
+                        </el-dropdown-menu>
+                      </el-dropdown>
+                    </div>
+                    <div class="article-management-box-btn">
+                      <el-popconfirm
+                        confirm-button-text='Sure'
+                        cancel-button-text='Cancel'
+                        icon="el-icon-info"
+                        icon-color="red"
+                        title="Are you sure you want to delete this note?"
+                        @confirm="deleteArticle(item.note_id)"
+                      >
+                        <el-button type="text" slot="reference">
+                          <i class="el-icon-delete" style="color:#f56c6c;"></i>
+                        </el-button>
+                      </el-popconfirm>
+                      
+                    </div>
+                  </div>
                 </div>
-                <!-- <div>{{currentNotes}}</div> -->
               </div>
             </div>
           </el-tab-pane>
@@ -82,6 +122,7 @@ export default {
       dialogVisibleCreate: false,
       dialogVisibleRename: false,
       newFolderName: '',
+      dialogVisibleDelNote: false,
     };
   },
   computed: {
@@ -125,17 +166,14 @@ export default {
       this.$axios.post("/note/delete-folder", {
         folderId: activeName
       }).then(res => {
-        console.log("delete res is ", res)
+        alert("delete successfully")
       })
       
 
       this.dialogVisibleDel = false
     },
     createFolder() {
-      // 缺一个非空检查
       if (this.newFolderName) {
-        // post request
-        console.log("post")
         this.$axios.post("/note/modify-folder",{
           title: this.newFolderName,
           mode: "new"
@@ -176,6 +214,7 @@ export default {
           folderId: newFolderItem.folder_id
         }).then(res => {
           console.log("res from rename is ", res)
+          alert("successfully rename the folder")
         })
         this.folders = newFolders
         this.newFolderName = ''
@@ -184,6 +223,57 @@ export default {
     },
     navigateToCreate() {
       this.$router.push('/note/edit')
+    },
+    moveArticle(command, id) {
+      console.log("folder id is", command)
+      console.log("note id is", id)
+      console.log("temp folder is", this.currentFolder)
+      if (command == this.currentFolder) {
+        alert("cannot move to the same folder")
+      } else {
+        let modifiedFolder = this.folders;
+        let tempNote;
+        modifiedFolder.forEach((folder, index) => {
+          if (folder.folder_id === this.currentFolder) {
+            folder.note.forEach((note) => {
+              if (note.note_id===id) {
+                tempNote = note
+              }
+            })
+            folder.note = folder.note.filter(note => note.note_id !== id);
+          }
+        });
+        modifiedFolder.forEach((folder, index) => {
+          if (folder.folder_id === command) {
+            folder.note.push(tempNote)
+          }
+        });
+        this.folders = modifiedFolder;
+        this.$axios.post("/note/move-note", {
+          noteId: id,
+          oldFolderId: this.currentFolder,
+          newFolderId: command
+        }).then((res) => {
+          alert("move successfully")
+        })
+      }
+    },
+    deleteArticle(id) {
+      console.log(id)
+      let modifiedFolder = this.folders;
+      modifiedFolder.forEach((folder, index) => {
+        if (folder.folder_id === this.currentFolder) {
+          folder.note = folder.note.filter(note => note.note_id !== id);
+        }
+      });
+      this.$axios.post("/note/delete-note", {
+        folderId: this.currentFolder,
+        noteId: id
+      }).then((res) => {
+        console.log(res)
+        alert("delete successfully! ")
+      })
+      this.folders = modifiedFolder
     }
   }
 }
@@ -215,6 +305,10 @@ export default {
     justify-content: left;
     overflow: wrap;
 }
+.article-cards-box {
+  display: flex;
+  flex-direction: row;
+}
 .single-article {
   border: 2px solid black;
   border-radius: 20px;
@@ -222,10 +316,16 @@ export default {
   text-align: left;
   width: 225px;
   height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .single-article-title {
   font-size: 18px;
   font-weight: 700;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .single-article-description {
   font-size: 15px;
@@ -233,5 +333,16 @@ export default {
 .create-btn {
   width: 170px;
   font-size: 16px;
+}
+.article-management-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+.article-management-box-btn {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
