@@ -90,19 +90,9 @@ export default new Router({
       component: Editor
     },
     {
-      path: '/bookshelf',
-      name: 'Bookshelf',
-      component: Bookshelf,
-    },
-    {
       path: '/note/edit',
       name: 'NoteEdit',
       component: NoteEdit,
-    },
-    {
-      path: '/note/detail',
-      name: 'NoteDetail',
-      component: NoteDetail,
     },
     {
       path: '/note/view',

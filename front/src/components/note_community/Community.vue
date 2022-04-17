@@ -2,16 +2,21 @@
   <div>
 
   <div class= "search_layout" >
+    <el-row :gutter="20">
+    <el-col :span="6"><div class="grid-content bg-purple">
+            <el-button type="primary" :class = "button_color_index" @click="back_to_personal_center" icon ="el-icon-back" circle></el-button>
+      </div>
+    </el-col>
+    <el-col :span="14"><div class="grid-content bg-purple">
       <span class="search_title" style = "margin-right:1%">
         Search
       </span>
-      <span>
         <el-input v-model="keyword" placeholder="Enjoy your journey ~" style="width: 30%"
         @keydown.enter.native = "searchEnterFun"></el-input>
-     </span>
-     <span>
       <el-button class="note_refresh" type="text" @click="refreshNote"><i class="el-icon-refresh"></i></el-button>
-     </span>
+     </div>
+    </el-col>
+    </el-row>
   </div>
 
   <div>
@@ -44,14 +49,6 @@ export default {
   created()
   {
     this.UpdatePage();
-    //更新数据库的notes列表
-     let obj = {title:"note1", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" }
-     this.notes_info.note_obj.list.push(obj);
-     this.notes_info.note_obj.list.push({title:"note2", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" });
-     this.notes_info.note_obj.list.push({title:"note3", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" });
-     this.notes_info.note_obj.list.push({title:"note4", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" });
-     this.notes_info.note_obj.list.push({title:"note5", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" });
-     this.notes_info.note_obj.list.push({title:"note6", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" });
   },
   data(){
     return {
@@ -175,6 +172,10 @@ export default {
       localStorage.community_mode = "all";
       //所有数据库的返回
       this.show_all_note();
+    },
+    back_to_personal_center()
+    {
+      this.$router.replace('/personal-center')
     }
 
   },
