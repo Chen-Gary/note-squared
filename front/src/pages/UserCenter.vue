@@ -8,18 +8,22 @@
         <Folders />
       </el-tab-pane>
       <!-- <el-tab-pane label="Saved" name="second">Saved</el-tab-pane> -->
-      <el-tab-pane label="Liked" name="second">Liked</el-tab-pane>
+      <el-tab-pane label="Liked" name="second">
+        <Like/>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
 import Folders from "../components/usercenter/Folders.vue"
+import Like from "../components/usercenter/Like.vue"
 import UserInfo from "./UserInfo.vue"
 export default {
   name: "UserCenter",
   components:{
     Folders,
+    Like,
     UserInfo,
   },
   data() {

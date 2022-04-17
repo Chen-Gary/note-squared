@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="community-page">
 
   <div class= "search_layout" >
     <el-row :gutter="20">
@@ -183,6 +183,9 @@ export default {
 </script>
 
 <style scoped>
+.community-page {
+  overflow: hidden;
+}
 .search_title{
   font-size:30px;
   font-weight: bold;
