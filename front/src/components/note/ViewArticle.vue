@@ -16,6 +16,12 @@
              
             </div>
           </el-col>
+           <el-col :span="2">
+            <div class="grid-content bg-purple-light" style="margin-left:0px">
+              <p>{{this.note_publishDate}} </p>
+             
+            </div>
+          </el-col>
         </el-row>
 
         <div class="markdown-body" id="markdown-content">
@@ -74,6 +80,7 @@ export default {
       note_id:this.$route.query.id,
       note_author:"",
       note_author_id:"",
+      note_publishDate:"",
       note_title:"",
       note_description:"",
       note_content:"",
@@ -98,6 +105,7 @@ export default {
               this.note_author = response.data.user.name;
               this.note_author_id = response.data.noteData.author;
               this.note_description = response.data.noteData.description;
+              this.note_publishDate = response.data.noteData.publishDate.slice(0,10);
               this.note_like = response.data.noteData.like;
               this.note_title = response.data.noteData.title;
               this.note_isMe = response.data.noteData.isMe;
