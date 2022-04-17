@@ -13,13 +13,11 @@
           <el-col :span="2">
             <div class="grid-content bg-purple-light" style="margin-left:0px">
               <p style="font-weight:bold">{{this.note_author}} </p>
-             
             </div>
           </el-col>
            <el-col :span="2">
-            <div class="grid-content bg-purple-light" style="margin-left:0px">
+            <div class="grid-content bg-purple-light" style="margin-left:0px; font-size: 14px; color: #909399">
               <p>{{this.note_publishDate}} </p>
-             
             </div>
           </el-col>
         </el-row>
@@ -57,7 +55,18 @@
         </div>
       </div>
       <div class="sidebar">
-        test
+        <div class="recommendations">
+          <div class="recommendations-header">
+            <div class="recommendations-header-title"> Recommendations </div>
+            <div class="recommendations-header-more" @click="navigateToCom"> 
+              (<u>more</u>) 
+            </div>
+          </div>
+          <div v-for="(item) in recommendation_list" :key="item.id">
+            <div class="recommend-article-title" @click="navigateToView(item.note_id)">{{item.title}}</div>
+            <div class="divider-dashed"></div>
+          </div>
+        </div>
       </div>
   </div>  
 </template>
@@ -73,6 +82,10 @@ export default {
     //更新当前页面note信息
     this.get_note_info();
     this.get_note_recommendation();
+  },
+  watch: {'$route' (to, from) {
+      this.$router.go(0);
+    }
   },
   data () {
     return {
@@ -108,7 +121,8 @@ export default {
               this.note_publishDate = response.data.noteData.publishDate.slice(0,10);
               this.note_like = response.data.noteData.like;
               this.note_title = response.data.noteData.title;
-              this.note_isMe = response.data.noteData.isMe;
+              this.note_isMe = response.data.isMe;
+              console.log("update note_isMe", this.note_isMe)
               this.note_isLiked = response.data.isLiked;
               this.note_id = response.data.noteData._id;//id应该原来就有，可以删除
               this.note_content = response.data.noteData.contentMD;
@@ -177,6 +191,7 @@ export default {
           }
         })
     },
+    // wait for implmentation
     note_fork()
     {
       this.$axios.post("/note/fork-note",{
@@ -195,6 +210,17 @@ export default {
           }
         })
     },
+    navigateToCom() {
+      this.$router.push('/community').catch(err => {err});
+    },
+    navigateToView(id) {
+      this.$router.push({
+        path:"/note/view",
+        query:{
+          id: id,
+        }
+      }).catch(err => {err})
+    },
     get_note_recommendation:function()
     {
        this.$axios.get("/note/recommendation-get",{
@@ -210,7 +236,7 @@ export default {
               array[i] = obj;
             }
             this.recommendation_list = array;
-            console.log(this.recommendation_list)
+            console.log("recommendation list are ", this.recommendation_list)
           }
           else{
             this.$message.error({
@@ -224,7 +250,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .article-title {
   font-size: 32px;
   font-weight: 700;
@@ -243,18 +269,11 @@ export default {
      outline: none;
      font-size: 15px;
  }
-.sidebar {
-    display: block !important;
-    width: 200px;
-    background-color: aquamarine;
-}
-/* .sidebar {
-    display: none !important;
-} */
 .page-container {
   display: flex;
   flex-direction: row;
   padding: 0px 45px;
+  margin-top: 50px;
 }
 .user-info {
   text-align: left;
@@ -284,5 +303,42 @@ export default {
   display: flex;
   justify-content: right;
   margin-top: 15px;
+}
+.sidebar {
+    display: block !important;
+    width: 300px;
+    // background-color: aquamarine;
+}
+/* .sidebar {
+    display: none !important;
+} */
+.divider-dashed {
+  border-top:1px dashed #afb3ac;
+  margin-bottom: 8px;
+}
+.recommend-article-title {
+  cursor: pointer;
+  overflow: wrap;
+}
+.recommendations {
+  // display: flex;
+  text-align: left;
+  padding: 15px;
+  color: #626568;
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    &-more {
+      font-size: 16px;
+      color:#66a0cc;
+      cursor: pointer;
+    }
+  }
 }
 </style>

@@ -227,7 +227,7 @@ export default {
       }
     },
     navigateToCreate() {
-      this.$router.push('/note/edit')
+      this.$router.push('/note/edit').catch(err => {err})
     },
     moveArticle(command, id) {
       console.log("folder id is", command)
@@ -286,7 +286,7 @@ export default {
         query:{
           id: id,
         }
-      })
+      }).catch(err => {err})
     }
   }
 }

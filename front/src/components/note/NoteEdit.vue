@@ -155,7 +155,7 @@
             query:{
               id: res.data.data._id,
             }
-          })
+          }).catch(err => {err})
         }).catch(err => {
           alert("some error occur: ", err)
         })
