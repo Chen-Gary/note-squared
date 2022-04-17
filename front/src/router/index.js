@@ -85,7 +85,7 @@ export default new Router({
     ]
     },
     {
-      path: '/note/edit',
+      path: '/note/edit/:id?/:folder?/:visibility?',
       name: 'NoteEdit',
       component: NoteEdit,
     },

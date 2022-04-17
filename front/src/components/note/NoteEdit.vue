@@ -130,12 +130,29 @@
         this.userFolder = res.data.data;
         console.log(this.userFolder)
       })
-    },
-    mounted() {
-      if(this.$route.query.noteId){
-        this.loadNote(this.$route.query.noteId)
+      if (this.$route.params.id) {
+        let noteId = this.$route.params.id
+        this.$axios.get("/note/note-get/" + noteId,{}).then(res => {
+          this.note.title = res.data.noteData.title;
+          this.note.description = res.data.noteData.description;
+          this.note.contentMd = res.data.noteData.contentMD;
+          // todo: folder visibility 还没做， 要怎么做呢
+        })
       }
+      if (this.$route.params.folder) {
+        this.note.selectedFolder = this.$route.params.folder
+      }
+      if (this.$route.params.visibility) {
+        this.note.visibility = this.$route.params.visibility
+      }
+      // todo: 如何不让params在url中显示
     },
+    // mounted() {
+    //   // if(this.$route.query.noteId){
+    //   //   this.loadNote(this.$route.query.noteId)
+    //   // }
+    //   console.log("mounted", this.$route.params)
+    // },
     methods: {
       postContent(){
         console.log(this.note)

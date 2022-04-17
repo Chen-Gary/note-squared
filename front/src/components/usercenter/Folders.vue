@@ -36,6 +36,14 @@
                   </div>
                   <div class="article-management-box">
                     <div class="article-management-box-btn">
+                      <el-button 
+                        type="text" 
+                        @click="withParamsToView(item.note_id, item.note_visibility)"
+                      >
+                        <i class="el-icon-edit" style="color:#a98e6b;"></i>
+                      </el-button>
+                    </div>
+                    <div class="article-management-box-btn">
                       <el-dropdown @command="(command) => {moveArticle(command, item.note_id)}">
                         <span class="el-dropdown-link">
                           <i class="el-icon-folder" style="color:#909399;"></i>
@@ -227,7 +235,13 @@ export default {
       }
     },
     navigateToCreate() {
-      this.$router.push('/note/edit').catch(err => {err})
+      this.$router.push({
+        name: 'NoteEdit',
+        params: {
+          folder: this.currentFolder
+        }
+      }).catch(err => {err})
+      // this.$router.push('/note/edit').catch(err => {err})
     },
     moveArticle(command, id) {
       console.log("folder id is", command)
@@ -285,6 +299,16 @@ export default {
         path:"/note/view",
         query:{
           id: id,
+        }
+      }).catch(err => {err})
+    },
+    withParamsToView(id, visibility) {
+      this.$router.push({
+        name: 'NoteEdit',
+        params: {
+          id: id,
+          visibility: visibility,
+          folder: this.currentFolder
         }
       }).catch(err => {err})
     }

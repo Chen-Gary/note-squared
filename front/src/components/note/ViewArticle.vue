@@ -2,7 +2,13 @@
   <div class="page-container">  
       <div class="main-content">
         <div class="article-title">
-          {{this.note_title}}  
+          {{this.note_title}}
+          <i 
+            style="font-size: 25px; cursor: pointer;"
+            @click="navigateToEdit(note_id)" 
+            class="el-icon-edit" 
+            v-if="note_isMe == true"
+          ></i>
         </div>      
         <el-row>
         <el-col :span="1" style="margin-left:0px">
@@ -221,6 +227,15 @@ export default {
         }
       }).catch(err => {err})
     },
+    navigateToEdit(id) {
+      this.$router.push({
+        name: 'NoteEdit',
+        params: {
+          id: id
+        }
+      }).catch(err => {err})
+      console.log("id in view page is ", id)
+    },
     get_note_recommendation:function()
     {
        this.$axios.get("/note/recommendation-get",{
@@ -280,7 +295,7 @@ export default {
   align-items: left;
 }
 .main-content {
-  width: 90%;
+  width: 85%;
   padding: 30px;
 }
 #markdown-content {
@@ -306,7 +321,7 @@ export default {
 }
 .sidebar {
     display: block !important;
-    width: 300px;
+    width: 320px;
     // background-color: aquamarine;
 }
 /* .sidebar {
@@ -322,6 +337,9 @@ export default {
 }
 .recommendations {
   // display: flex;
+  position: fixed;
+  right: 60px;
+  bottom: 100px;
   text-align: left;
   padding: 15px;
   color: #626568;
