@@ -6,7 +6,7 @@
     <!--笔记标题-->
      <!--!!!!!!!!跳转链接-->
     <div class = "title">
-      <el-button type="text" class = "title_text">{{noteItem.title}}</el-button>
+      <el-button type="text" class = "title_text" @click="handle_router_change">{{noteItem.title}}</el-button>
     </div>
 
     <!--笔记简介-->
@@ -44,6 +44,17 @@ export default {
     return{
       heart_url:require("../../assets/heart.png"),
     }
+  },
+  methods:{
+    handle_router_change(id){
+      this.$router.push({
+        path:"/note/view",
+        query:{
+          id: this.noteItem.url,
+        }
+      })
+    }
+
   }
   
 

@@ -80,7 +80,7 @@
               localStorage.setItem('password',this.loginForm.password)
               //分别跳转到笔记编辑或者管理者界面
               if (response.data.isAdmin) this.$router.replace('admin')
-              else this.$router.replace('/note/edit')
+              else this.$router.replace('/personal-center')
             }
             else {
               alert("Incorrect email or password")

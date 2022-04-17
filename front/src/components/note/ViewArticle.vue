@@ -69,7 +69,7 @@ export default {
   data () {
     return {
       liked_status :"Like\xa0\xa0\xa0\xa0\xa0\xa0Fork",
-      note_id:"625a74502f879603b077f003",//note id暂时是这个！！会更改
+      note_id:this.$route.query.id,
       note_author:"",
       note_author_id:"",
       note_title:"",
