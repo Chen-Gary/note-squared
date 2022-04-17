@@ -78,6 +78,9 @@
               localStorage.setItem('elementToken', response.data.jwt)
               localStorage.setItem('email',this.loginForm.username)
               localStorage.setItem('password',this.loginForm.password)
+              localStorage.community_page = 1
+              localStorage.community_mode = "all"
+              localStorage.search_element = ""
               //分别跳转到笔记编辑或者管理者界面
               if (response.data.isAdmin) this.$router.replace('admin')
               else this.$router.replace('/personal-center')

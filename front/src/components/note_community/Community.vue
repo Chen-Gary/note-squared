@@ -43,7 +43,7 @@ export default {
   },
   created()
   {
-    this.show_all_note();
+    this.UpdatePage();
     //更新数据库的notes列表
      let obj = {title:"note1", description:"it's a new note", thumb:"0",username:"Frida",url:"www.hello.com" }
      this.notes_info.note_obj.list.push(obj);
@@ -58,22 +58,25 @@ export default {
       notes_info:{
         'note_obj' :{list:[ ]}, //object:标题,简介,点赞数,用户(谁上传的),对应的url link
       },
-      keyword:"",
+      keyword:localStorage.search_element,
       page:{
-            currentPage:1, //当前页
+            currentPage:localStorage.community_page, //当前页
             pagesize:10,    // 每页的数据
             rows:1,         //总条数
             totalPage:5,  //总条数
       },
-      mode:"all", //当前搜索模式search，当前所有数据库模式all
+      mode:localStorage.community_mode, //当前搜索模式search，当前所有数据库模式all
     }
   },
   methods: {
     searchEnterFun(e)
     {
       this.mode = "search";//搜索模式
+      localStorage.community_mode = "search";
       this.page.currentPage = 1;//调整页面为搜索的第一页
+      localStorage.community_page = 1;
       var keycode = window.event? e.keyCode:e.which;
+      localStorage.search_element = this.keyword;
       if (keycode == 13){
               console.log("press enter");
         this.search(); //回车键触发  搜索事件
@@ -118,6 +121,7 @@ export default {
     
     handleCurrentChange: function(currentPage){
         this.page.currentPage = currentPage;
+        localStorage.community_page = currentPage;
         this.UpdatePage();
         console.log(this.page.currentPage)  //点击第几页
     },
@@ -129,6 +133,7 @@ export default {
       //等待后端完善所有数据库的返回
       else{
         this.show_all_note();
+        this.keyword = ""
       }
         
     },
@@ -164,8 +169,10 @@ export default {
       this.keyword = "";
       //清空回到数据库的第一页
       this.page.currentPage = 1;
+      localStorage.community_page = 1;
       //模式转为所有笔记的返回
       this.mode = "all";
+      localStorage.community_mode = "all";
       //所有数据库的返回
       this.show_all_note();
     }
