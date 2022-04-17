@@ -13,10 +13,21 @@
         > </el-image>
         {{ item.name }}
       </el-menu-item>
+       <el-menu-item>
+         <el-button type="text" class = "router_button" @click="to_personal_center">Personal Center</el-button>
+      </el-menu-item>
+
+      <el-menu-item>
+         <el-button type="text" class = "router_button" @click="to_community">Community</el-button>
+      </el-menu-item>
+
 
     <li style="margin-right:2%; float:right; outline: none;cursor: pointer">
         <i class="el-icon-full-screen" style="font-size:30px;" @click="fullScreen"></i>
-      </li>
+    </li>
+    <li style="margin-right:2%; margin-top:0.5%;float:right; outline: none;cursor: pointer">
+        <el-button type="text" class = "router_button" @click="note_log_out">Log out</el-button>
+    </li>
 
 
     </el-menu>
@@ -89,7 +100,21 @@
               document.webkitExitFullscreen();
             }
           }
-        }
+        },
+        note_log_out(){
+            localStorage.clear();
+            this.$router.replace('/home');
+        },
+        to_personal_center()
+        {
+          if (localStorage.elementToken) this.$router.replace('/personal-center');
+          else this.$router.replace('/login');
+        },
+        to_community()
+        {
+           if (localStorage.elementToken) this.$router.replace('/community');
+           else this.$router.replace('/login');
+        },
       }
     }
 
@@ -102,17 +127,23 @@
     top: 0px;
     margin: 0%;
     line-height:10px;
-    margin-top: 15px;
+    margin-top: 0px;
+    position:fixed;
+    z-index:100;
   }
   .el-menu-item{
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     font-weight: bolder!important;
     font-size: 100%;
   }
+  .router_button{
+    font-weight: bolder!important;
+    color: #000000;
+  }
   .el-menu--horizontal>.el-menu-item {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    height: 35px!important;
-    line-height: 35px!important;
+    height: 45px!important;
+    line-height: 50px!important;
     font-size: 130%;
     color: #000000;
   }
@@ -137,6 +168,9 @@
     align-items: center;
     letter-spacing: -0.02em;
     color: rgba(0, 0, 0, 0.87);
+  }
+  .el-icon-full-screen{
+    line-height: 50px!important;
   }
 
 

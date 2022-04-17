@@ -85,19 +85,22 @@ export default new Router({
     ]
     },
     {
-      path: '/Editor',
-      name: 'Editor',
-      component: Editor
-    },
-    {
       path: '/note/edit',
       name: 'NoteEdit',
       component: NoteEdit,
     },
     {
-      path: '/note/view',
-      name: 'ViewArticle',
-      component: ViewArticle
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/note/view',
+      children: [
+      {
+        path: '/note/view',
+        name: 'ViewArticle',
+        component: ViewArticle
+      },
+    ]
     },
     {
       path:'/admin',
@@ -106,9 +109,17 @@ export default new Router({
 
     },
     {
-      path: '/personal-center',
-      name: 'PersonalCenter',
-      component: PersonalCenter
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/community',
+      children: [
+        {
+          path: '/personal-center',
+          name: 'PersonalCenter',
+          component: PersonalCenter
+        },
+    ]
     },
     {
       path: '/info',

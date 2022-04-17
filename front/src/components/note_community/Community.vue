@@ -188,7 +188,7 @@ export default {
   font-weight: bold;
 }
 .search_layout{
-  margin-top:3%;
+  margin-top:5%;
   margin-bottom: 3%;
 }
 .note_refresh{

@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class= "top_space">
       <el-row>
           <el-col :span="1" style="margin-left:20px">
             <div class="grid-content bg-purple">
@@ -19,14 +19,6 @@
              <br>
             </div>
           </el-col>
-          <el-col :span="1"><div class="grid-content bg-purple-light">
-            <el-button class="note-operation" type="primary" @click="to_note_community" style="margin-left:-70px">Community</el-button>
-            </div>
-          </el-col>
-          <el-col :span="1"><div class="grid-content bg-purple-light">
-            <el-button class="note-operation" type="info" plain @click="log_out" style="margin-left:10px">Log out</el-button>
-            </div>
-            </el-col>
       </el-row>
 
     <div>
@@ -264,6 +256,9 @@
 </script>
 
 <style>
+.top_space{
+  margin-top:4%;
+}
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
