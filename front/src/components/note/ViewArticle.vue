@@ -1,66 +1,80 @@
 <template>
   <div class="page-container">  
-      <div class="main-content">
-        <div class="article-title">
-          {{this.note_title}}
-          <i 
-            style="font-size: 25px; cursor: pointer;"
-            @click="navigateToEdit(note_id)" 
-            class="el-icon-edit" 
-            v-if="note_isMe == true"
-          ></i>
-        </div>      
-        <el-row>
-        <el-col :span="1" style="margin-left:0px">
-            <div class="grid-content bg-purple">
-              <el-avatar shape="circle" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
-            </div>
-          </el-col>
+    <div class="main-content">
+      <div class="article-title">
+        {{this.note_title}}
+        <i 
+          style="font-size: 25px; cursor: pointer;"
+          @click="navigateToEdit(note_id)" 
+          class="el-icon-edit" 
+          v-if="note_isMe == true"
+        ></i>
+      </div>      
+      <el-row>
+      <el-col :span="1" style="margin-left:0px">
+          <div class="grid-content bg-purple">
+            <el-avatar shape="circle" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
+          </div>
+        </el-col>
+        <el-col :span="2">
+          <div class="grid-content bg-purple-light" style="margin-left:0px">
+            <p style="font-weight:bold">{{this.note_author}} </p>
+          </div>
+        </el-col>
           <el-col :span="2">
-            <div class="grid-content bg-purple-light" style="margin-left:0px">
-              <p style="font-weight:bold">{{this.note_author}} </p>
-            </div>
-          </el-col>
-           <el-col :span="2">
-            <div class="grid-content bg-purple-light" style="margin-left:0px; font-size: 14px; color: #909399">
-              <p>{{this.note_publishDate}} </p>
-            </div>
-          </el-col>
-        </el-row>
+          <div class="grid-content bg-purple-light" style="margin-left:0px; font-size: 14px; color: #909399">
+            <p>{{this.note_publishDate}} </p>
+          </div>
+        </el-col>
+      </el-row>
 
-        <div class="markdown-body" id="markdown-content">
-          <VueMarkdown :source="note_content" v-highlight></VueMarkdown>
-        </div>
-        <div v-if="note_isMe == false" class="interface-box">
-          <!-- 添加v-if 如果是自己的文章则没有 -->
-          <el-button type="primary" :class = "button_color_index" @click="like_notes" icon ="el-icon-caret-top" circle style="font-size: 15px;"></el-button>
-          <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-          <p>{{liked_status}}</p>
-        </div>
-        <el-divider>END</el-divider>
-        <div class="comments-area">
-          <div class="post-comment">
-            <el-image
-              style="width: 50px; height: 50px"
-              :src="url"
-            ></el-image>
-            <div class="coments-textarea">
-              <el-input 
-                class="comment-input"
-                v-model="comment"
-                placeholder="Please enter your comments..."
-                maxlength="140"
-                show-word-limit
-                type="textarea" 
-              ></el-input>
-              <div class="post-button">
-                <el-button size="medium">Post</el-button>
-              </div>
+      <div class="markdown-body" id="markdown-content">
+        <VueMarkdown :source="note_content" v-highlight></VueMarkdown>
+      </div>
+      <div v-if="note_isMe == false" class="interface-box">
+        <!-- 添加v-if 如果是自己的文章则没有 -->
+        <el-button type="primary" :class = "button_color_index" @click="like_notes" icon ="el-icon-caret-top" circle style="font-size: 15px;"></el-button>
+        <el-button type="warning" icon="el-icon-star-off" @click="displayForkDialog" circle></el-button>
+        <p>{{liked_status}}</p>
+      </div>
+      <el-divider>END</el-divider>
+      <div class="comments-area">
+        <div class="post-comment">
+          <el-image
+            style="width: 50px; height: 50px"
+            :src="url"
+          ></el-image>
+          <div class="coments-textarea">
+            <el-input 
+              class="comment-input"
+              v-model="comment"
+              placeholder="Please enter your comments..."
+              maxlength="140"
+              show-word-limit
+              type="textarea" 
+            ></el-input>
+            <div class="post-button">
+              <el-button size="medium">Post</el-button>
             </div>
           </div>
         </div>
       </div>
-      <div class="sidebar">
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-container">
+        <div class="advertisements">
+          <el-carousel trigger="click" height="150px">
+            <el-carousel-item>
+              <img :src="carousel1" class="carousel-pic">
+            </el-carousel-item>
+            <el-carousel-item>
+              <img :src="carousel2" class="carousel-pic">
+            </el-carousel-item>
+            <el-carousel-item>
+              <img :src="carousel3" class="carousel-pic">
+            </el-carousel-item>
+          </el-carousel>
+        </div>
         <div class="recommendations">
           <div class="recommendations-header">
             <div class="recommendations-header-title"> Recommendations </div>
@@ -74,11 +88,33 @@
           </div>
         </div>
       </div>
+    </div>
+    <el-dialog
+      title="Fork"
+      :visible.sync="dialogVisibleFork"
+      width="40%">
+      <el-select style="width: 250px" v-model="selectedFolder" placeholder="Please select the target folder">
+        <el-option
+          v-for="item in userFolder"
+          :key="item.folder_id"
+          :label="item.folder_title"
+          :value="item.folder_id">
+        </el-option>
+      </el-select>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisibleFork = false">取 消</el-button>
+        <el-button type="primary" @click="note_fork">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>  
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown'
+import { Message } from 'element-ui'
+import TypeWriter from '../../assets/Note/typewriter.png'
+import Program from '../../assets/Note/program.png'
+import HomePic4 from '../../assets/Home/home_pic4.png'
 export default {
   components: {
     VueMarkdown // 注入组件
@@ -112,6 +148,12 @@ export default {
       fits: ['fill', 'contain', 'cover', 'none', 'scale-down'],
       url: 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg', 
       comment: "",
+      dialogVisibleFork: false,
+      selectedFolder: "",
+      userFolder: [],
+      carousel1: TypeWriter,
+      carousel2: Program,
+      carousel3: HomePic4
     }
   },
   methods:{
@@ -197,17 +239,27 @@ export default {
           }
         })
     },
-    // wait for implmentation
+    displayForkDialog() {
+      this.$axios.post("/note/local-folder-notes-get", { withNote: "false" })
+      .then (res => {
+        this.userFolder = res.data.data;
+        console.log("finish getting", this.userFolder)
+      })
+      this.dialogVisibleFork = true;
+    },
     note_fork()
     {
       this.$axios.post("/note/fork-note",{
-        mode:mode,
-        noteId:this.note_id,
-        }).then(response=>{
+        folderId: this.selectedFolder,
+        noteId: this.note_id,
+        })
+        .then(response=>{
+          console.log(response)
           if (response.status === 200)
           {
-            this.note_isLiked = !this.note_isLiked;
-            console.log(response)
+            // todo: 后端返回isForked
+            // this.note_isLiked = !this.note_isLiked;
+            Message.success("Successfully forked to your folder!")
           }
           else{
             this.$message.error({
@@ -215,6 +267,7 @@ export default {
             });
           }
         })
+        this.dialogVisibleFork = false;
     },
     navigateToCom() {
       this.$router.push('/community').catch(err => {err});
@@ -322,6 +375,11 @@ export default {
 .sidebar {
     display: block !important;
     width: 320px;
+    &-container {
+      position: fixed;
+      right: 60px;
+      bottom: 100px;
+    }
     // background-color: aquamarine;
 }
 /* .sidebar {
@@ -336,13 +394,9 @@ export default {
   overflow: wrap;
 }
 .recommendations {
-  // display: flex;
-  position: fixed;
-  right: 60px;
-  bottom: 100px;
   text-align: left;
-  padding: 15px;
   color: #626568;
+  padding: 15px;
   &-header{
     display: flex;
     justify-content: space-between;
@@ -357,6 +411,12 @@ export default {
       color:#66a0cc;
       cursor: pointer;
     }
+  }
+}
+.advertisements {
+  margin-bottom: 30px;
+  .carousel-pic {
+    width: 100%;
   }
 }
 </style>

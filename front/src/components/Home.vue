@@ -1,178 +1,175 @@
 <template>
- <!-- <el-scrollbar style="height:100%">-->
-   <div class="container">
+  <div>
+    <div class="container">
     <!---开头版面 + 登录注册按钮--->
-    <div class="header-title">
-      <div class = "first_text">
-        Tame your study.<br>
-        Manage your life.
+      <div class="header-title">
+        <div class = "first_text">
+          Tame your study.<br>
+          Manage your life.
+        </div>
+        <div class = "first_text2 typewriter-animation">
+          Remember everything and tackle any project with your notes, tasks, and schedule!
+        </div>
       </div>
-      <div class = "first_text2 typewriter-animation">
-        Remember everything and tackle any project with your notes, tasks, and schedule!
-      </div>
-    </div>
-    <div class="button-box">
-      <div class="grid-content bg-purple">
-        <el-button type="primary" @click="toLogin" class="register_button">LOGIN</el-button>
-      </div>
-      <div class="grid-content bg-purple-light">
-        <el-button type="primary" @click="toRegister" class="login_button">REGISTER</el-button>
-      </div>
-    </div>
-     <div>
-        <img :src="imgUrl"   class = "first_pic" >
-    </div>
-
-    <!---三个简介--->
-    <div class="feature-container">
-      <div class = "feature_text">
-          Features
+      <div class="button-box">
+        <div class="grid-content bg-purple">
+          <el-button type="primary" @click="toLogin" class="register_button">LOGIN</el-button>
+        </div>
+        <div class="grid-content bg-purple-light">
+          <el-button type="primary" @click="toRegister" class="login_button">REGISTER</el-button>
+        </div>
       </div>
       <div>
-        <el-col :span="12" style="margin-top :3%">
-          <div class="grid-content bg-purple">
-            <el-row :gutter="20">
-              <el-col :span="4">
-                <div class="grid-content bg-purple">
-                  <img :src="imgIcon1"   class = "icon" >
-                </div>
-              </el-col>
-              <el-col :span="20">
-                <div class="grid-content bg-purple">
-                  <div class = "sub_feature_text">
-                  Instant Markdown Note
-                  </div>
-                </div>
-              </el-col>
-            </el-row>
-
-          <div class = "introduction">
-            Support left-aligned typing with a wide range of
-            fonts, sizes, and colors as well as a variety of
-            auxiliary tool. Provide formatting for outlines
-            and interactive list. Continuous page scroll inspires
-            you to explore endless ideas.
-          </div>
-
-          </div>
-        </el-col>
-
-        <el-col :span="12">
-          <div class="grid-content bg-purple-light">
-            <div class = "intro_pic">
-              <img :src="imgUrl2" >
-              </div>
-          </div>
-        </el-col>
+        <img :src="imgUrl"   class = "first_pic" >
       </div>
-      <el-row style = "margin-top :3%">
-        <el-col :span="12">
-          <div class="grid-content bg-purple-light">
-            <div class = "intro_pic2">
-              <img :src="imgUrl3" >
+
+      <!---三个简介--->
+      <div class="feature-container">
+        <div class = "feature_text">
+          Features
+        </div>
+        <div>
+          <el-col :span="12" style="margin-top :3%">
+            <div class="grid-content bg-purple">
+              <el-row :gutter="20">
+                <el-col :span="4">
+                  <div class="grid-content bg-purple">
+                    <img :src="imgIcon1"   class = "icon" >
+                  </div>
+                </el-col>
+                <el-col :span="20">
+                  <div class="grid-content bg-purple">
+                    <div class = "sub_feature_text">
+                    Instant Markdown Note
+                    </div>
+                  </div>
+                </el-col>
+              </el-row>
+
+            <div class = "introduction">
+              Support left-aligned typing with a wide range of
+              fonts, sizes, and colors as well as a variety of
+              auxiliary tool. Provide formatting for outlines
+              and interactive list. Continuous page scroll inspires
+              you to explore endless ideas.
             </div>
-          </div>
-        </el-col>
-        <el-col :span="12">
-          <div class="grid-content bg-purple" style="margin-top:2%">
-            <el-row :gutter="20">
-              <el-col :span="4">
-                <div class="grid-content bg-purple">
-                  <img :src="imgIcon2"   class = "icon2" >
-                </div>
-              </el-col>
-              <el-col :span="20">
-                <div class="grid-content bg-purple">
-                  <div class = "sub_feature_text2">
-                  Note Management
-                  </div>
-                </div>
-              </el-col>
-            </el-row>
 
-          <div class = "introduction2">
-            Notes can be created, deleted, and <br>sorted easily
-            with minimal steps and a <br>user-friendly UI system. 
-            You can group <br>notes with customizable subjects and<br> 
-            dividers. You can also set their own<br>note permissions,
-            private or public.
-          </div>
-          </div>
-        </el-col>
-      </el-row>
-      <el-row style = "margin-top :4%">
-        <el-col :span="12">
-          <div class="grid-content bg-purple">
-            <el-row :gutter="20">
-              <el-col :span="4">
-                <div class="grid-content bg-purple">
-                  <img :src="imgIcon3"   class = "icon" >
+            </div>
+          </el-col>
+
+          <el-col :span="12">
+            <div class="grid-content bg-purple-light">
+              <div class = "intro_pic">
+                <img :src="imgUrl2" >
                 </div>
-              </el-col>
-              <el-col :span="20">
-                <div class="grid-content bg-purple">
-                  <div class = "sub_feature_text">
-                  Note Community
-                  </div>
-                </div>
-              </el-col>
-            </el-row>
-
-          <div class = "introduction">
-            Note community is where users can upload 
-            their notes and view others notes. You can 
-            publish  notes for the world to see in the 
-            note community through public note permissions. 
-            You will receive comments and likes from other users. 
-          </div>
-
-          </div>
-        </el-col>
-
-        <el-col :span="12">
-          <div class="grid-content bg-purple-light">
-            <div class = "intro_pic">
-              <img :src="imgUrl4" >
+            </div>
+          </el-col>
+        </div>
+        <el-row style = "margin-top :3%">
+          <el-col :span="12">
+            <div class="grid-content bg-purple-light">
+              <div class = "intro_pic2">
+                <img :src="imgUrl3" >
               </div>
+            </div>
+          </el-col>
+          <el-col :span="12">
+            <div class="grid-content bg-purple" style="margin-top:2%">
+              <el-row :gutter="20">
+                <el-col :span="4">
+                  <div class="grid-content bg-purple">
+                    <img :src="imgIcon2"   class = "icon2" >
+                  </div>
+                </el-col>
+                <el-col :span="20">
+                  <div class="grid-content bg-purple">
+                    <div class = "sub_feature_text2">
+                    Note Management
+                    </div>
+                  </div>
+                </el-col>
+              </el-row>
+
+            <div class = "introduction2">
+              Notes can be created, deleted, and <br>sorted easily
+              with minimal steps and a <br>user-friendly UI system. 
+              You can group <br>notes with customizable subjects and<br> 
+              dividers. You can also set their own<br>note permissions,
+              private or public.
+            </div>
+            </div>
+          </el-col>
+        </el-row>
+        <el-row style = "margin-top :4%">
+          <el-col :span="12">
+            <div class="grid-content bg-purple">
+              <el-row :gutter="20">
+                <el-col :span="4">
+                  <div class="grid-content bg-purple">
+                    <img :src="imgIcon3"   class = "icon" >
+                  </div>
+                </el-col>
+                <el-col :span="20">
+                  <div class="grid-content bg-purple">
+                    <div class = "sub_feature_text">
+                    Note Community
+                    </div>
+                  </div>
+                </el-col>
+              </el-row>
+
+            <div class = "introduction">
+              Note community is where users can upload 
+              their notes and view others notes. You can 
+              publish  notes for the world to see in the 
+              note community through public note permissions. 
+              You will receive comments and likes from other users. 
+            </div>
+
+            </div>
+          </el-col>
+
+          <el-col :span="12">
+            <div class="grid-content bg-purple-light">
+              <div class = "intro_pic">
+                <img :src="imgUrl4" >
+                </div>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
+
+
+
+      <!---末尾版面--->
+      <div class = "last_text" style="margin-top:20%">
+        <div class = "same_align">
+          <img :src="Logo" class="logo">
+          <div style = "margin-left:1%">
+            Note²
           </div>
-        </el-col>
-      </el-row>
-    </div>
-
-
-
-    <!---末尾版面--->
-    <div class = "last_text" style="margin-top:20%">
-
-      <div class = "same_align">
-      <img :src="Logo" class="logo">
-      <div style = "margin-left:1%">
-        Note²
+        </div>
       </div>
+      <div class = "last_text2">
+        Shop  •  Reviews  •  Help  •  Returns  •  Story  •  Partnership  •  Refer a Friend
       </div>
 
+      <div>
+        <img :src="imgUrl5" class = "supporter">
+      </div>
 
+      <div style = "font-size: 9px">
+        <div style="margin-top:20px ">
+          © Setproduct.com. All rights reserved. The best time to plant a<br> tree was 20 years ago. The second best time is now
+        </div> 
+      </div>
 
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
-   <div class = "last_text2">
-     Shop  •  Reviews  •  Help  •  Returns  •  Story  •  Partnership  •  Refer a Friend
-    </div>
-
-    <div class>
-       <img :src="imgUrl5" class = "supporter">
-    </div>
-
-   <div style = "font-size: 9px">
-     <div style="margin-top:20px ">
-     © Setproduct.com. All rights reserved. The best time to plant a<br> tree was 20 years ago. The second best time is now
-    </div> 
-   </div>
-
-   <br>
-   <br>
-   <br>
-   <br>
-    </div>
+  </div>
 
   
 </template>

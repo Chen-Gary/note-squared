@@ -130,6 +130,7 @@
     margin-top: 0px;
     position:fixed;
     z-index:100;
+    height: 60px;
   }
   .el-menu-item{
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
