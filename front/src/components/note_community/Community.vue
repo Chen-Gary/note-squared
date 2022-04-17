@@ -7,7 +7,7 @@
             <el-button type="primary" :class = "button_color_index" @click="back_to_personal_center" icon ="el-icon-back" circle></el-button>
       </div>
     </el-col>
-    <el-col :span="14"><div class="grid-content bg-purple">
+    <el-col :span="13"><div class="grid-content bg-purple">
       <span class="search_title" style = "margin-right:1%">
         Search
       </span>
