@@ -71,6 +71,7 @@
 
 <script>
   import TypeWriter from '../../assets/Note/typewriter.png'
+  import { Message } from 'element-ui';
   export default {
     name: "NoteEdit",
     data() {
@@ -156,26 +157,33 @@
     methods: {
       postContent(){
         console.log(this.note)
-        this.$axios.post('/note/modify-note', {
-          mode: "new",  // 之后需要改成动态的
-          folderId: this.note.selectedFolder,
-          // note ID (edit mode)
-          title: this.note.title,
-          description: this.note.description,
-          contentMD: this.note.contentMd,
-          visibility: this.note.visibility
-        }).then(res => {
-          console.log(res)
-          alert("post successfully!")
-          this.$router.push({
-            path:"/note/view",
-            query:{
-              id: res.data.data._id,
-            }
-          }).catch(err => {err})
-        }).catch(err => {
-          alert("some error occur: ", err)
-        })
+        if (this.note.title && this.note.contentMd) {
+          this.$axios.post('/note/modify-note', {
+            mode: this.$route.params.id ? "edit":"new",  // 之后需要改成动态的
+            folderId: this.note.selectedFolder,
+            // note ID (edit mode)
+            title: this.note.title,
+            description: this.note.description,
+            contentMD: this.note.contentMd,
+            visibility: this.note.visibility
+          }).then(res => {
+            console.log(res)
+            alert("post successfully!")
+            this.$router.push({
+              path:"/note/view",
+              query:{
+                id: res.data.data._id,
+              }
+            }).catch(err => {err})
+          }).catch(err => {
+            alert("some error occur: ", err)
+          })
+        } else {
+          this.$message({
+            message:'ERR: You should at least input article title and content',
+            type:'error'
+          })
+        }
         
       },
       download(){
