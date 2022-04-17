@@ -1,0 +1,1575 @@
+{
+	"info": {
+		"_postman_id": "6a5a51ca-2c1c-47f2-8eca-04daef5e7111",
+		"name": "Note Squared",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "get verivication code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "000@qq.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register/email-verification-code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register",
+								"email-verification-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "000@qq.com",
+									"description": "需要唯一",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc123",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "李四666",
+									"type": "text"
+								},
+								{
+									"key": "verificationCode",
+									"value": "EWcU",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "12341234@qq.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abc123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate token (is token valid & is user admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUzNzhmMTA2ZTRiNGFiZWEwYjMwYzgiLCJlbWFpbCI6IjAwMEBxcS5jb20iLCJpYXQiOjE2NDk2Mzk2NjAsImV4cCI6MTY0OTYzOTY3NX0.sI6ocRhGrAe7P6awSHoIjVobewV-sHMhqOi12tzKIww",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/validate-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"validate-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my profile info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTU5MzUzOCwiZXhwIjoxNjgxMTI5NTM4fQ.YgLlIfg5AmbW7Xuyl2P2lLKLs70V9fVCmgNWCtTXFZw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set nickname",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTU4NTcyNiwiZXhwIjoxNjQ5NjcyMTI2fQ.AI5sII9hsXg0TyojsYKGeU_Cfciawk7oE2xFhmxCw5Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "newName",
+									"value": "myNewName",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with old password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTU4NTcyNiwiZXhwIjoxNjQ5NjcyMTI2fQ.AI5sII9hsXg0TyojsYKGeU_Cfciawk7oE2xFhmxCw5Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPwd",
+									"value": "abcde1234",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abc123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/old-pwd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"old-pwd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with email - get verification code",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@qq.com.cn",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/email/verification-code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"email",
+								"verification-code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set password - with email - set",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@qq.com.cn",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abcde1234",
+									"type": "text"
+								},
+								{
+									"key": "verificationCode",
+									"value": "czcu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-pwd/email/set",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-pwd",
+								"email",
+								"set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set avatar image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUzNzhmMTA2ZTRiNGFiZWEwYjMwYzgiLCJlbWFpbCI6IjAwMEBxcS5jb20iLCJpYXQiOjE2NTAwMDUxMTksImV4cCI6MTY4MTU0MTExOX0.Zg8woylcZE3qREyWWahYdO6KMR6qsgxNvvq7LC6537I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Gary/Desktop/avatar_1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/set-avatar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"set-avatar"
+							]
+						},
+						"description": "表单类型设置为：enctype=\"multipart/form-data\"\n\n比如：\n```HTML\n<form class=\"form-container\" action=\"/admin/article-add\" method=\"post\" enctype=\"multipart/form-data\">\n```"
+					},
+					"response": []
+				},
+				{
+					"name": "get avatar image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/get-avatar?uid=624bfb61261110cd765d93ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"get-avatar"
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "624bfb61261110cd765d93ad",
+									"description": "user id (whose avatar image we want to get)"
+								}
+							]
+						},
+						"description": "表单类型设置为：enctype=\"multipart/form-data\"\n\n比如：\n```HTML\n<form class=\"form-container\" action=\"/admin/article-add\" method=\"post\" enctype=\"multipart/form-data\">\n```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin API",
+			"item": [
+				{
+					"name": "Get User List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTU4NTcyNiwiZXhwIjoxNjQ5NjcyMTI2fQ.AI5sII9hsXg0TyojsYKGeU_Cfciawk7oE2xFhmxCw5Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/userlist/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"userlist",
+								"1"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Note List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjVhNTg3ZGZhZDU5ZjI2ZTI1M2I3NWYiLCJlbWFpbCI6ImNoaEBxcS5jb20iLCJpYXQiOjE2NTAwODgwNzEsImV4cCI6MTY4MTYyNDA3MX0.uHOByTP_Wa7Jv1cW-LnoW-72dV5SauUp1G06OQtaNwY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/admin/notelist/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"notelist",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTE1MDU3OSwiZXhwIjoxNjQ5MjM2OTc5fQ.3Dwfjr27h-Jda-29Exf72fX5TU9GVrUE-KzgZjZTNl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_id",
+									"value": "624bf445dd5519495c241fab",
+									"description": "用于指定要修改的用户，_id不可修改",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "32432432@test.com",
+									"description": "更新后的值",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "nbnb",
+									"description": "更新后的值",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "admin",
+									"description": "更新后的值",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/profile-edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"profile-edit"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				},
+				{
+					"name": "update user password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY0OTE1MDU3OSwiZXhwIjoxNjQ5MjM2OTc5fQ.3Dwfjr27h-Jda-29Exf72fX5TU9GVrUE-KzgZjZTNl8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "_id",
+									"value": "624bf445dd5519495c241fab",
+									"description": "用于指定要修改的用户，_id不可修改",
+									"type": "text"
+								},
+								{
+									"key": "newPwd",
+									"value": "abc123",
+									"description": "更新后的值",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/admin/password-edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"admin",
+								"password-edit"
+							]
+						},
+						"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Note API",
+			"item": [
+				{
+					"name": "Search Feature",
+					"item": [
+						{
+							"name": "search all public notes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/note/search-public?search=typescript is hard&page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"note",
+										"search-public"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "typescript is hard"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search notes of current user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY1MDAxMzQwMiwiZXhwIjoxNjgxNTQ5NDAyfQ.p0aHj2w_8HnURJrcjBjfe9lnWeqetUp5WUtDQiIK9Sg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/note/search-self?search=typescript is hard&page=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"note",
+										"search-self"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "typescript is hard"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "upload picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUzNzhmMTA2ZTRiNGFiZWEwYjMwYzgiLCJlbWFpbCI6IjAwMEBxcS5jb20iLCJpYXQiOjE2NTAwMDYxMTMsImV4cCI6MTY4MTU0MjExM30.F3aUazA93TRftaXbnFGAMqYeIwTzifDoh1MbnwLQJ04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "picture",
+									"type": "file",
+									"src": "/C:/Users/Gary/Desktop/avatar_1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/upload-pic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"upload-pic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-recommendation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/note/recommendation-get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"recommendation-get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single note (with detailed content)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/note-get/:noteId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"note-get",
+								":noteId"
+							],
+							"variable": [
+								{
+									"key": "noteId",
+									"value": "625584316d14718d3ea4d8f4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get local folders and notes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyYzJlM2Y5NmE3NGEyZjA1ZGYzMDEiLCJlbWFpbCI6IjExOTAxMDAxMUBsaW5rLmN1aGsuZWR1LmNuIiwiaWF0IjoxNjUwMDg0MjUyLCJleHAiOjE2ODE2MjAyNTJ9.u-w9fE_rajuHZGAK2u-IS1KqqQzv33Yl8LApMWDrZIU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "withNote",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/local-folder-notes-get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"local-folder-notes-get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify folder: edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "new description",
+									"type": "text"
+								},
+								{
+									"key": "mode",
+									"value": "edit",
+									"type": "text"
+								},
+								{
+									"key": "folderId",
+									"value": "6255297552e723aab47faa52",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/modify-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"modify-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify folder: create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUzNzhmMTA2ZTRiNGFiZWEwYjMwYzgiLCJlbWFpbCI6IjAwMEBxcS5jb20iLCJpYXQiOjE2NDk5ODk5MTUsImV4cCI6MTY4MTUyNTkxNX0.pYR0WHwJoE9818W90Dkg_GTxqHbA9vTU5Qo5unLdPOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "CSC4001folder",
+									"type": "text"
+								},
+								{
+									"key": "mode",
+									"value": "new",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/modify-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"modify-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "folderId",
+									"value": "6256604a9e8480790a557aa6",
+									"type": "text"
+								},
+								{
+									"key": "noteId",
+									"value": "625660929e8480790a557abe",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/delete-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"delete-note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "folderId",
+									"value": "6256846bc0a1b73e5e25871c",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/delete-folder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"delete-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify note: edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mode",
+									"value": "edit",
+									"type": "text"
+								},
+								{
+									"key": "folderId",
+									"value": "625629f796d25843fe008296",
+									"type": "text"
+								},
+								{
+									"key": "noteId",
+									"value": "62562a6996d25843fe0082a0",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "contentMD",
+									"value": "hello world!! - modified",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/modify-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"modify-note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify note: create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjRiZmI2MTI2MTExMGNkNzY1ZDkzYWQiLCJlbWFpbCI6IjEyMzQxMjM0QHFxLmNvbSIsImlhdCI6MTY1MDAxMzEwMCwiZXhwIjoxNjgxNTQ5MTAwfQ.rU4t8OvN9J1v6094mup6vmbAsZ8Z61xd0ogCjcLrLJc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mode",
+									"value": "new",
+									"type": "text"
+								},
+								{
+									"key": "folderId",
+									"value": "6258d98e38e5a5a5ccd2ec2c",
+									"type": "text"
+								},
+								{
+									"key": "noteId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "a trial title",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a test",
+									"type": "text"
+								},
+								{
+									"key": "contentMD",
+									"value": "typescript is hard!!!",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "public",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/modify-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"modify-note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "move-note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "noteId",
+									"value": "625534cd42c388e5c72b4c77",
+									"type": "text"
+								},
+								{
+									"key": "oldFolderId",
+									"value": "6255297552e723aab47faa52",
+									"type": "text"
+								},
+								{
+									"key": "newFolderId",
+									"value": "6255408ac0a9b705dee2dfb7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/move-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"move-note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like note (including cancel like)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyZjVkODNjMjc3YmQ1ZDNiOTdkMGUiLCJlbWFpbCI6IjFAaHl5LmNvbSIsImlhdCI6MTY0OTYwNDQ4NiwiZXhwIjoxNjgxMTQwNDg2fQ.23chq8dHiYANd6F3qzXmUU5xx7UrdBgfTcnRKAniGvA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mode",
+									"value": "like",
+									"type": "text"
+								},
+								{
+									"key": "noteId",
+									"value": "6256848ec0a1b73e5e25872a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/like-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"like-note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fork-note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjUyYzJlM2Y5NmE3NGEyZjA1ZGYzMDEiLCJlbWFpbCI6IjExOTAxMDAxMUBsaW5rLmN1aGsuZWR1LmNuIiwiaWF0IjoxNjUwMTA3NzkzLCJleHAiOjE2ODE2NDM3OTN9.cJG71YpQYTmafTRBVdGAdJJ5kd17MtPR4O6aoGF05-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "noteId",
+									"value": "6257722238918da4e9e34256",
+									"type": "text"
+								},
+								{
+									"key": "folderId",
+									"value": "6257a1925460961282a25140",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/note/fork-note",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"note",
+								"fork-note"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[DISCARDED]",
+			"item": [
+				{
+					"name": "[DISCARDED] User APIs",
+					"item": [
+						{
+							"name": "Get User List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmM2E4ZDAwZTI2ZDc1MjVjNzhjMzUiLCJlbWFpbCI6IjAwMDAwMDAwMDBAcXEuY29tIiwiaWF0IjoxNjQ3MjYyNDE0LCJleHAiOjE2NDczNDg4MTR9.r0l9vodsjmLFOYoAYSJt9RLOfucwfY3kKywWEPQOyMg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/userlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"userlist"
+									]
+								},
+								"description": "\"Authorization\"中，选择Bearer Token，填入\"Login\"返回的jwt token。只有admin账号可以看到user list"
+							},
+							"response": []
+						},
+						{
+							"name": "Register Comfirm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/user/confirm/xxxxxxxxxxxx",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"confirm",
+										"xxxxxxxxxxxx"
+									]
+								},
+								"description": "把\"Register\" API返回的 \"confirmationCode\" 填到 \"/api/user/confirm/\"后面"
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "0000000000@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "[DISCARDED] User APIs - Cloud",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "1223@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/login",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "233@qq.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "hello1",
+											"type": "text"
+										},
+										{
+											"key": "isAdmin",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/register",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Comfirm",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://120.78.207.251:3000/api/user/confirm/xxxxxxxxxxxx",
+									"protocol": "http",
+									"host": [
+										"120",
+										"78",
+										"207",
+										"251"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"confirm",
+										"xxxxxxxxxxxx"
+									]
+								},
+								"description": "把\"Register\" API返回的 \"confirmationCode\" 填到 \"/api/user/confirm/\"后面"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
