@@ -25,7 +25,7 @@
     }
 </script>
 
-<style>
+<style scoped>
   .el-scrollbar {
     overflow-x: hidden!important;
   }

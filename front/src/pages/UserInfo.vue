@@ -255,7 +255,7 @@
   }
 </script>
 
-<style>
+<style scoped>
 .top_space{
   margin-top:4%;
 }

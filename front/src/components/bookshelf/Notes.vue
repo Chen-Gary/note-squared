@@ -165,7 +165,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
   .box-card{
     display: inline-block;

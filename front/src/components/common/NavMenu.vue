@@ -120,7 +120,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .nav-bar{
     width: 100%;
     left: 0px;

@@ -117,7 +117,7 @@
     }
 </script>
 
-<style>
+<style scoped>
   .el-tabs__new-tab{
     border: 0px!important;
     margin: 0px 10px 0px 0px!important;

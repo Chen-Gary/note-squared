@@ -63,7 +63,7 @@
     }
 </script>
 
-<style>
+<style scoped>
   .el-tabs__item {
     height: 20px!important;
     line-height: 20px!important;

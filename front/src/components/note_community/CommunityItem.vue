@@ -52,7 +52,7 @@ export default {
         query:{
           id: this.noteItem.url,
         }
-      })
+      }).catch(err => {err})
     }
 
   }
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .item{
   width: 80%;
   height: 100%;

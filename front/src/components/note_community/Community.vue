@@ -182,7 +182,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .search_title{
   font-size:30px;
   font-weight: bold;
