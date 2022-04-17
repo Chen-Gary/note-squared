@@ -46,7 +46,8 @@ async function returnRecommendation(limit) {
     for (var i=0; i<limit; i++) {
         result.data.push({
             noteId: recommend[i]._id,
-            title: recommend[i].title
+            title: recommend[i].title,
+            author: recommend[i].author
         });
     }
     return result;

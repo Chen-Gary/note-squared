@@ -15,6 +15,7 @@ module.exports = async (req, res) => {
         const noteFound = await Note.findById(likes[i].note);
         likeList.push({
             title: noteFound.title,
+            description: noteFound.description,
             id: noteFound._id
         });
     }
