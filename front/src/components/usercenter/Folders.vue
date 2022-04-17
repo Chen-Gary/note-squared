@@ -1,9 +1,16 @@
 <template>
   <div class="personal-center">
     <div class="operation-box">
-      <el-button @click="dialogVisibleCreate = true">Create</el-button>
-      <el-button @click="showConfirmRemove">Delete</el-button>
-      <el-button @click="dialogVisibleRename = true">Rename</el-button>
+      <el-tooltip effect="dark" content="Create">
+        <el-button type="success" @click="dialogVisibleCreate = true" icon="el-icon-plus" circle> 
+        </el-button>
+      </el-tooltip>
+      <el-tooltip effect="dark" content="Delete">
+        <el-button type="danger" @click="showConfirmRemove" icon="el-icon-delete" circle></el-button>
+      </el-tooltip>
+      <el-tooltip effect="dark" content="Rename">
+        <el-button type="primary" @click="dialogVisibleRename = true" icon="el-icon-edit" circle></el-button>
+      </el-tooltip>
     </div>
     <div class="article-container">
       <div class="folder">
@@ -15,7 +22,9 @@
             :name="item.folder_id"
           >
             <div class="articles">
-              <el-button class="create-btn" @click="navigateToCreate">Create New Note</el-button>
+              <el-button class="create-btn" @click="navigateToCreate">
+                <i class="el-icon-plus"></i> Create New Note
+              </el-button>
               <div class="article-cards-box">
                 <div class="single-article" v-for="(item, i) in currentNotes" :key = "i">
                   <div>
@@ -283,17 +292,15 @@ export default {
 }
 </script>
 
-<style scoped>
-.personal-center {
-  padding: 30px 50px;
-}
+<style lang="less" scoped>
 .operation-box {
   display: flex;
   flex-direction: row;
   justify-content: left;
 }
 .article-container{
-  padding: 30px;
+  /* padding: 30px; */
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
     
@@ -303,20 +310,26 @@ export default {
 /* } */
 .articles {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     /* align-items: left; */
     justify-content: left;
     overflow: wrap;
+    padding-left: 30px;
 }
 .article-cards-box {
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  /* overflow: wrap; */
 }
 .single-article {
-  border: 2px solid black;
+  border: 2px solid #aac7f0;
   border-radius: 20px;
   padding: 12px 20px;
+  margin-right: 40px;
+  margin-bottom: 30px;
   text-align: left;
   width: 225px;
   height: 175px;
@@ -327,16 +340,18 @@ export default {
 .single-article-title {
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 10px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
+  cursor: pointer;
 }
 .single-article-description {
   font-size: 15px;
 }
 .create-btn {
   width: 170px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .article-management-box {
   display: flex;

@@ -7,8 +7,8 @@
       <el-tab-pane label="My Articles" name="first">
         <Folders />
       </el-tab-pane>
-      <el-tab-pane label="Saved" name="second">Saved</el-tab-pane>
-      <el-tab-pane label="Liked" name="third">Liked</el-tab-pane>
+      <!-- <el-tab-pane label="Saved" name="second">Saved</el-tab-pane> -->
+      <el-tab-pane label="Liked" name="second">Liked</el-tab-pane>
     </el-tabs>
   </div>
 </template>
