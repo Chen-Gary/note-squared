@@ -22,8 +22,20 @@
 
           <el-form-item prop = "verification_code">
              <el-container>
-               <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
-               <el-button style="width:30%" type="primary" @click="confirm_verfication_code" class="form-confirm">Send</el-button> 
+                <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
+                <el-button 
+                  v-show="sendCode"
+                  style="margin-left: 10px; width: 30%"  
+                  type="primary" 
+                  @click="confirm_verfication_code" 
+                  class="form-confirm"
+                >Send</el-button> 
+                <el-button 
+                  v-show="!sendCode"
+                  style="margin-left: 10px; width: 30%; border-radius: 15px;" 
+                  type="primary" 
+                  disabled 
+                >({{counter}})</el-button> 
             </el-container>
           </el-form-item>
 
@@ -81,7 +93,20 @@
             ],
             verification_code:[{required:true, message:'Empty verification code',trigger:'blur'}
             ]
-          }
+          },
+          // count down
+          sendCode: true,
+          counter: 60,
+          interCounter: null
+        }
+      },
+      created() {
+        if(window.sessionStorage.getItem("X_no_time")==null){
+          this.sendCode = true
+        }else{
+          this.counter=Number(window.sessionStorage.getItem("X_no_time"));
+          this.toLoading()
+          this.sendCode = false
         }
       },
       methods: {
@@ -125,10 +150,28 @@
           })
           
         },
+        toLoading(){
+          this.sendCode = false;
+          this.interCounter = setInterval(this.fusn, 1000);
+        }, 
+        fusn(){
+          this.counter--;
+          window.sessionStorage .setItem("X_no_time", this.counter);
+          if(window.sessionStorage .getItem("X_no_time")<="0"){
+              window.sessionStorage .removeItem('X_no_time');
+          }
+          if(this.counter <= 0) {
+                this.counter=60;
+                this.sendCode = true;
+                clearInterval(this.interCounter)
+          }
+        },
         //邮箱验证码验证
         confirm_verfication_code(){
           //通过验证       
           console.log(this.registerData.email);
+          // counter loading
+          this.toLoading()
           this.$axios.post("/user/register/email-verification-code",{
               email:this.registerData.email
           }).then(res=> {
@@ -180,7 +223,7 @@
     height: 150%;
     background-color: #457DED;
    /* border: 2px solid #484848;*/
-    border-radius: 4px;
+    /* border-radius: 4px; */
     border-radius: 15px;
     font-weight: bolder;
   }
