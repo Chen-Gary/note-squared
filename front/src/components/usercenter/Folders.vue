@@ -82,33 +82,33 @@
       </div>
     </div>
     <el-dialog
-      title="提示"
+      title="Kind Reminder"
       :visible.sync="dialogVisibleDel"
       width="40%">
-      <span>是否确认删除?</span>
+      <span>Are you sure you want to delete the forlder?</span>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisibleDel = false">取 消</el-button>
-        <el-button type="primary" @click="removeFolder">确 定</el-button>
+        <el-button @click="dialogVisibleDel = false">Cancel</el-button>
+        <el-button type="primary" @click="removeFolder">Confirm</el-button>
       </span>
     </el-dialog>
     <el-dialog
-      title="提示"
+      title="Kind Reminder"
       :visible.sync="dialogVisibleCreate"
       width="40%">
       <el-input v-model="newFolderName" placeholder="Please enter the folder name."></el-input>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisibleCreate = false">取 消</el-button>
-        <el-button type="primary" @click="createFolder">确 定</el-button>
+        <el-button @click="dialogVisibleCreate = false">Cancel</el-button>
+        <el-button type="primary" @click="createFolder">Confirm</el-button>
       </span>
     </el-dialog>
     <el-dialog
-      title="提示"
+      title="Kind Reminder"
       :visible.sync="dialogVisibleRename"
       width="40%">
       <el-input v-model="newFolderName"></el-input>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisibleRename = false">取 消</el-button>
-        <el-button type="primary" @click="renameFolder">确 定</el-button>
+        <el-button @click="dialogVisibleRename = false">Cancel</el-button>
+        <el-button type="primary" @click="renameFolder">Confirm</el-button>
       </span>
     </el-dialog>
   </div>

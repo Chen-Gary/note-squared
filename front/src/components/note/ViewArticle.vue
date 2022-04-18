@@ -110,8 +110,8 @@
         </el-option>
       </el-select>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisibleFork = false">取 消</el-button>
-        <el-button type="primary" @click="note_fork">确 定</el-button>
+        <el-button @click="dialogVisibleFork = false">Cancel</el-button>
+        <el-button type="primary" @click="note_fork">Confirm</el-button>
       </span>
     </el-dialog>
   </div>  
