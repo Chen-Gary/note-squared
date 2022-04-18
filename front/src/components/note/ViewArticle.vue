@@ -37,6 +37,7 @@
           :toolbarsFlag="prop.toolbarsFlag"
           :editable="prop.editable"
           :scrollStyle="prop.scrollStyle"
+          style="min-height: 250px"
         ></mavon-editor>
       </div>
       <div v-if="note_isMe == false" class="interface-box">
@@ -46,6 +47,9 @@
         <p>{{liked_status}}</p>
       </div>
       <el-divider>END</el-divider>
+      <div class="interface-data">
+        Liked by {{note_like}} people, forked {{note_forked}} times.
+      </div>
       <!-- <div class="comments-area">
         <div class="post-comment">
           <el-image
@@ -161,6 +165,7 @@ export default {
       note_description:"",
       note_content:"",
       note_like:0,
+      note_forked: 0,
       note_isLiked:false,
       note_isMe:false,
       squareUrl:"https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",//头像
@@ -181,7 +186,7 @@ export default {
     get_note_info(){
        this.$axios.get("/note/note-get/" + this.note_id,{
         }).then(response=>{
-          console.log(response)
+          console.log("note get response", response)
           if (response.status === 200)
           {
               this.note_author = response.data.user.name;
@@ -189,6 +194,7 @@ export default {
               this.note_description = response.data.noteData.description;
               this.note_publishDate = response.data.noteData.publishDate.slice(0,10);
               this.note_like = response.data.noteData.like;
+              this.note_forked = response.data.noteData.fork;
               this.note_title = response.data.noteData.title;
               this.note_isMe = response.data.isMe;
               console.log("update note_isMe", this.note_isMe)
@@ -251,7 +257,11 @@ export default {
           if (response.status === 200)
           {
             this.note_isLiked = !this.note_isLiked;
-            console.log(response)
+            if (this.note_isLiked) {
+              this.note_like++;
+            } else {
+              this.note_like--;
+            }
           }
           else{
             this.$message.error({
@@ -281,6 +291,7 @@ export default {
             // todo: 后端返回isForked
             // this.note_isLiked = !this.note_isLiked;
             Message.success("Successfully forked to your folder!")
+            this.note_forked++;
           }
           else{
             this.$message.error({
@@ -317,14 +328,7 @@ export default {
           console.log(response)
           if (response.status === 200)
           {
-            let array = []
-            let obj = {note_id:"", title:""}
-            for (let i=0; i<response.data.list.length; i++){
-              obj.note_id = response.data.list[i].noteId
-              obj.title = response.data.list[i].title
-              array[i] = obj;
-            }
-            this.recommendation_list = array;
+            this.recommendation_list = response.data.list;
             console.log("recommendation list are ", this.recommendation_list)
           }
           else{
@@ -392,6 +396,15 @@ export default {
   display: flex;
   justify-content: right;
   margin-top: 15px;
+}
+.interface-box {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.interface-data {
+  font-size: 16px;
+  color: #657168;
+  text-align: left;
 }
 .sidebar {
     display: block !important;
