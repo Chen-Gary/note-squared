@@ -160,7 +160,7 @@
 
       <div style = "font-size: 9px">
         <div style="margin-top:20px ">
-          © Setproduct.com. All rights reserved. The best time to plant a<br> tree was 20 years ago. The second best time is now
+          <el-link :underline="false" href="https://github.com/Chen-Gary/note-squared"> https://github.com/Chen-Gary/note-squared</el-link>
         </div> 
       </div>
 

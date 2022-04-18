@@ -17,7 +17,7 @@
         <div class="grid-content bg-purple-light" style="margin-left:15px">
           <p style="font-weight:bold">{{this.note_author}} </p>
         </div>
-        <div class="grid-content bg-purple-light" style="margin-left:25px; font-size: 14px; color: #909399">
+        <div class="grid-content bg-purple-light" style="margin-left:25px; color: #909399">
           <p> posted on {{this.note_publishDate}} </p>
         </div>
       </div>

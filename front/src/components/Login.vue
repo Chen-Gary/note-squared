@@ -30,7 +30,7 @@
     <!--末尾版权文字-->
     <div style = "font-size: 12px">
      <div style="margin-top :35% ">
-     © Setproduct.com. All rights reserved. The best time to plant a tree was 20 years ago. <br>The second best time is now.
+     © All rights reserved. The best time to plant a tree was 20 years ago. <br>The second best time is now.
       </div> 
     </div>
 </div>

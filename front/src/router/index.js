@@ -85,9 +85,17 @@ export default new Router({
     ]
     },
     {
-      path: '/note/edit/:id?/:folder?/:visibility?',
-      name: 'NoteEdit',
-      component: NoteEdit,
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/note/view',
+      children: [
+      {
+        path: '/note/edit/:id?/:folder?/:visibility?',
+        name: 'NoteEdit',
+        component: NoteEdit,
+      },
+    ]
     },
     {
       path: '/',
@@ -103,10 +111,17 @@ export default new Router({
     ]
     },
     {
-      path:'/admin',
-      name:'/admin',
-      component: Admin_ChangeProfile
-
+      path: '/',
+      name: 'HomeNavBar',
+      component: HomeNavBar,
+      redirect:'/admin',
+      children: [
+      {
+        path:'/admin',
+        name:'/admin',
+        component: Admin_ChangeProfile
+      },
+    ]
     },
     {
       path: '/',
@@ -120,11 +135,6 @@ export default new Router({
           component: PersonalCenter
         },
     ]
-    },
-    {
-      path: '/info',
-      name: 'UserInfo',
-      component: UserInfo
     },
   ]
 })
