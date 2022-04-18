@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-*Note*$^2$ (Note Squared) is web-based note-taking application.
+*Note*$^2$ (Note Squared) is a web-based note-taking application.
 
 This is a group project of *CSC4001-Software Engineering*, at CUHK(SZ).
 
@@ -10,7 +10,7 @@ This is a group project of *CSC4001-Software Engineering*, at CUHK(SZ).
 
 ## 2. Features & Demo
 
-==...TODO==
+Feel free to play with our demo following this link: http://note.garychen.top/
 
 
 
@@ -100,7 +100,170 @@ npm run start
 
 
 
-## 5. Developers
+## 5. Deployment Guide
+
+You may deploy this project in a Linux server following the instructions below.
+
+### 5.1 Front-end Deployment
+
+#### 5.1.1 Adjust Front-end Code
+
+* In `/front/src/axios.js`, replace `localhost:3000` with your back-end API base URL, say `note.garychen.top:3000`:
+
+  ```javascript
+  const http = axios.create({
+    baseURL:'http://localhost:3000/api/user'
+  })
+  ```
+
+* In `/front/src/main.js`, similarly replace the base URL:
+
+  ```javascript
+  axios.defaults.baseURL = 'http://localhost:3000/api'
+  Vue.prototype.$axios = axios
+  ```
+
+* In `/front/src/utils/const.js`, similarly replace the base URL:
+
+  ```javascript
+  export const hostAddr = "http://localhost:3000";
+  ```
+
+#### 5.1.2 Deploy Front-end
+
+You may simply follow the normal procedures of deploying Vue project.
+
+Here is a tutorial in YouTube for your reference: [Deploy Vuejs App On Ubuntu Server](https://www.youtube.com/watch?v=rVZo2FAjXtA).
+
+#### 5.1.3 Update Front-end Deployment
+
+```bash
+cd /var/www/html/vue/note-squared/front
+
+git pull
+
+npm run build
+```
+
+
+
+### 5.2 Server Deployment
+
+#### 5.2.1 Adjust Server Code
+
+* Change server listening port if needed.
+
+  In `app/index.js`, update the following code:
+
+  ```javascript
+  const PORT = 3000
+  ```
+
+* Remove console log info if needed.
+
+  In `app/index.js`, update the following code:
+
+  ```javascript
+  // print request info from front-end to console
+  // (comment this out if you do not want to see the log)
+  app.use(morgan('dev'))
+  ```
+
+* Update database config if needed.
+
+  Go to `app/config/db.js`, update the config.
+
+* Update secret key for jwt signing if needed.
+
+  Go to `app/config/key.js`, update `secret_jwt`.
+
+* Update email and password for sending verification code.
+
+  Go to `app/config/nodemailer.config.js`, update the following.
+
+  ```javascript
+  // config of email sender
+  const user = "note-squared@outlook.com"
+  const pass = "xxxxxxxxxxxxxxx"
+  ```
+
+* **[IMPORTANT]** Make the server really send the verification code emails.
+
+  * Go to `app/router/user/register-email-verification-code.js`, uncomment the following:
+
+    ```javascript
+    // send verification email
+    // (temporarily removed)
+    //await nodemailer.sendVerificationCode_register(_email, _email, _verificationCode)
+    ```
+
+  * Go to `app/router/user/set-pwd-email-verification-code.js`, uncomment the following:
+
+    ```javascript
+    // send verification email
+    // (temporarily removed)
+    // await nodemailer.sendVerificationCode_resetPwd(user.name, _email, _verificationCode)
+    ```
+
+
+#### 5.2.2 Deploy Server
+
+```bash
+apt update
+
+#apt install nginx
+#service nginx status
+
+apt install mongodb
+service mongodb status
+
+apt install npm
+npm -v
+node -v
+# install `n` to manage node version
+npm i -g n
+n 12
+
+#exit and login to server again
+node -v
+npm -v
+
+git clone ...
+
+# install dependencies
+#npm i -g yarn
+#yarn
+npm install
+
+#set nginx to deliver static files...
+
+npm i -g pm2
+
+pm2 start ...
+#pm2 start app
+#pm2 restart app
+
+pm2 status
+
+#set nginx again...
+#set server to only listen to localhost...
+```
+
+Tutorial: https://www.youtube.com/watch?v=-oTdaFDvLo4
+
+#### 5.2.3 Update Server Deployment
+
+```bash
+cd /root/note-squared/server
+
+git pull
+
+pm2 restart app
+```
+
+
+
+## 6. Developers
 
 * [Chen-Gary](https://github.com/Chen-Gary)
 * [Frida161](https://github.com/Frida161)
