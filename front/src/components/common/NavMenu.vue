@@ -27,7 +27,8 @@
         <i class="el-icon-full-screen" style="font-size:30px;" @click="fullScreen"></i>
     </li>
     <li style="margin-right:2%; margin-top:0.5%;float:right; outline: none;cursor: pointer">
-        <el-button type="text" class = "router_button" @click="note_log_out">Log out</el-button>
+       <el-button type="text" class = "router_button" @click="note_log_out">{{this.login_status}}</el-button>
+
     </li>
 
 
@@ -46,31 +47,24 @@
             name: '',
             menuList: []
           },
-
+          login_status_from_page:$arguments,
           navList: [
             {name: 'Note²', url: '/home'},
           ],
+          
+          login_status:"Log In"
         };
       },
 
       mounted() {
-        //如果local storage有存，读取后自动登录
-       /* if (window.localStorage.getItem("user") != null) {
-          this.userFlag.name = JSON.parse(window.localStorage.getItem("user")).username
-          this.userFlag.menuList = [
-            {url: '/home', name: '用户中心'},
-            {url: '/home', name: '笔记管理'},
-          ]
-          this.isLogin = 'inline-block'
-        } else {*/
-        /*if (window.localStorage.getItem("user") == null){
-          this.userFlag.name = "Try Note² free"
-          this.userFlag.menuList = [
-            {url: '/register', name: 'Register'},
-            {url: '/login', name: 'Login'},
-          ]
-          this.isLogin = 'none'
-        }*/
+        console.log("login status")
+        if (window.localStorage.getItem("email") != null )
+        {
+          this.login_status = "Log Out"
+        }
+        else{
+          this.login_status = "Log In"
+        }
       },
 
       methods: {
@@ -103,8 +97,46 @@
           }
         },
         note_log_out(){
-            localStorage.clear();
-            this.$router.replace('/home');
+            if (this.login_status == "Log Out"){
+              localStorage.clear();
+              this.$router.replace('/home');
+              this.login_status = "Log In"
+            }
+            else {
+                this.$router.replace('/login');
+            }
+        },
+        auto_login(){
+          this.$axios.post("/user/login",{
+            email:localStorage.email,
+            password:localStorage.password,
+          })
+          .then(response=>{
+            console.log("status:")
+            console.log(response.data)
+            if(response.status === 200){
+              console.log('login success')
+              //弹窗显示
+              Message.success("Successfully Login!")
+              localStorage.setItem('id',response.data._id)
+              localStorage.setItem('elementToken', response.data.jwt)
+              localStorage.setItem('email',this.loginForm.username)
+              localStorage.setItem('password',this.loginForm.password)
+              localStorage.community_page = 1
+              localStorage.community_mode = "all"
+              localStorage.search_element = ""
+              //分别跳转到笔记编辑或者管理者界面
+              if (response.data.isAdmin) this.$router.replace('admin')
+              else this.$router.replace('/personal-center')
+            }
+            else {
+              alert("Incorrect email or password")
+            }
+          })
+          .catch(function (error) {
+            alert("Incorrect email or password")
+            console.log(error)
+          })
         },
         to_personal_center()
         {
