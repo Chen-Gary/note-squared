@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
     if (!note) return res.status(404).send('invalid id, cannot find the note');
     
     // check if the note is my own note
-    const isMine = (note.author.toString() == req.body.user_id.toString());
+    const isMine = (note.author.toString() === req.body.user_id.toString());
 
     // check if the note is being liked
     const findLike = await Like.findOne({user: req.body.user_id, note: _noteId});
@@ -28,8 +28,8 @@ module.exports = async (req, res) => {
     }
 
     // get the user information
-    const userFound = await User.findById(req.body.user_id);
-    var userInfo = {
+    const userFound = await User.findById(note.author);
+    const userInfo = {
         name: userFound.name,
         avatar: userFound.avatar
     }
