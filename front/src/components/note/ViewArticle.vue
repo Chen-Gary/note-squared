@@ -31,7 +31,7 @@
           :toolbarsFlag="prop.toolbarsFlag"
           :editable="prop.editable"
           :scrollStyle="prop.scrollStyle"
-          style="min-height: 250px;"
+          style="min-height: 250px; z-index: 10"
         ></mavon-editor>
       </div>
       <div v-if="note_isMe == false" class="interface-box">
@@ -371,7 +371,7 @@ export default {
 }
 
 .main-content {
-  width: 85%;
+  width: 80%;
   padding: 30px;
 }
 #markdown-content {
@@ -406,7 +406,9 @@ export default {
 }
 .sidebar {
     display: block !important;
-    width: 320px;
+    width: 300px;
+    margin-right: 30px;
+    text-align: left;
     &-container {
       position: fixed;
       right: 60px;
@@ -419,15 +421,19 @@ export default {
 } */
 .divider-dashed {
   border-top:1px dashed #afb3ac;
-  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 10px;
 }
 .divider {
   margin-top: 50px;
 }
 .recommend-article {
+  width: 280px;
   cursor: pointer;
-  overflow: wrap;
+  // overflow: wrap;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   &-author {
     margin-left: 10px;

@@ -174,7 +174,7 @@
             this.$router.push({
               path:"/note/view",
               query:{
-                id: res.data.data._id,
+                id: this.$route.params.id ? this.$route.params.id : res.data.data._id,
               }
             }).catch(err => {err})
           }).catch(err => {
