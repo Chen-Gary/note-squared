@@ -92,7 +92,7 @@
       </span>
     </el-dialog>
     <el-dialog
-      title="Kind Reminder"
+      title="Create New Folder"
       :visible.sync="dialogVisibleCreate"
       width="40%">
       <el-input v-model="newFolderName" placeholder="Please enter the folder name."></el-input>
@@ -102,10 +102,10 @@
       </span>
     </el-dialog>
     <el-dialog
-      title="Kind Reminder"
+      title="Rename the folder "
       :visible.sync="dialogVisibleRename"
       width="40%">
-      <el-input v-model="newFolderName"></el-input>
+      <el-input v-model="newFolderName" placeholder="Please enter the folder name."></el-input>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisibleRename = false">Cancel</el-button>
         <el-button type="primary" @click="renameFolder">Confirm</el-button>
@@ -174,15 +174,13 @@ export default {
       });
       console.log("current folder is ", this.currentFolder)
       this.folders = tabs.filter(tab => tab.folder_id !== this.currentFolder);
-      this.currentFolder = activeName;
       console.log(this.folders)
       this.$axios.post("/note/delete-folder", {
-        folderId: activeName
+        folderId: this.currentFolder
       }).then(res => {
         alert("delete successfully")
+        this.currentFolder = activeName;
       })
-      
-
       this.dialogVisibleDel = false
     },
     createFolder() {
