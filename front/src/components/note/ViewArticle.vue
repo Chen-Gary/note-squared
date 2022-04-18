@@ -340,7 +340,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .article-title {
   font-size: 32px;
   font-weight: 700;
@@ -404,7 +404,8 @@ export default {
   color: #657168;
   text-align: left;
 }
-.sidebar {
+@media only screen and (min-width: 1100px){
+  .sidebar {
     display: block !important;
     width: 300px;
     margin-right: 30px;
@@ -414,11 +415,13 @@ export default {
       right: 60px;
       bottom: 100px;
     }
-    // background-color: aquamarine;
+  }
 }
-/* .sidebar {
+@media only screen and (max-width: 1099px){
+  .sidebar {
     display: none !important;
-} */
+  }
+}
 .divider-dashed {
   border-top:1px dashed #afb3ac;
   margin-top: 8px;
