@@ -10,23 +10,17 @@
           v-if="note_isMe == true"
         ></i>
       </div>      
-      <el-row>
-      <el-col :span="1" style="margin-left:0px">
-          <div class="grid-content bg-purple">
-            <el-avatar shape="circle" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
-          </div>
-        </el-col>
-        <el-col :span="2">
-          <div class="grid-content bg-purple-light" style="margin-left:0px">
-            <p style="font-weight:bold">{{this.note_author}} </p>
-          </div>
-        </el-col>
-          <el-col :span="2">
-          <div class="grid-content bg-purple-light" style="margin-left:0px; font-size: 14px; color: #909399">
-            <p>{{this.note_publishDate}} </p>
-          </div>
-        </el-col>
-      </el-row>
+      <div class="author-info">
+        <div class="grid-content bg-purple">
+          <el-avatar shape="circle" :size="40" :src="squareUrl" @click.native="open_avatar_window" id="avatar-image" ></el-avatar>
+        </div>
+        <div class="grid-content bg-purple-light" style="margin-left:15px">
+          <p style="font-weight:bold">{{this.note_author}} </p>
+        </div>
+        <div class="grid-content bg-purple-light" style="margin-left:25px; font-size: 14px; color: #909399">
+          <p> posted on {{this.note_publishDate}} </p>
+        </div>
+      </div>
 
       <div class="markdown-body" id="markdown-content">
         <!-- <VueMarkdown :source="note_content" v-highlight></VueMarkdown> -->
@@ -37,7 +31,7 @@
           :toolbarsFlag="prop.toolbarsFlag"
           :editable="prop.editable"
           :scrollStyle="prop.scrollStyle"
-          style="min-height: 250px"
+          style="min-height: 250px;"
         ></mavon-editor>
       </div>
       <div v-if="note_isMe == false" class="interface-box">
@@ -46,7 +40,7 @@
         <el-button type="warning" icon="el-icon-star-off" @click="displayForkDialog" circle></el-button>
         <p>{{liked_status}}</p>
       </div>
-      <el-divider>END</el-divider>
+      <el-divider class="divider">END</el-divider>
       <div class="interface-data">
         Liked by {{note_like}} people, forked {{note_forked}} times.
       </div>
@@ -94,8 +88,11 @@
               (<u>more</u>) 
             </div>
           </div>
-          <div v-for="(item) in recommendation_list" :key="item.id">
-            <div class="recommend-article-title" @click="navigateToView(item.note_id)">{{item.title}}</div>
+          <div v-for="(item) in recommendation_list" :key="item.noteId">
+            <div class="recommend-article" @click="navigateToView(item.noteId)">
+              <div class="recommend-article-title">{{item.title}}</div>
+              <div class="recommend-article-author"> ({{item.authorName}})</div>
+            </div>
             <div class="divider-dashed"></div>
           </div>
         </div>
@@ -368,10 +365,11 @@ export default {
   padding: 0px 45px;
   margin-top: 50px;
 }
-.user-info {
-  text-align: left;
-  align-items: left;
+.author-info {
+  display: flex;
+  align-items: baseline;
 }
+
 .main-content {
   width: 85%;
   padding: 30px;
@@ -423,9 +421,19 @@ export default {
   border-top:1px dashed #afb3ac;
   margin-bottom: 8px;
 }
-.recommend-article-title {
+.divider {
+  margin-top: 50px;
+}
+.recommend-article {
   cursor: pointer;
   overflow: wrap;
+  display: flex;
+  align-items: center;
+  &-author {
+    margin-left: 10px;
+    font-size: 15px;
+    color: #909399;
+  }
 }
 .recommendations {
   text-align: left;

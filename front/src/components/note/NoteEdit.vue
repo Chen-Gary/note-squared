@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="editor-page">
     <div class="head">
       <div class="head-title">Post Your Own Article</div>
       <div class="head-img">
@@ -51,7 +51,7 @@
             v-model="note.contentMd"
             @save="saveNote"
             @imgAdd="$imgAdd"
-            style="min-height: 500px"
+            style="min-height: 500px; max-width: 1100px"
             >
           </mavon-editor>
         </div>
@@ -169,12 +169,12 @@
             contentMD: this.note.contentMd,
             visibility: this.note.visibility
           }).then(res => {
-            console.log(res)
+            console.log("res from posting article", res)
             alert("post successfully!")
             this.$router.push({
               path:"/note/view",
               query:{
-                id: this.$route.params.id,
+                id: res.data.data._id,
               }
             }).catch(err => {err})
           }).catch(err => {
@@ -256,6 +256,10 @@
 </script>
 
 <style lang="less" scoped>
+  .editor-page {
+    min-width: 1300px;
+    padding-bottom: 50px;
+  }
   .el-scrollbar__wrap{
     overflow-x: hidden!important;
   }
