@@ -68,6 +68,7 @@ export default {
 <style scoped>
 .article-cards-box {
   margin-top: 30px;
+  padding-left: 50px;
   display: flex;
   flex-flow: row wrap;
   /* overflow: wrap; */

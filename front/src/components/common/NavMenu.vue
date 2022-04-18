@@ -6,12 +6,13 @@
       router
       active-text-color="#25567A">
 
-      <el-menu-item   v-for="(item,i) in navList" :index="item.url" :key="i">
+      <el-menu-item @click="to_home">
+        <!--   v-for="(item,i) in navList" :index="item.url" :key="i" -->
         <el-image
         class="logo"
         :src="require('@/assets/Logo.png')"
         > </el-image>
-        {{ item.name }}
+        Note²
       </el-menu-item>
        <el-menu-item>
          <el-button type="text" class = "router_button" @click="to_personal_center">Personal Center</el-button>
@@ -115,6 +116,9 @@
            if (localStorage.elementToken) this.$router.replace('/community');
            else this.$router.replace('/login');
         },
+        to_home() {
+          this.$router.replace('/home')
+        }
       }
     }
 
@@ -130,7 +134,7 @@
     margin-top: 0px;
     position:fixed;
     z-index:100;
-    height: 60px;
+    /* height: 50px; */
   }
   .el-menu-item{
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
