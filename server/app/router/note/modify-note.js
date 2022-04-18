@@ -61,7 +61,7 @@ module.exports = async (req, res) => {
         return res.status(200).json({success: true, data: saveInfo});
     }
     else if (mode === "edit"){ // ####EDIT####
-        console.log(req.body);
+        // console.log(req.body);
         // set values
         const _noteId = mongoose.Types.ObjectId(req.body.noteId);
         // find the note
@@ -76,7 +76,7 @@ module.exports = async (req, res) => {
         if (req.body.contentMD !== null && req.body.contentMD !== "") _contentMD = req.body.contentMD;
         var _visibility = note2Update.visibility;
         if (req.body.visibility !== null && req.body.visibility !== "") _visibility = req.body.visibility;
-        console.log(_visibility);
+        // console.log(_visibility);
         
         // update the note in db
         const filter = {_id: _noteId, author: req.body.user_id};

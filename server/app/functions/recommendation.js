@@ -1,5 +1,6 @@
 // this file includes functins to implement recommendation
 const Note = require("../model/Note");
+const User = require("../model/User");
 // w is the parameter for the score function
 const w = [3, 3, 4];
 const timeRangeOffset = 5; // this is for setting the time range to justify "most recent"
@@ -44,10 +45,14 @@ async function returnRecommendation(limit) {
     }
     const recommend = noteByDate.sort(compare).reverse();
     for (var i=0; i<limit; i++) {
+        const authorInfo = await User.findById(recommend[i].author);
+        var authorName = authorInfo.name;
         result.data.push({
             noteId: recommend[i]._id,
             title: recommend[i].title,
-            author: recommend[i].author
+            score: recommend[i].score,
+            author: recommend[i].author,
+            authorName: authorName
         });
     }
     return result;
