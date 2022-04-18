@@ -1,5 +1,7 @@
 <template>
   <div class="editor-page">
+    <br>
+    <br>
     <div class="head">
       <div class="head-title">Post Your Own Article</div>
       <div class="head-img">
