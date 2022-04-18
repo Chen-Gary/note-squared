@@ -29,7 +29,15 @@
       </el-row>
 
       <div class="markdown-body" id="markdown-content">
-        <VueMarkdown :source="note_content" v-highlight></VueMarkdown>
+        <!-- <VueMarkdown :source="note_content" v-highlight></VueMarkdown> -->
+        <mavon-editor
+          :value="note_content"
+          :subfield="prop.subfield"
+          :defaultOpen="prop.defaultOpen"
+          :toolbarsFlag="prop.toolbarsFlag"
+          :editable="prop.editable"
+          :scrollStyle="prop.scrollStyle"
+        ></mavon-editor>
       </div>
       <div v-if="note_isMe == false" class="interface-box">
         <!-- 添加v-if 如果是自己的文章则没有 -->
@@ -38,7 +46,7 @@
         <p>{{liked_status}}</p>
       </div>
       <el-divider>END</el-divider>
-      <div class="comments-area">
+      <!-- <div class="comments-area">
         <div class="post-comment">
           <el-image
             style="width: 50px; height: 50px"
@@ -58,7 +66,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="sidebar">
       <div class="sidebar-container">
@@ -127,6 +135,18 @@ export default {
   },
   watch: {'$route' (to, from) {
       this.$router.go(0);
+    }
+  },
+  computed: {
+    prop() {
+      let data= {
+        subfield: false,
+        defaultOpen: 'preview',
+        editable: false,
+        toolbarsFlag: false,
+        scrollStyle: true
+      }
+      return data
     }
   },
   data () {

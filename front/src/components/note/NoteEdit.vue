@@ -157,11 +157,12 @@
     methods: {
       postContent(){
         console.log(this.note)
-        if (this.note.title && this.note.contentMd) {
+        if (this.note.title && this.note.contentMd && this.note.selectedFolder) {
           this.$axios.post('/note/modify-note', {
             mode: this.$route.params.id ? "edit":"new",  // 之后需要改成动态的
+            // mode: "new",
             folderId: this.note.selectedFolder,
-            // note ID (edit mode)
+            noteId: this.$route.params.id ? this.$route.params.id : "",
             title: this.note.title,
             description: this.note.description,
             contentMD: this.note.contentMd,
@@ -172,7 +173,7 @@
             this.$router.push({
               path:"/note/view",
               query:{
-                id: res.data.data._id,
+                id: this.$route.params.id,
               }
             }).catch(err => {err})
           }).catch(err => {
@@ -180,7 +181,7 @@
           })
         } else {
           this.$message({
-            message:'ERR: You should at least input article title and content',
+            message:'ERR: You should at least input article title, content and target folder',
             type:'error'
           })
         }
