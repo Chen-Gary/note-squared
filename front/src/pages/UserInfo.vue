@@ -14,9 +14,15 @@
              
             </div>
           </el-col>
-          <el-col :span="17">
+
+          <el-col :span="18">
             <div class="grid-content bg-purple">
              <br>
+            </div>
+          </el-col>
+            <el-col :span="19">
+            <div class="grid-content bg-purple-light" style="margin-left:0px">
+                <el-button class="note-operation" type="info" plain @click="log_out" style="margin-right:-90%">Log out</el-button>
             </div>
           </el-col>
       </el-row>

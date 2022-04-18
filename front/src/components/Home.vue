@@ -1,5 +1,6 @@
 <template>
   <div>
+    <br>
     <div class="container">
     <!---开头版面 + 登录注册按钮--->
       <div class="header-title">
