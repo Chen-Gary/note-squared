@@ -123,6 +123,7 @@ import { Message } from 'element-ui'
 import TypeWriter from '../../assets/Note/typewriter.png'
 import Program from '../../assets/Note/program.png'
 import HomePic4 from '../../assets/Home/home_pic4.png'
+import { hostAddr } from '../../utils/const'
 export default {
   components: {
     VueMarkdown // 注入组件
@@ -222,7 +223,7 @@ export default {
             //存在头像
             if (response.data.avatarExist)
             {
-              this.squareUrl = 'http://localhost:3000'+response.data.url
+              this.squareUrl = hostAddr + response.data.url
             }
           })
           .catch(function (error) {

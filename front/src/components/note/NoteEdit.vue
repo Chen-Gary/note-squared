@@ -72,6 +72,7 @@
 <script>
   import TypeWriter from '../../assets/Note/typewriter.png'
   import { Message } from 'element-ui';
+  import { hostAddr } from '../../utils/const'
   export default {
     name: "NoteEdit",
     data() {
@@ -242,7 +243,7 @@
         .then((response) => {
           if(response.status === 200){
             // 之后需要改掉
-            let url = "http://localhost:3000" + response.data.url;
+            let url = hostAddr + response.data.url;
             this.$refs.md.$img2Url(pos, url);
           }
           else {

@@ -73,6 +73,7 @@
 
 <script>
   import qs from 'qs'
+  import { hostAddr } from '../utils/const'
   export default {
     name: "UserInfo",
     created(){
@@ -171,7 +172,7 @@
             //存在头像
             if (response.data.avatarExist)
             {
-              this.imageUrl = 'http://localhost:3000'+response.data.url
+              this.imageUrl = hostAddr + response.data.url
               this.squareUrl = this.imageUrl;
             }
            // this.username = response.data.name;
