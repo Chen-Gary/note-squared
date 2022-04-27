@@ -47,7 +47,7 @@ module.exports = async(req, res) => {
         if (!likeFound) return res.status(422).send(`cannot dislike for user has not liked the note`);
 
         // pull the user- note relation from the Like schema
-        const likeDeleteFilter = {author: req.body.user_id, note: _noteId};
+        const likeDeleteFilter = {user: req.body.user_id, note: _noteId};
         const likeDeletion = await Like.findOneAndDelete(likeDeleteFilter);
         if (!likeDeletion) return res.status(422).send(`cannot delete the like relation`);
 
