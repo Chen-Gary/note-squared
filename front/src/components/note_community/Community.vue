@@ -121,6 +121,7 @@ export default {
         localStorage.community_page = currentPage;
         this.UpdatePage();
         console.log(this.page.currentPage)  //点击第几页
+        this.scrollTop(".tabledns");
     },
     
     UpdatePage() {    
@@ -176,7 +177,14 @@ export default {
     back_to_personal_center()
     {
       this.$router.replace('/personal-center')
-    }
+    },
+    // 翻页后滚动条回到页面顶端
+    scrollTop (selector) {
+      let element = selector && document.querySelector(selector) || window;
+      element.scrollTo(0, 0);
+    },
+
+
 
   },
 }
