@@ -1,5 +1,7 @@
-.<template>
+<template>
 <div>
+<br>
+<br>
 <el-card>
   <el-button 
     class="note-operation" 
