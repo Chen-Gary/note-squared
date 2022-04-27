@@ -54,8 +54,8 @@ module.exports = async(req, res) => {
         // decrease the like count
         const likeFilter = {_id: _noteId};
         const noteUpdate = ({like: {$gte: 1}}, {$inc: {like: -1}});
-        const likeNote = await Note.findOne(likeFilter);
-        if (likeNote.like < 1) return res.status(422).send(`cannot decrease the like count`);
+        // const likeNote = await Note.findOne(likeFilter);
+        // if (likeNote.like < 1) return res.status(422).send(`cannot decrease the like count`);
         const likeUpdateInfo = await Note.findOneAndUpdate(likeFilter, noteUpdate);
         if (!likeUpdateInfo) return res.status(422).send(`cannot decrease the like count`);
 
