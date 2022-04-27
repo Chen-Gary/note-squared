@@ -92,7 +92,7 @@
         file_info :"",
         squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
         username:"12345678910",
-        new_username:"none",
+        new_username:"",
         nickname_dialogVisible:false,
         avatar_dialogVisible:false,
         obj:{
