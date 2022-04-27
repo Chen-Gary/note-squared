@@ -155,7 +155,12 @@ export default {
   methods: {
     showConfirmRemove() {
       if (this.folders.length != 0) {
-        this.dialogVisibleDel = true
+        if (this.folders[0].folder_id != this.currentFolder) {
+          this.dialogVisibleDel = true
+        }
+        else {
+          alert("default folder cannot be deleted!")
+        }
       }
       else {
         alert("No folder to be deleted!")

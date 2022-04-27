@@ -1,4 +1,4 @@
-<template>
+ <template>
     <div class="container">
       <div class="form-body">
         <div class = "header_text">Forget Password</div>
@@ -20,7 +20,19 @@
           <el-form-item prop = "verification_code">
              <el-container>
                <el-input  style="width: 70%" placeholder="Verification code" v-model="registerData.verification_code"></el-input>
-               <el-button style="width:30%" type="primary" @click="confirm_verfication_code" class="form-confirm">Send</el-button> 
+               <el-button 
+                  v-show="sendCode"
+                  style="margin-left: 10px; width: 30%"  
+                  type="primary" 
+                  @click="confirm_verfication_code"
+                  class="form-confirm"
+                >Send</el-button> 
+                <el-button 
+                  v-show="!sendCode"
+                  style="margin-left: 10px; width: 30%; border-radius: 15px;" 
+                  type="primary" 
+                  disabled 
+                >({{counter}})</el-button>  
             </el-container>
           </el-form-item>
 
@@ -87,7 +99,21 @@
             ],
             verification_code:[{required:true, message:'Empty verification code',trigger:'blur'}
             ]
-          }
+          },
+          sendCode: false,
+          counter: 60,
+          interCounter: null
+        }
+      },
+      created() {
+        if(window.sessionStorage.getItem("forget_time")==null){
+          console.log("initial no status")
+          this.sendCode = true
+        }else{
+          this.counter=Number(window.sessionStorage.getItem("forget_time"));
+          console.log("have status and is: ", this.counter)
+          this.toLoading()
+          this.sendCode = false
         }
       },
       methods: {
@@ -125,8 +151,29 @@
           })
           
         },
+        toLoading(){
+          this.sendCode = false;
+          console.log("enter loading")
+          this.interCounter = setInterval(this.fusn, 1000);
+        }, 
+        fusn(){
+          this.counter--;
+          console.log("enter fusn")
+          window.sessionStorage .setItem("forget_time", this.counter);
+          if(window.sessionStorage .getItem("forget_time")<="0"){
+              console.log("enter fusn if")
+              window.sessionStorage .removeItem('forget_time');
+          }
+          if(this.counter <= 0) {
+                this.counter=60;
+                this.sendCode = true;
+                console.log("enter fusn else")
+                clearInterval(this.interCounter)
+          }
+        },
         //邮箱验证码验证
         confirm_verfication_code(){
+          this.toLoading()
           //通过验证       
           this.$axios.post("/user/set-pwd/email/verification-code",{
               email:this.registerData.email
@@ -147,7 +194,6 @@
         {
           this.$router.replace('/register')
         }
-
 
       }
 
