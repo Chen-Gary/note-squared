@@ -15,7 +15,7 @@ async function getLocalFolderNote(userId, withNote) {
         data: []
     }
     const folderFilter = {author: userId};
-    const foldersFound = await Folder.find(folderFilter).sort({title: 1});
+    const foldersFound = await Folder.find(folderFilter).sort({publishDate: 1});
     console.log(foldersFound);
     for (var i=0; i<foldersFound.length; i++){
         var notesInFolder = foldersFound[i].notes;

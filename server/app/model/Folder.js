@@ -15,7 +15,11 @@ const FolderSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         default: []
-    }]
+    }],
+    publishDate: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 const Folder = model('Folder', FolderSchema);
