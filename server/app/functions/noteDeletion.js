@@ -61,6 +61,13 @@ async function deleteOneFolder(folderId, authorId){
         deletInfo: ""
     }
 
+    // you cannot delete the default folder
+    const user = await User.findById(authorId);
+    if (folderId.equals(user.defaultFolder)) {
+        result.status = false;
+        result.deletInfo = "you cannot delete the default folder";
+        return result;
+    }
     // find the folder to be deleted
     const folderFilter = {_id: folderId, author: authorId};
     const folder2Delete = await Folder.findOne(folderFilter);
