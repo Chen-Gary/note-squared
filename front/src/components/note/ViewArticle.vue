@@ -322,7 +322,7 @@ export default {
     {
        this.$axios.get("/note/recommendation-get",{
         }).then(response=>{
-          console.log(response)
+          console.log("get rec", response)
           if (response.status === 200)
           {
             this.recommendation_list = response.data.list;
