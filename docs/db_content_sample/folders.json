@@ -1,0 +1,306 @@
+[{
+  "_id": {
+    "$oid": "625d6e704e61af7e8afbc12e"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "625d6e6f4e61af7e8afbc12c"
+  },
+  "notes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d7408ab4f23d61b9f3e92"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "625d7408ab4f23d61b9f3e90"
+  },
+  "notes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d7425ab4f23d61b9f3e9e"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "notes": [
+    {
+      "$oid": "625d7a0fab4f23d61b9f4019"
+    },
+    {
+      "$oid": "625e5afebf3a3800e8d6c04e"
+    },
+    {
+      "$oid": "625e5ca6bf3a3800e8d6c0a4"
+    },
+    {
+      "$oid": "625e5f64bf3a3800e8d6c131"
+    },
+    {
+      "$oid": "626a3c0fa748fac4daaebbce"
+    },
+    {
+      "$oid": "625e58d9bf3a3800e8d6bfdc"
+    },
+    {
+      "$oid": "626a3ceaa748fac4daaebc78"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d75f1ab4f23d61b9f3eba"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "notes": [
+    {
+      "$oid": "62690a22d7c2a18030dce2b1"
+    },
+    {
+      "$oid": "62690c8bd7c2a18030dce318"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d761cab4f23d61b9f3ecd"
+  },
+  "title": "CSC4001",
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "notes": [
+    {
+      "$oid": "62690e4fd7c2a18030dce33e"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d762aab4f23d61b9f3ed7"
+  },
+  "title": "csc3170",
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "notes": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5646bf3a3800e8d6bfb4"
+  },
+  "title": "DDA 2020",
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "notes": [
+    {
+      "$oid": "625e5e6dbf3a3800e8d6c0fa"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5827bf3a3800e8d6bfd5"
+  },
+  "title": "Music",
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "notes": [
+    {
+      "$oid": "625e5b88bf3a3800e8d6c083"
+    },
+    {
+      "$oid": "625e5dedbf3a3800e8d6c0cf"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5999bf3a3800e8d6c006"
+  },
+  "title": "games",
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "notes": [
+    {
+      "$oid": "625e5adabf3a3800e8d6c00d"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6260f851d7c2a18030dcd930"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "6260f851d7c2a18030dcd92e"
+  },
+  "notes": [
+    {
+      "$oid": "6260f894d7c2a18030dcd965"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6267930ad7c2a18030dcdba4"
+  },
+  "title": "CSC 4001",
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "notes": [
+    {
+      "$oid": "626793e4d7c2a18030dcdbaa"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269059fd7c2a18030dcdf46"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "notes": [
+    {
+      "$oid": "6269069cd7c2a18030dce11d"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626933c6d8600f43435fa7fa"
+  },
+  "title": "GEB2405",
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "notes": [
+    {
+      "$oid": "62693436d8600f43435fa801"
+    },
+    {
+      "$oid": "6269348cd8600f43435fa823"
+    },
+    {
+      "$oid": "62693508d8600f43435fa84f"
+    },
+    {
+      "$oid": "6269357fd8600f43435fa8d2"
+    },
+    {
+      "$oid": "626935c1d8600f43435fa922"
+    }
+  ],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651061702461"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693635d8600f43435fa9a4"
+  },
+  "title": "Tech",
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "notes": [
+    {
+      "$oid": "6269369bd8600f43435fa9aa"
+    },
+    {
+      "$oid": "62693705d8600f43435fa9d1"
+    },
+    {
+      "$oid": "62693751d8600f43435faa1c"
+    },
+    {
+      "$oid": "626937b8d8600f43435faa46"
+    },
+    {
+      "$oid": "626937dcd8600f43435faa6f"
+    },
+    {
+      "$oid": "62693805d8600f43435faa99"
+    }
+  ],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062325875"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a1668b1955a2525465576"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "626a1667b1955a2525465574"
+  },
+  "notes": [],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651119720003"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a179cb1955a25254655af"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "626a179cb1955a25254655ad"
+  },
+  "notes": [],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651120028560"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a2abfa748fac4daaebaf8"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "626a2abfa748fac4daaebaf6"
+  },
+  "notes": [],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651124927691"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a3a28a748fac4daaebb57"
+  },
+  "title": "default",
+  "author": {
+    "$oid": "626a3a28a748fac4daaebb55"
+  },
+  "notes": [],
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651128872488"
+    }
+  },
+  "__v": 0
+}]
