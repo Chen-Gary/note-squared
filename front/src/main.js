@@ -6,10 +6,8 @@ import store from "./store";
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import { Message } from 'element-ui'
 
 import axios from 'axios'
-import VueAxios from 'vue-axios'
 
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
