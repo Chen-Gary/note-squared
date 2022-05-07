@@ -78,7 +78,6 @@
 </template>
 
 <script>
-  import qs from 'qs'
   import { hostAddr } from '../utils/const'
   export default {
     name: "UserInfo",

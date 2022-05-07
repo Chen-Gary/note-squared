@@ -53,7 +53,6 @@
 
 
 <script>
-    import { Message } from 'element-ui';
     export default {
       name: "Register",
      

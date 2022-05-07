@@ -120,7 +120,6 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import { Message } from 'element-ui'
 import TypeWriter from '../../assets/Note/typewriter.png'
 import Program from '../../assets/Note/program.png'
 import HomePic4 from '../../assets/Home/home_pic4.png'

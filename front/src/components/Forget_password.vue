@@ -59,7 +59,6 @@
 
 
 <script>
-    import { Message } from 'element-ui';
     export default {
       name: "Forget_password",
      

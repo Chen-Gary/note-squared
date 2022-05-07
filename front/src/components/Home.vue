@@ -177,7 +177,6 @@
 
 <script>
 import NavMenu from "./common/NavMenu";
-import { Message } from 'element-ui';
     export default {
         name: "Home",
         data() {
