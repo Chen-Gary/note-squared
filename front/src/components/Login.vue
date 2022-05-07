@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import { Message } from 'element-ui';
+    // import { Message } from 'element-ui';
     export default {
       name: "Login",
       data() {
@@ -73,7 +73,8 @@
             if(response.status === 200){
               console.log('login success')
               //弹窗显示
-              Message.success("Successfully Login!")
+              // Message.success("Successfully Login!")
+              alert("Successfully Login!")
               localStorage.setItem('id',response.data._id)
               localStorage.setItem('elementToken', response.data.jwt)
               localStorage.setItem('email',this.loginForm.username)
