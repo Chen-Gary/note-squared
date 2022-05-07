@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "626a15e3b1955a252546556c"
+  },
+  "email": "test2022@qq.com",
+  "usedFor": "register",
+  "verificationCode": "ycBu",
+  "sendDate": {
+    "$date": {
+      "$numberLong": "1651119587584"
+    }
+  },
+  "__v": 0
+}]

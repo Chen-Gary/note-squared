@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
 
     // send verification email
     // (temporarily removed)
-   // await nodemailer.sendVerificationCode_resetPwd(user.name, _email, _verificationCode)
+    //await nodemailer.sendVerificationCode_resetPwd(user.name, _email, _verificationCode)
 
     res.status(200).send(newCode)
 }

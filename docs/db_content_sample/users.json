@@ -1,0 +1,131 @@
+[{
+  "_id": {
+    "$oid": "625d6e6f4e61af7e8afbc12c"
+  },
+  "email": "admin@admin.com",
+  "password": "$2a$10$UxByxMOa1J70mIIsd8YybO9S810ZJkSM2KhjYycucTQdPrL4y8QVC",
+  "name": "刘华强",
+  "role": "admin",
+  "avatar": "eb2e423d3918cf62958ef1000.jpg",
+  "defaultFolder": {
+    "$oid": "625d6e704e61af7e8afbc12e"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d7408ab4f23d61b9f3e90"
+  },
+  "email": "test00@gmail.com",
+  "password": "$2a$10$L/O8qZtZNggmzB/7o5QDsu8IrJaxZLRqUK7velN7TTAv.xhL5ozj2",
+  "name": "Gary Chen~",
+  "role": "admin",
+  "avatar": null,
+  "defaultFolder": {
+    "$oid": "625d7408ab4f23d61b9f3e92"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "email": "test01@qq.com",
+  "password": "$2a$10$zmeAMhyq9mVKuFJCGXCu1eKhmX8iUbfBkLbuGfQOK9ECQguMSEgH.",
+  "name": "Cheems",
+  "role": "normal",
+  "avatar": "95c99eda9788a3dfdd5451502.jfif",
+  "defaultFolder": {
+    "$oid": "625d7425ab4f23d61b9f3e9e"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "email": "test02@qq.com",
+  "password": "$2a$10$K6BbWf3goqAo.xrv1C.iPu9sl7OTgU32yy.unV4nue9ttfGjkElUW",
+  "name": "Frida",
+  "role": "normal",
+  "avatar": "95c99eda9788a3dfdd5451500.hellonitrack.com--uploads-image-20211118-1637224714201203.jpg&refer=http---newyx-img.hellonitrack.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto.jpeg",
+  "defaultFolder": {
+    "$oid": "625d75f1ab4f23d61b9f3eba"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6260f851d7c2a18030dcd92e"
+  },
+  "email": "test03@qq.com",
+  "password": "$2a$10$czhJKHuyTkFd4xVHnc.N5.5wftVxyu1AIFkw/bHAlAbi8dXbZI2Re",
+  "name": "Gary",
+  "role": "normal",
+  "avatar": "b2b62090e6ca0e2b225ad8100.jpeg",
+  "defaultFolder": {
+    "$oid": "6260f851d7c2a18030dcd930"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "email": "test04@qq.com",
+  "password": "$2a$10$XKZ0PUPyn8m/dxar21aLreNeRk69HsjyKJ/J64bcECl9h27LJCS5q",
+  "name": "瑟奇",
+  "role": "normal",
+  "avatar": "b2b62090e6ca0e2b225ad8101.jpeg",
+  "defaultFolder": {
+    "$oid": "6269059fd7c2a18030dcdf46"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a1667b1955a2525465574"
+  },
+  "email": "test05@qq.com",
+  "password": "$2a$10$ed2XsAb1GAB5MCivURh62uY1fjOZS7rC0pczpP4LOwpEZCz4z3/Tq",
+  "name": "Happy~SE~!",
+  "role": "normal",
+  "avatar": "a6f8283f53e80bcdd5d28d500.jpg",
+  "defaultFolder": {
+    "$oid": "626a1668b1955a2525465576"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a179cb1955a25254655ad"
+  },
+  "email": "test06@qq.com",
+  "password": "$2a$10$6zF0yC2HdIGvAGJCZx7ycu1ZoQw7Fo.kvk8f4seRs04WHp6U2LB0W",
+  "name": "牛啊牛啊",
+  "role": "normal",
+  "avatar": null,
+  "defaultFolder": {
+    "$oid": "626a179cb1955a25254655af"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a2abfa748fac4daaebaf6"
+  },
+  "email": "hello@qq.com",
+  "password": "$2a$10$SDhhpqzKYWdtSW6GYHKR.uJAegLS5dN0FAgW1ydsWTXp9kre5MYQG",
+  "name": "你好世界!!!!",
+  "role": "admin",
+  "avatar": null,
+  "defaultFolder": {
+    "$oid": "626a2abfa748fac4daaebaf8"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a3a28a748fac4daaebb55"
+  },
+  "email": "test07@qq.com",
+  "password": "$2a$10$0J1V//AkpiM4DDd6eDeq4OoGXUP/5uRV/HTDFwHvpcCHH.J/KzFRa",
+  "name": "Prof.He@SDS",
+  "role": "normal",
+  "avatar": "846bdc4ccc2aa64a107ba7201.jpg",
+  "defaultFolder": {
+    "$oid": "626a3a28a748fac4daaebb57"
+  },
+  "__v": 0
+}]

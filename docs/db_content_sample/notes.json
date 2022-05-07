@@ -1,0 +1,561 @@
+[{
+  "_id": {
+    "$oid": "625d7a0fab4f23d61b9f4019"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "One Door Away",
+  "description": "A funny game test",
+  "contentMD": "# One Door Away\n\n## Introduction\n\nYou wake up in a strange place forgetting everything. You do not know where here is and forget who you are. You try to follow the sound of sea waves and want to get out of the room.\n\nLuckily, you can shoot portals to assist you. With the portals, you are able to transfer yourself or other objects from one place to another!\n\nDuring the journey escaping, you find some memory fragments and recall some past memory about yourself. There seems to have something hidden about yourself and you need to figure it out...\n\nThis is an interesting **2D puzzle** game. Enjoying solving the puzzles, and hopefully, you can find out the truth about yourself!\n\n\n\n## Demo\n\n![](README_demo_img/demo_menu.png)\n\n![](README_demo_img/demo_level_4.png)\n\n![](README_demo_img/demo_level_14.png)\n\nDemo videos can be found follow this link: https://www.bilibili.com/video/BV1Z3411x7b4\n\n\n\n## Download\n\nExecutable can be found in [**Release**](https://github.com/Timothy-197/OneDoorAway/releases).\n\nDemo videos of our game are also provided in the release page.\n\n\n\n## Environment\n\nDeveloped by **Unity 2019.4.5f1**.\n\n\n\n## Developers\n\n**Design**\n\n* [Yifan Zhao](https://github.com/Fantendo2001)\n\n**Program**\n\n* [Honghao Chen](https://github.com/Chen-Gary)\n* [Yiyan Hu](https://github.com/Timothy-197)\n\n",
+  "visibility": "private",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650293263507"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e58d9bf3a3800e8d6bfdc"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Schism -- Tool",
+  "description": "Lyric of Tool's song \"Schism\"",
+  "contentMD": "\"Schism\"\n![lateralus.jpg](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae00.jpg)\n\nI know the pieces fit 'cause I watched them fall away\nMildewed and smoldering. Fundamental differing\nPure intention juxtaposed will set two lovers souls in motion\nDisintegrating as it goes testing our communication\nThe light that fueled our fire then has burned a hole between us so\nWe cannot seem to reach an end crippling our communication\n\nI know the pieces fit 'cause I watched them tumble down\nNo fault, none to blame, it doesn't mean I don't desire to\nPoint the finger, blame the other, watch the temple topple over\nTo bring the pieces back together, rediscover communication\n\nThe poetry that comes from the squaring off between\nAnd the circling is worth it\nFinding beauty in the dissonance\n\nThere was a time that the pieces fit, but I watched them fall away\nMildewed and smoldering, strangled by our coveting\nI've done the math enough to know the dangers of our second guessing\nDoomed to crumble unless we grow, and strengthen our communication\n\n(Cold, cold, cold)\nCold silence has a tendency to atrophy any sense of compassion between supposed lovers\nBetween supposed brothers\n\nI know the pieces fit [8x]",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650350297595"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5adabf3a3800e8d6c00d"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Brawl Stars: Brock",
+  "description": "Introduce the brawler -Brock aka. Monkey",
+  "contentMD": "![images.jfif](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae01.jfif)\n## Basic info\n\"Brock fires a long-range, explosive rocket at enemies. His Super is a ballistic rocket barrage that destroys cover!\"\nBrock is a Common Brawler who is unlocked as a Trophy Road reward upon reaching 1000 Trophies. He has low health but a high damage output. His attack shoots long-ranged rockets that explode and deal area damage in a short radius. His Super fires a barrage of rockets in a large area. His first Gadget, Rocket Laces, allows him to fire at his feet, damaging nearby enemies and knock them back, and launching Brock into the air. His second Gadget, Rocket Fuel, makes Brock's next attack a mega rocket that has a larger explosion radius, destroys walls and travels faster. His first Star Power, More Rockets!, increases the number of rockets fired from his Super. His second Star Power, Rocket No. Four, increases Brock's ammo capacity to 4.\n\n## Tips\n* Try to predict where opponents are going to be. His rockets are fairly slow and narrow, and the enemies will likely be moving.\nBrock performs the best in open maps that don't have a lot of cover so that close-ranged Brawlers couldn't ambush him.\nAlways keep Brock behind other teammates, because he has fairly low health and is best used for long-ranged support instead.\nIn Duo Showdown, two Brawlers will most likely be near each other, and Brock's rockets have a small area of explosion when it hits something or when the rocket's range distance ends. Shooting a rocket in between the two Brawlers when they're near will damage both of them greatly. Since his attack's splash radius is also large enough to go through walls slightly, use it to damage enemies extremely close to walls, similarly to Jacky's attack.\n* Because of Brock's very slow reload time, it's important to make every shot count. Don't fire off all three rockets at once, since that will leave Brock completely defenseless. While his Rocket No. Four Star Power give Brock one additional ammo, it is still worthwhile to maintain your ammo for when you need it.\nUse Brock's Super whenever the opponents group up or one is hiding behind a wall.\n* When using Brock's Super against an enemy, make it count and try to aim it perfectly, as sometimes some Brawlers can escape and deal damage to you when you are still in the duration of the Super.\n* Brock's Super is great for getting the enemy team to split up as they avoid the rockets so that teammates can deal with them individually.\n* Brock's Rocket Laces Gadget can be used for briefly getting away from ambushing assassins or tanks. He can also use it to keep distance by jumping over walls or to get close to throwers behind walls.\n* At close range, Brock can easily defeat lower-health Brawlers by quick-firing 3 rockets. Saving Brock's ammunition and using his Gadget Rocket Laces is especially useful for close-range ambushes.\n* Brock isn’t a viable Brawler to use in Special Events because he has slow reload speed and his Super can break walls, giving the robots a huge advantage in Robo Rumble and Boss Fight, and helping the Mega Monster destroy the city in Super City Rampage.\n* Use him in Heist to break the walls covering the enemy safe so that he can land burst damage on the enemy safe easily. Also, with his long range, he can deal massive damage to the safe while staying relatively safe from a safe distance as well. His attack's slow projectile speed will not be a disadvantage as the safe is stationary, but enemies might have time to go to the safe and tank some of the shots.\n* Brock's Super can be used against a wall in front of a goal in Brawl Ball, meaning Brock does not have to go around the wall. He can also use his Rocket Fuel Gadget to break the walls. This applies to all Brawl Ball maps with a wall in front of the goal.\nBrock's Rocket Fuel Gadget aids in Brock's area denial. Brock can deal splash damage, but it is rather difficult unless enemies stay within one tile. Making each individual shot count is vital for Brock whose slow reload speed and projectile speed makes him vulnerable once a couple of shots are fired. It also allows Brock to open up walls on the map without having to charge his Super first.\n* Brock can use Rocket Fuel to break open important walls on the map without needing to charge his Super - a very important tool in maps such as Backyard Bowl or Shooting Star. He can use his Gadget at the start of the match to give his team a huge defensive advantage. One advantage over his Super is that you can better predict the amount of walls Brock's Gadget will destroy as opposed to his Super, which only shows the area-of effect of possible missile hits which is harder to control. However, unlike his super, this shot can be body-blocked by enemies or spawnables (such as the shadows from Tara's Support from Beyond), as the attack does not pierce. However, if your target is standing near their spawnables, the small explosion radius ensures they will still get damaged.\n* Brock is a strong Brawler in certain maps in Siege. Paired with his Rocket Fuel Gadget and Incendiary Star Power, he can consistently damage the IKE. Brock can move on the side of the enemies' spawn area (just beyond the IKE's reach), and with Brock's moderately fast unload speed, he is able to hit all three shots onto the IKE, dealing massive damage, and with his Rocket Fuel Gadget, he can deal additional damage to the Siege bot or the IKE turret.",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650350810791"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5afebf3a3800e8d6c04e"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "First Node!",
+  "description": "First Node! First Node!",
+  "contentMD": "First Node!\nFirst Node!\nFirst Node!\nFirst Node!",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650350846024"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5b88bf3a3800e8d6c083"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Listen to me: Thank you ...",
+  "description": "A very popular and brainwashing song",
+  "contentMD": "听我说谢谢你\n\n因为有你 温暖了四季\n\n谢谢你 感谢有你\n\n世界更美丽\n\n我要谢谢你 因为有你\n\n爱常在心底\n\n谢谢你 感谢有你\n\n把幸福传递\n\n送给你小心心\n\n送你花一朵\n\n你在我生命中\n\n太多的感动\n\n你是我的天使\n\n一路指引我\n\n无论岁月变幻\n\n爱你唱成歌\n\n听我说谢谢你\n\n因为有你 温暖了四季\n\n谢谢你 感谢有你\n\n世界更美丽\n\n我要谢谢你 因为有你\n\n爱常在心底\n\n谢谢你 感谢有你\n\n把幸福传递\n\n听我说谢谢你\n\n因为有你 温暖了四季\n\n谢谢你 感谢有你\n\n世界更美丽\n\n我要谢谢你 因为有你\n\n爱常在心底\n\n谢谢你 感谢有你\n\n把幸福传递\n\n我要谢谢你\n\n因为有你 温暖了四季\n\n谢谢你 感谢有你\n\n世界更美丽\n\n我要谢谢你 因为有你\n\n爱常在心底\n\n谢谢你 感谢有你\n\n把幸福传递\n\n谢谢你 感谢有你\n\n世界更美丽",
+  "visibility": "public",
+  "like": 1,
+  "fork": 0,
+  "score": 4,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650350984130"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5ca6bf3a3800e8d6c0a4"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "buy melon",
+  "description": "画面感极强",
+  "contentMD": "\n![买瓜.jpg](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae02.jpg)\n有一个人前来买瓜（旁白）生意行吗你们哥几个，哥俩（画外音）（刘华强停车，熄火）哥们你这瓜多少钱一斤啊？（刘华强）两块钱一斤（老板）我擦，你这瓜皮子是金子做的还是瓜粒子是金子做的？（刘华强）你瞧着现在哪有瓜啊？这都是大棚的瓜，你嫌贵我还嫌贵呢（老板）给我挑一个（刘华强）（刘华强转身）这个怎么样（老板）（老板拍西瓜，刘华强转回来）你这瓜保熟吗？（刘华强）我开水果摊的，能买给你生瓜蛋子？（老板）我问你这瓜保 熟 吗？（刘华强）你是故意找茬是不是啊？（老板）你这瓜要熟我肯定要啊（刘华强指西瓜，并走到椅子旁）那它要是不熟怎么办啊？（刘华强）（刘华强坐下）这瓜要是不熟，我自己吞了它，满意了吧？（老板）（刘华强微微点头）15斤，30块（老板）你这哪够15斤啊，你这称有问题啊（刘华强）你TM故意找茬是不是？你要不要吧！你要不要！？（老板）（老板把西瓜放到刘华强面前桌上）（刘华强把称翻开，指吸铁石）（瓜摊老板穿米色夹克的小弟绕后）吸铁石，另外你说的，这瓜要是生的你自己吞进去啊（刘华强）（刘华强拿刀站起来并劈瓜）你TM劈我瓜是吧？（老板）（刘华强捅老板）（米色夹克小弟拿砖头对着刘华强，刘华强拿刀指小弟，小弟扔砖头）杀人了！郝哥杀人了！杀人了！（黑色衣服小弟）（刘华强扔刀骑摩托离开）华强，哎华强，华强（一家三口）（刘华强回头笑） 作者：sks268 https://www.bilibili.com/read/cv12356519 出处：bilibili",
+  "visibility": "public",
+  "like": 2,
+  "fork": 1,
+  "score": 14,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650351270063"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5dedbf3a3800e8d6c0cf"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Metropolis Part I - \"The Miracle and the Sleeper\"",
+  "description": "A song by Dream Theater, from the album \"Images and Words\"",
+  "contentMD": "# \"Metropolis - Part I - \"The Miracle And The Sleeper\"\"\n\n\n![images and words.jpg](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae03.jpg)\nThe smile of dawn arrived early May\nShe carried a gift from her home\nThe night shed a tear to tell her of fear\nAnd of sorrow and pain, she'll never outgrow\n\nDeath is the first dance, eternal\n\nThere's no more freedom\nThe both of you will be confined\nTo this mind\n\nI was told there's a miracle for each day that I try\nI was told there's a new love that's born for each one that has died\nI was told there'd be no one to call on when I feel alone and afraid\nI was told if you dream of the next world\nYou'll find yourself swimming in a lake of fire\n\nAs a child, I thought I could live without pain, without sorrow\nAs a man, I've found it's all caught up with me\nI'm asleep, yet I'm so afraid\n\nSomewhere like a scene from a memory\nThere's a picture worth a thousand words\nEluding stares the faces before me\nIt hides away and will never be heard of again\n\nDeceit is the second without end\n\nThe city's cold blood teaches us to survive\nJust keep my heart in your eyes and we'll stay alive\nThe third arrives\n\nBefore the leaves have fallen\nBefore we lock the doors\nThere must be the third and last dance\nThis one will last forever\nMetropolis watches and thoughtfully smiles\nShe's taken you to your home\n\nIt can only take place\nWhen the struggle between our children has ended\nNow the Miracle and the Sleeper know\nThat the third is love\n\nLove is the Dance of Eternity!",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650351597129"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5e6dbf3a3800e8d6c0fa"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Decision Tree -Sklearn",
+  "description": "Sample code to implement decision tree",
+  "contentMD": "```python\n>>> from sklearn.datasets import load_iris\n>>> from sklearn.model_selection import cross_val_score\n>>> from sklearn.tree import DecisionTreeClassifier\n>>> clf = DecisionTreeClassifier(random_state=0)\n>>> iris = load_iris()\n>>> cross_val_score(clf, iris.data, iris.target, cv=10)\n...                             \n...\narray([ 1.     ,  0.93...,  0.86...,  0.93...,  0.93...,\n        0.93...,  0.93...,  1.     ,  0.93...,  1.      ])\n\n```\n",
+  "visibility": "public",
+  "like": 1,
+  "fork": 0,
+  "score": 4,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650351725199"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "625e5f64bf3a3800e8d6c131"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Hun Yuan Xing Yi Bible",
+  "description": "By Ma Baoguo",
+  "contentMD": "# Old Testament\n今日语文作业:背诵《马保国语录》（以下为课文内容）\n\n朋友们好啊我是浑元形意太极门掌门人马保国。\n\n\n\n刚才有个朋友问我马老师发生什么事了，我说怎么回事，给我发了几张截图，我一看！嗷！原来是昨天，有两个年轻人，三十多岁，一个体重九十多公斤，一个体重八十多公斤，他们说，哎…有一个说是我在健身房练功颈椎练坏了，马老师你能不能教教我浑元功法，哎…帮助治疗一下，我的颈椎病，我说可以。我说你在健身房练死劲儿不好用，他不服气。我说小朋友：你两个手来折我一个手指头，他折不动。他说你这也没用我说我这个有用，这是化劲儿，传统功夫是讲化劲儿的四两拨千金。二百多斤的英国大力士，都握我不动我这一个手指头，啊…哈！他非和我试手，我说可以。诶…我一说呢啪就站起来了，很快啊！然后上来就是一个左正蹬一个右鞭腿一个左刺拳，我全部防出去，防出去了啊，防出去以后自然是传统功夫以点到为止右拳放到他鼻子上没打他，我笑一下准备收拳，由于这时间，按传统功夫的点到为止他已经输了，如果这一拳发力，一拳就把他鼻子打骨折了，放在他鼻子上没有打他，他也承认，我先打到他面部。他不知道拳放在他鼻子上，他承认我先打到他面部，啊，我收拳的时间不打了，他突然袭击左刺拳来打我脸，我大意了啊，没有闪，哎…他的左拳给我眼，啊，右眼，蹭了一下，但没关系啊！他也说，啊他截图也说了，两分多钟以后，当时流眼泪了，捂着眼，我说停停。然后两分多钟以后，两分多钟以后诶就好了，我说小伙子你不讲武德你不懂，他说马老师对不起，对不起，我不懂规矩。啊，我是…他说他是乱打的，他可不是乱打的啊，正蹬，鞭腿，左刺拳，训练有素，后来他说他练过三四年泰拳，啊，看来是有备而来！这两个年轻人不讲武德，来骗！来偷袭！我六十九岁的老同志，这好吗？这不好，我劝这位年轻人好自为之，好好反思，以后不要再犯这样的聪明，小聪明啊，武林要以和为贵，要讲武德，不要搞窝里斗，谢谢朋友们！ 作者：Great_Glass https://www.bilibili.com/read/cv8307514 出处：bilibili",
+  "visibility": "public",
+  "like": 3,
+  "fork": 1,
+  "score": 18,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650351972857"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6260f894d7c2a18030dcd965"
+  },
+  "author": {
+    "$oid": "6260f851d7c2a18030dcd92e"
+  },
+  "title": "刘华强买瓜",
+  "description": "画面感极强",
+  "contentMD": "\n![买瓜.jpg](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae02.jpg)\n有一个人前来买瓜（旁白）生意行吗你们哥几个，哥俩（画外音）（刘华强停车，熄火）哥们你这瓜多少钱一斤啊？（刘华强）两块钱一斤（老板）我擦，你这瓜皮子是金子做的还是瓜粒子是金子做的？（刘华强）你瞧着现在哪有瓜啊？这都是大棚的瓜，你嫌贵我还嫌贵呢（老板）给我挑一个（刘华强）（刘华强转身）这个怎么样（老板）（老板拍西瓜，刘华强转回来）你这瓜保熟吗？（刘华强）我开水果摊的，能买给你生瓜蛋子？（老板）我问你这瓜保 熟 吗？（刘华强）你是故意找茬是不是啊？（老板）你这瓜要熟我肯定要啊（刘华强指西瓜，并走到椅子旁）那它要是不熟怎么办啊？（刘华强）（刘华强坐下）这瓜要是不熟，我自己吞了它，满意了吧？（老板）（刘华强微微点头）15斤，30块（老板）你这哪够15斤啊，你这称有问题啊（刘华强）你TM故意找茬是不是？你要不要吧！你要不要！？（老板）（老板把西瓜放到刘华强面前桌上）（刘华强把称翻开，指吸铁石）（瓜摊老板穿米色夹克的小弟绕后）吸铁石，另外你说的，这瓜要是生的你自己吞进去啊（刘华强）（刘华强拿刀站起来并劈瓜）你TM劈我瓜是吧？（老板）（刘华强捅老板）（米色夹克小弟拿砖头对着刘华强，刘华强拿刀指小弟，小弟扔砖头）杀人了！郝哥杀人了！杀人了！（黑色衣服小弟）（刘华强扔刀骑摩托离开）华强，哎华强，华强（一家三口）（刘华强回头笑） 作者：sks268 https://www.bilibili.com/read/cv12356519 出处：bilibili",
+  "visibility": "public",
+  "like": 0,
+  "fork": 1,
+  "score": 6,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650522260229"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626793e4d7c2a18030dcdbaa"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "Node.js Note",
+  "description": "A note of learning nodejs",
+  "contentMD": "# NODE.JS & BACKEND\n\n\nlistener 收到请求，处理请求，再将请求发送至前端\n\nrequest = 请求 object\n\nresponse = 响应 object\n\nHTTP Get and HTTP post\n\n#### POST\n\n向后端服务器提交数据\n\n提交登陆表单：/process-login\n\n分部分传输数据，stream 数据流， buffer：缓冲区\n\n### NPM\n\npackage manager:\n\n> repository/registry: 内置模块，第三方模块（eg: express, react）\n>\n> CLI: command line interface\n\n### 自定义nodejs模块\n\n维护：大问题=>小问题\n\n### NVM\n\nnodejs 版本控制\n\n\n\n### Browser vs Node\n\n\n\n\n### Globals\n\nglobal variables: can be accessed in the application everywhere\n\n\n\n\n### Build-in Modules\n\n> (can be check in the node.js official site)\n>\n> OS\n>\n> PATH\n>\n> FS\n>\n> HTTP\n\n### NPM\n\n\nif there is package.json, we can simply run nom install to build the dependencies\n\nnodemon: watching the application\n\ninstall gloablly\n\n\n\n### Event loop\n\n\n\n### Events\n\nused heavily in nodejs\n\n\n\n### HTTP messages:\n\nuser: http request msg\n\nserver: http response msg\n\n\n\n\nheaders: the information about the msg\n\n\n\n### setup server (Node)\n\ncreate a server by https:\n\nport is a communication endpoint\n\n```javascript\nconst http =  require(\"http\");\nconst server = http.createServer(req, res)=>{\n\tconst url = req.url; // the url of the request, in the form of \"/\" or \"/register\" .etc\n    if (url === \"/\") { ... } // if the request url is '/', do ...\n    res.writeHead(statusCode, {'content-type': type});\n    res.write(\"info\");\n    res.end(\"info\");\n}\nserver.listen(5000); // server listen on port\n```\n\nmime type: datatype to be rendered (what are you sending back)\n\n```javascript\n// get the content by reading file, using fs module\nconst homePage = readFileSync(\"./index.html\");\n```\n\n\n\n# Express\n\nmuch simpler than using the http module\n\n### Import express\n\n```javascript\nconst express = require(\"express\");\nconst app = express();\n\napp.listen(5000, ()=>{\n    // callbacks\n})\n// methods: app.method\n// app.get, app.post, app.put, app.delete, app.all\n```\n\n\nup: what the users do, down: what the browser do\n\n### methods\n\nget\n\n```javascript\napp.get('/', (req, res) =>{\n  // perform something  \n})\n// examples:\napp.get('/', (req, res) => {\n  console.log('user hit the resource')\n  res.status(200).send('Home Page')\n})\n\napp.get('/about', (req, res) => {\n  res.status(200).send('About Page')\n})\n```\n\nall\n\n```javascript\napp.all() // handle all the user behaviors\napp.all('*', (req, res) => {\n  res.status(404).send('<h1>resource not found</h1>')\n})\n```\n\nuse path to pass the file\n\n```javascript\nconst path = require('path')\napp.get('/', (req, res) => {\n  res.sendFile(path.resolve(__dirname, './navbar-app/index.html'))\n})\n```\n\napp.use\n\n```javascript\napp.use(express.static('./public')) \n// all static resources in the public, static files are those server won't need to change\n```\n\n### API & SSR\n\n\napi: server provides data, front end provides the data\n\n#### JSON:\n\n```javascript\nconst { products } = require('./data')\napp.get('/', (req, res) => {\n  res.json(products) // send a json response\n})\n// data.js: a file with arrays\n\napp.get('/api/products/:productID', (req, res) => { // route parameter: productID\n  // console.log(req)\n  // console.log(req.params)\n  const { productID } = req.params // a holder provides the data that users provide\n\n  const singleProduct = products.find(\n    (product) => product.id === Number(productID)\n  )\n  if (!singleProduct) {\n    return res.status(404).send('Product Does Not Exist')\n  }\n\n  return res.json(singleProduct)\n})\n```\n\n#### Query (url) parameters\n\neg: localhost:5000/api/query?limt=2&search=a\n\nthe \"limt=2&search=a\" are parameters\n\n### Middleware\n\nreq => middleware (do something) => res\n\neg:\n\n#### own middleware\n\n```javascript\nconst logger = (req, res, next) => {\n  const method = req.method\n  const url = req.url\n  const time = new Date().getFullYear()\n  console.log(method, url, time)\n  next() // must pass on to the next middleware\n} // can set up numbers of logic in a middleware\n// better to put middleware to separated files\n\napp.get('/', logger, (req, res) => {\n  res.send('Home')\n})\napp.get('/about', logger, (req, res) => {\n  res.send('About')\n})\n\nconst logger = require('./logger')\nconst authorize = require('./authorize')\napp.use([logger, authorize]) // don't need to write middleware in every method\napp.get('/', (req, res) => {\n  res.send('Home')\n})\napp.get('/', [logger, authorize], (req, res) => {\n  res.send('Home')\n})\n```\n\n#### express middleware\n\nreference to the doc\n\n```javascript\napp.use(); // expect middleware as parameters (eg: express.static)\napp.use(express.static('path')); // use all the static assets\napp.use(express.urlencoded({extened: false})); //parse the data\napp.use(express.json()); // parse json\n```\n\n#### third party middleware\n\neg: morgan \n\n```javascript\nconst morgan = require('morgan')\napp.use(morgan('tiny'))\n```\n\n### HTTP Methods\n\nget: read data\n\n```javascript\napp.get('/api/people', (req, res) => {\n  res.status(200).json({ success: true, data: people })\n})\n```\n\npost: insert data\n\n```javascript\napp.post('/api/postman/people', (req, res) => {\n  const { name } = req.body // data to be send, important in post\n  if (!name) {\n    return res\n      .status(400)\n      .json({ success: false, msg: 'please provide name value' })\n  }\n  res.status(201).json({ success: true, data: [...people, name] })\n})\n```\n\nput: update data\n\n```javascript\napp.put('/api/people/:id', (req, res) => {\n  const { id } = req.params\n  const { name } = req.body\n\n  const person = people.find((person) => person.id === Number(id))\n\n  if (!person) {\n    return res\n      .status(404)\n      .json({ success: false, msg: `no person with id ${id}` })\n  }\n  const newPeople = people.map((person) => {\n    if (person.id === Number(id)) {\n      person.name = name\n    }\n    return person\n  })\n  res.status(200).json({ success: true, data: newPeople })\n})\n```\n\ndelete: delete data\n\n```javascript\napp.delete('/api/people/:id', (req, res) => {\n  const person = people.find((person) => person.id === Number(req.params.id))\n  if (!person) {\n    return res\n      .status(404)\n      .json({ success: false, msg: `no person with id ${req.params.id}` })\n  }\n  const newPeople = people.filter(\n    (person) => person.id !== Number(req.params.id)\n  )\n  return res.status(200).json({ success: true, data: newPeople })\n})\n```\n\n### Router\n\ngroup the routes separately\n\nnvc: a pattern to set up api\n\n```javascript\nconst express = require('express')\nconst router = express.Router()\n\nrouter.post('/', (req, res) => {\n  const { name } = req.body\n  if (name) {\n    return res.status(200).send(`Welcome ${name}`)\n  }\n\n  res.status(401).send('Please Provide Credentials')\n})\n```\n\nuse route\n\n```javascript\nconst name = require(\"router path\");\napp.use('/api/people', name); // first argument is the base path\n```\n\n#### router controller\n\nseparate the functions with the router file, put the functions in a router controller to make the code more organized\n\n![image-20220410155340635](C:\\Users\\11957\\AppData\\Roaming\\Typora\\typora-user-images\\image-20220410155340635.png)\n\n```javascript\nconst express = require('express')\nconst router = express.Router()\n\nconst {\n  getPeople,\n  createPerson,\n  createPersonPostman,\n  updatePerson,\n  deletePerson,\n} = require('../controllers/people')\n\n// router.get('/', getPeople)\n// router.post('/', createPerson)\n// router.post('/postman', createPersonPostman)\n// router.put('/:id', updatePerson)\n// router.delete('/:id', deletePerson)\n\nrouter.route('/').get(getPeople).post(createPerson)\nrouter.route('/postman').post(createPersonPostman)\nrouter.route('/:id').put(updatePerson).delete(deletePerson)\n\nmodule.exports = router\n```\n\n```javascript\nlet { people } = require('../data')\n\nconst getPeople = (req, res) => {\n  res.status(200).json({ success: true, data: people })\n}\n\nconst createPerson = (req, res) => {\n  const { name } = req.body\n  if (!name) {\n    return res\n      .status(400)\n      .json({ success: false, msg: 'please provide name value' })\n  }\n  res.status(201).send({ success: true, person: name })\n}\n\n...\n\nmodule.exports = {\n  getPeople,\n  createPerson,\n  createPersonPostman,\n  updatePerson,\n  deletePerson,\n}\n\n```\n\n\n\n\n\n---\n\n# 博客项目\n\n### 项目结构\n\n* public: static assets\n* model: database 操作\n* route: 路由\n* views: 模板\n\nabsolute path: ‘/’\n\nbodyparser: parse the request, can only process normal form\n\nformidabale: process binary data from the client side\n\n#### Test notes:\n\n> email: 1@hyy.com\n>\n> password: 123\n>\n> name: tim\n\n* register-email-verification\n\n\n* register\n\n\n#### use formidable\n\n\naccess the picture: use a string (path to access the photo)\n\nadd the note into the database\n\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1650955236283"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269069cd7c2a18030dce11d"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "荒野乱斗：布洛克",
+  "description": "荒野乱斗 - 布洛克 aka. 猴强削",
+  "contentMD": "![images.jfif](http://note.garychen.top:3000/static/note-pic/b741579c304bd889eebddae01.jfif)\n## Basic info\n\"Brock fires a long-range, explosive rocket at enemies. His Super is a ballistic rocket barrage that destroys cover!\"\nBrock is a Common Brawler who is unlocked as a Trophy Road reward upon reaching 1000 Trophies. He has low health but a high damage output. His attack shoots long-ranged rockets that explode and deal area damage in a short radius. His Super fires a barrage of rockets in a large area. His first Gadget, Rocket Laces, allows him to fire at his feet, damaging nearby enemies and knock them back, and launching Brock into the air. His second Gadget, Rocket Fuel, makes Brock's next attack a mega rocket that has a larger explosion radius, destroys walls and travels faster. His first Star Power, More Rockets!, increases the number of rockets fired from his Super. His second Star Power, Rocket No. Four, increases Brock's ammo capacity to 4.\n\n## Tips\n* Try to predict where opponents are going to be. His rockets are fairly slow and narrow, and the enemies will likely be moving.\nBrock performs the best in open maps that don't have a lot of cover so that close-ranged Brawlers couldn't ambush him.\nAlways keep Brock behind other teammates, because he has fairly low health and is best used for long-ranged support instead.\nIn Duo Showdown, two Brawlers will most likely be near each other, and Brock's rockets have a small area of explosion when it hits something or when the rocket's range distance ends. Shooting a rocket in between the two Brawlers when they're near will damage both of them greatly. Since his attack's splash radius is also large enough to go through walls slightly, use it to damage enemies extremely close to walls, similarly to Jacky's attack.\n* Because of Brock's very slow reload time, it's important to make every shot count. Don't fire off all three rockets at once, since that will leave Brock completely defenseless. While his Rocket No. Four Star Power give Brock one additional ammo, it is still worthwhile to maintain your ammo for when you need it.\nUse Brock's Super whenever the opponents group up or one is hiding behind a wall.\n* When using Brock's Super against an enemy, make it count and try to aim it perfectly, as sometimes some Brawlers can escape and deal damage to you when you are still in the duration of the Super.\n* Brock's Super is great for getting the enemy team to split up as they avoid the rockets so that teammates can deal with them individually.\n* Brock's Rocket Laces Gadget can be used for briefly getting away from ambushing assassins or tanks. He can also use it to keep distance by jumping over walls or to get close to throwers behind walls.\n* At close range, Brock can easily defeat lower-health Brawlers by quick-firing 3 rockets. Saving Brock's ammunition and using his Gadget Rocket Laces is especially useful for close-range ambushes.\n* Brock isn’t a viable Brawler to use in Special Events because he has slow reload speed and his Super can break walls, giving the robots a huge advantage in Robo Rumble and Boss Fight, and helping the Mega Monster destroy the city in Super City Rampage.\n* Use him in Heist to break the walls covering the enemy safe so that he can land burst damage on the enemy safe easily. Also, with his long range, he can deal massive damage to the safe while staying relatively safe from a safe distance as well. His attack's slow projectile speed will not be a disadvantage as the safe is stationary, but enemies might have time to go to the safe and tank some of the shots.\n* Brock's Super can be used against a wall in front of a goal in Brawl Ball, meaning Brock does not have to go around the wall. He can also use his Rocket Fuel Gadget to break the walls. This applies to all Brawl Ball maps with a wall in front of the goal.\nBrock's Rocket Fuel Gadget aids in Brock's area denial. Brock can deal splash damage, but it is rather difficult unless enemies stay within one tile. Making each individual shot count is vital for Brock whose slow reload speed and projectile speed makes him vulnerable once a couple of shots are fired. It also allows Brock to open up walls on the map without having to charge his Super first.\n* Brock can use Rocket Fuel to break open important walls on the map without needing to charge his Super - a very important tool in maps such as Backyard Bowl or Shooting Star. He can use his Gadget at the start of the match to give his team a huge defensive advantage. One advantage over his Super is that you can better predict the amount of walls Brock's Gadget will destroy as opposed to his Super, which only shows the area-of effect of possible missile hits which is harder to control. However, unlike his super, this shot can be body-blocked by enemies or spawnables (such as the shadows from Tara's Support from Beyond), as the attack does not pierce. However, if your target is standing near their spawnables, the small explosion radius ensures they will still get damaged.\n* Brock is a strong Brawler in certain maps in Siege. Paired with his Rocket Fuel Gadget and Incendiary Star Power, he can consistently damage the IKE. Brock can move on the side of the enemies' spawn area (just beyond the IKE's reach), and with Brock's moderately fast unload speed, he is able to hit all three shots onto the IKE, dealing massive damage, and with his Rocket Fuel Gadget, he can deal additional damage to the Siege bot or the IKE turret.",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651050140541"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62690a22d7c2a18030dce2b1"
+  },
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "title": "震惊！原来大家爱吃的老坛酸菜，竟然是用脚踩出来的！",
+  "description": "315曝光，老坛酸菜牛肉面全部下架！",
+  "contentMD": "\n插旗菜业是湖南省华容县较大的蔬菜再加工企业，为多家知名企业代加工酸菜制品，也为一些方便面企业代加工老坛酸菜包，号称老坛工艺，足时发酵。\n在插旗菜业的清洗车间，一袋袋酸菜被随意堆放在地上，经过机器清洗、切碎、拌料、包装、杀菌，就做成了老坛酸菜包。\n![dd748d80a4fffc8ecee63150c1915684.jpegwm_2,t_55m5a625Y3LS6kuiBlOe9keeahOS4gOS6mS6iw==,fc_ffffff,ff_U2ltSGVp,sz_22,x_14,y_14.jpeg](http://note.garychen.top:3000/static/note-pic/b2b62090e6ca0e2b225ad8102.jpeg@wm_2,t_55m+5a625Y+3L+S6kuiBlOe9keeahOS4gOS6m+S6iw==,fc_ffffff,ff_U2ltSGVp,sz_22,x_14,y_14.jpeg)\n然而实地探访得知，该企业标准化腌制池腌出来的酸菜是用来加工出口产品的，老坛酸菜包里的酸菜则是从外面收购来的“土坑酸菜”。\n什么是“土坑酸菜”？\n顾名思义，就是农户在露天土坑里腌制出的酸菜。\n这类酸菜为了追求最大的经济利益，抛弃了传统腌制酸菜使用的泡菜坛、腌制池，腌制技术，在缺乏卫生标准和安全环境的条件下腌制出的酸菜。\n![04e2ad55870023c71647f2f147a1c58a.jpegwm_2,t_55m5a625Y3LS6kuiBlOe9keeahOS4gOS6mS6iw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13.jpeg](http://note.garychen.top:3000/static/note-pic/b2b62090e6ca0e2b225ad8103.jpeg@wm_2,t_55m+5a625Y+3L+S6kuiBlOe9keeahOS4gOS6m+S6iw==,fc_ffffff,ff_U2ltSGVp,sz_20,x_13,y_13.jpeg)\n\n这类酸菜没有生产许可、没有检验证明、甚至连最基础的干净卫生都不沾边，妥妥的“三无产品”。不敢想食用了这类酸菜会给消费者带来的严重后果。\n在农田里腌制这些酸菜的土坑周围，工人们有的穿着拖鞋，有的光着脚，踩在酸菜上，有的甚至一边抽烟一边干活，抽完的烟头直接扔到酸菜上。\n\n[原文链接](https://baijiahao.baidu.com/s?id=1727473999474265458&wfr=spider&for=pc)",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651051042793"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62690c8bd7c2a18030dce318"
+  },
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "title": "Elden Ring",
+  "description": "A current popular game ",
+  "contentMD": "**++Elden Ring++** is an action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. The game was directed by Hidetaka Miyazaki and made in collaboration with fantasy novelist George R. R. Martin, who provided material for the game's setting. It was released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on February 25, 2022.\n\nElden Ring is presented through a third-person perspective, with players freely roaming its interactive open world. Gameplay elements include combat, featuring several types of weapons and magic spells, horseback riding, summons, and crafting. Elden Ring received critical acclaim, with praise for its open world gameplay, fantasy setting, and evolution of the Souls formula. The game sold 12 million copies worldwide within three weeks of its release.\n\n![src=httpimg.3dmgame.comuploadsimagesnews202106111623355162_285725.jpgrefer=httpimg.3dmgame.comapp=2002size=f9999,10000q=a80n=0g=0nfmt=a.png](http://note.garychen.top:3000/static/note-pic/b2b62090e6ca0e2b225ad8104.3dmgame.com-uploads-images-news-20210611-1623355162_285725.jpg&refer=http---img.3dmgame.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=a.png)\n\n",
+  "visibility": "private",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651051659264"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62690e4fd7c2a18030dce33e"
+  },
+  "author": {
+    "$oid": "625d75f1ab4f23d61b9f3eb8"
+  },
+  "title": "A Cute Game Recommendation: Animal Crossing",
+  "description": "Animal Crossing is a social simulation video game series developed and published by Nintendo.",
+  "contentMD": "==Animal Crossing== is a social simulation video game series developed and published by ++Nintendo++. The series was conceptualized and created by Katsuya Eguchi and Hisashi Nogami. In Animal Crossing, the player character is a human who lives in a village inhabited by various anthropomorphic animals and can do various activities like fishing, bug catching, and fossil hunting. The series is notable for its open-ended gameplay and use of the video game console's internal clock and calendar to simulate the real passage of time. :laughing: :laughing: :laughing:\n![u=2031255258,3368505111fm=253fmt=autoapp=138f=JPEG.png](http://note.garychen.top:3000/static/note-pic/b2b62090e6ca0e2b225ad8105.png)\nSince its initial release in 2001, five Animal Crossing games have been released worldwide, one each for the Nintendo 64/iQue Player (enhanced and reissued for the GameCube), Nintendo DS, Wii, Nintendo 3DS, and Nintendo Switch. The series has been both critically and commercially successful and has sold over 60 million units worldwide. ",
+  "visibility": "public",
+  "like": 0,
+  "fork": 1,
+  "score": 6,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651052111159"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693436d8600f43435fa801"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "GEB2405 Online Lecture 5",
+  "description": "On-line Lecture 5 - Data visualization - Graphing a continuous or discrete variable",
+  "contentMD": "# On-line Lecture 5 - Data visualization - Graphing a continuous or discrete variable\n\n Package used\n\n```R\nlibrary(ggplot2)\n```\n\nTable of contents:\n\n(Graph for one variable)\n\n* For **continuous/numeric** variables, creating, editing, coloring **histogram**\n* For **discrete/categorical/factor** variables, creating, editing, coloring **bar plot**\n\n\n\n## Basic `ggplot2` grammar\n\n![img_1.png](http://note.garychen.top:3000/static/note-pic/fb37e8bd47235dcb8d6710100.png)\n\n```R\nggplot(data, aes(x,y,options)) + geom_typegraph(option)\n\n# add labels\nggplot(data, aes(x,y,options)) + geom_typegraph(option) + labs(x=..., y=..., title=...)\n```\n\n```R\n# examples (very ugly)\nggplot(mtcars,aes(x=mpg)) + geom_histogram() # mtcars$mpg\nggplot(mtcars,aes(x=cyl)) + geom_histogram() # mtcars$cyl\n\nggplot(mtcars,aes(x=mpg)) + geom_dotplot()\n```\n\n\n\n## Graphing ==an== unique continuous data (==histogram==)\n\n* `binwidth=nbr`: change the bar width\n* `fill=\"name_of_color\"`: change the color with which the bar is filled\n* `colour=\"name_of_color\"`: change the outline of the bar\n* `alpha=nbr`: change the transparency of the color\n\n```R\nggplot(mtcars,aes(x=mpg))+geom_histogram(fill=\"skyblue\",\n                                         alpha=0.7,\n                                         binwidth=5,\n                                         colour=\"grey\"\n                                         )\n```\n\n```R\n# modifying the aesthetic part using fill=Gender to have different colors\n# see graph in 27:14\nggplot(SEE_students_data_2,aes(x=BMI,fill=Gender))+geom_density(colour=\"black\",alpha=0.5)\n\nggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))+\n\tgeom_area(stat=\"bin\", colour=\"black\",alpha=0.5,binwidth=1)\n```\n\n```R\n# add a title and change axis names\nggplot(SEE_students_data_2,aes(x=BMI, fill=Gender))+\n  geom_density(colour=\"black\",alpha=0.5)+\n  labs(title=\"Body Mass index per Gender\\nSEE Students\", y=\"Frequency\",x=\"Body Mass Index\")\n```\n\n\n\n## Graphing ==univariate== categorical/factor data\n\n```R\nggplot(SEE_students_data_2,aes(x=Gender))+geom_bar()\n\n#adding color to the bar using a set, a given color, manually defined colors\n# example 1\nggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))+\n  geom_bar(alpha=0.5)+\n  scale_fill_brewer(palette=\"Set1\") # predefined color set\n\n# example 2\nggplot(SEE_students_data_2,aes(x=Gender, fill=Gender))+\n  geom_bar()+\n  scale_fill_brewer(palette = \"Blues\") # predefined color set\n\n# example 3\nggplot(SEE_students_data_2,aes(x=Gender,fill=Gender))+\n  geom_bar(alpha=0.75)+\n  scale_fill_manual(values=c(\"pink\",\"blue\")) # manually defined color set\n```\n\n\n\n### Organize the bar in the right order\n\n```R\nlibrary(forcats)\n```\n\nTwo useful options in `forcats`:\n\n* `fct_infreq(x)`:  to arrange the results depending on the frequency\n* `fct_reorder(x)`: to arrange the results according to another variable\n\n```R\nggplot(CUHKSZ_employment_survey_1, aes(x=fct_infreq(Occupation), fill=Occupation))+\n  geom_bar(alpha=0.75)+\n  scale_fill_brewer(palette=\"Blues\")\n\n# OR simply\nggplot(CUHKSZ_employment_survey_1, aes(fct_infreq(Occupation), fill=Occupation))+\n  geom_bar(alpha=0.75)+\n  scale_fill_brewer(palette=\"Blues\")\n```\n\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651061814154"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269348cd8600f43435fa823"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "GEB2405 Online Lecture 9",
+  "description": "Online Lecture 9 - Local correlation in cross tables",
+  "contentMD": "# Online Lecture 9 - Local correlation in cross tables\n\nPackages used\n\n```R\n# same packages as last week\nlibrary(gmodels) # for `CrossTable()`\nlibrary(sjstats) # for cramer'V test - `crosstable_statistics()`\nlibrary(sjPlot) # for `sjPlot::sjt.xtab()`\n\nlibrary(GDAtools) # for `pem()`\n```\n\n---\n\n## Expected Frequency + Chi-square contribution\n\nChi-square contribution in `CrossTable(data$x, data$y)` \n\n\n\n**expected**: If `TRUE`, chisq will be set to `TRUE` and expected cell counts from the chisq will be included **(this lec)** \n\n**prop.r**: If `TRUE`, row proportions will be included\n\n**prop.c**: If `TRUE`, column proportions will be included\n\n**prop.t**: If `TRUE`, table proportions will be included\n\n**prop.chisq**: If `TRUE`, chi-square contribution of each cell will be included **(this lec)** \n\n\n\nExpected Frequency = (Row Total * Column Total) / N\n\n```R\nCrossTable(data$x, data$y, expected=TRUE)\n```\n\n\n\nWe can also show **Expected Frequency** in `sjPlot::sjt.xtab()` by adding `show.exp = TRUE` \n\n```R\nsjPlot::sjt.xtab(df$var1, df$var2, show.exp=TRUE)\n\n#sjPlot::sjt.xtab(df$var1, df$var2, showExpected=TRUE) # old version\n```\n\n\n\n## PEM (Percentage of Maximum Deviation)\n\nDetails of **PEM** => between **-100 and 100**, where **\"0\"** shows that there is **no statistical correlation**. \n\nThe equation of PEM is important!\n\n* If PEM > 0, `observed` > `expected` \n* If PEM < 0, `observed` < `expected` \n\n![pem_details.png](http://note.garychen.top:3000/static/note-pic/fb37e8bd47235dcb8d6710101.png)\n\nSee `Online9 ppt` Page 20 and 21 for an example of how to calculate **expected frequency** and **PEM**.\n\n\n\nHow to calculate PEM by R?\n\n```R\nlibrary(GDAtools)\n\npem(df$var1, df$var2)\n\n# In old version of `GDAtools`\n#x <- table(df$var1, df$var2) # create an object and saved as a table\n#pem(x)\n```\n\nAbout PEM value:\n\n* < 10%: not a significant deviation\n* 10% ~ 15%: a small but significant deviation\n* 15% ~ 30%: strong deviation\n* more than 30%: very strong deviation\n\n\n\n# Tutorial 9\n\n**Transform all characters variables into factor variables**\n\n```R\nlibrary(magrittr) # for `%>%`\nlibrary(dplyr) # for `mutate_if()`\n\ndf <- df %>% mutate_if(is.character,as.factor)\n```\n\n\n\n**How to interpret PEM value?**\n\nSee example in `Tutorial-9_script.R` \n\nLine 23-24\n\n> The parents who are **intermediate** profession have an slightly **higher** (pem=6.5) propension to **always** supervise their child homework;\n> and are **less likely** (**negative pem** = -20.1) to **never or almost never** tutor their child homework. (\"less likely\" ==> amendment by me)\n\n```R\npem(millemium_2015_study$class,millemium_2015_study$help)\n```\n\n```\n$peml\n                    always usually sometimes never or almost never\nHi manag/prof         -3.7    -2.5      -1.0                   3.1\nLo manag/prof          0.1     1.7      -1.2                 -10.5\nIntermediate           6.5    -2.4      -8.2                 -20.1\nSmall emp and s-emp  -11.6     2.8       1.4                   1.4\nLow sup and tech      -3.5     2.2       0.1                  -2.6\nSemi routine          -5.3    -0.4       1.1                   3.1\nRoutine               -3.3    -9.5       4.1                   1.5\n\n$pemg\n[1] 4.8\n```\n\n\n\nLine 40 \n\n> From the **pem** we can see that the son and daughter of higher professional are **less likely** to be bored at school (**-62.5%** for Never)\n>\n> （这句话好像又错了。。。应该是more likely吧。。）",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651061900336"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693508d8600f43435fa84f"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "GEB2405 Online Lecture 8",
+  "description": "Online Lecture 8 - Bivariate analysis - cross tabulation",
+  "contentMD": "# Online Lecture 8 - Bivariate analysis - cross tabulation\n\nPackages used\n\n```R\nlibrary(gmodels) # for `CrossTable()`\nlibrary(sjstats) # for cramer'V test - `crosstable_statistics()`\nlibrary(sjPlot) # for `sjPlot::sjt.xtab()`\n```\n\n---\n\n```R\nCrossTable(data$x, data$y)\nCrossTable(data$x, data$y, prop.t=FALSE, prop.chisq=FALSE)\n```\n\n**expected**: If `TRUE`, chisq will be set to `TRUE` and expected cell counts from the chisq will be included **(next lec)** \n\n**prop.r**: If `TRUE`, row proportions will be included\n\n**prop.c**: If `TRUE`, column proportions will be included\n\n**prop.t**: If `TRUE`, table proportions will be included\n\n**prop.chisq**: If `TRUE`, chi-square contribution of each cell will be included **(next lec)** \n\n\n\n**chi square / pearson X^2 test**: correlation between the two (categorical) variables\n\n```R\nCrossTable(data$x, data$y, chisq=TRUE) # see p-value\n```\n\n![1.png](http://note.garychen.top:3000/static/note-pic/fb37e8bd47235dcb8d6710102.png)\n\nDo we have other test methods to examine the correlation between two variables?\n\n**chisq**: If `TRUE`, the results of a chi-square test will be included\n\n**fisher**: If `TRUE`, the results of a Fisher Exact test will be included\n\n**mcnemar**: If `TRUE`, the results of a McNemar test will be included\n\n```R\nCrossTable(data$x, data$y, fisher=TRUE) # only apply to 2*2 table\n```\n\n---\n\ncramer'V ==> **how strong** the correlation is\n\n![2.png](http://note.garychen.top:3000/static/note-pic/fb37e8bd47235dcb8d6710103.png)\n\n```R\nlibrary(sjstats)\n\ncrosstable_statistics(df, x1=varname1, x2=varname2, statistics=c(\"cramer\"))\n```\n\n---\n\nThe outputs of previous `CrossTable()` and `crosstable_statistics()` is not good looking\n\n===> want beautiful table that is ready to publish\n\n```R\nlibrary(sjPlot)\n\nsjPlot::sjt.xtab(df$var1, df$var2) # only show frequency\n\nsjPlot::sjt.xtab(df$var1, df$var2, show.row.prc=TRUE, show.col.prc=TRUE)\n```\n\n\n\n# Tutorial 8\n\n$H_0$ = null hypothesis (i.e. the two variables are independent?)\n\nIf p-value < 0.05, we can reject $H_0$ with 95% confidence. \n\nIn other words, if p-value < 0.05, the two variables are statistically correlated.\n\n\n\nYou may check the `.docx` file of Week 8 for more info of the above three statistic tests, but that will not help much.",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062024334"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269357fd8600f43435fa8d2"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "GEB2405 Online Lecture 7",
+  "description": "Online Lecture 7 - Pie chart & Faceting (Multiple bars)",
+  "contentMD": "# Online Lecture 7\n\n* Pie chart\n\n* Faceting (Multiple bars)\n\n```R\n# packages used\nlibrary(ggplot2)\nlibrary(gmodels) # for `CrossTable`\n```\n\n## Pie Chart\n\nPreparatory stage:\n\n```R\nlibrary(gmodels)\n\n#Make the CrossTable\nCrosstable(object,prop.t=TRUE)\n#Cross table to know the proportion\nCrossTable(smoking_and_drug_use_amongst_English_pupils$CgStat2,prop.t=TRUE)\n\n#create a small dataframe with the key value\ncount.smokers<-data.frame(smoke=c(\"NA\",\"never smoked\",\"smoked and then stopped\",\"tried once\",\"occasional smoker\",\"light smoker\",\"regular smoker\"),\n                          n=c(51,5900,326,779,223,119,191),\n                          prop=c(0.007,0.777,0.043,0.103,0.029,0.016,0.025))\n\n> count.smokers # a table will be printed out\n```\n\nVisualization stage:\n\n```R\n#create a pie char\nggplot(<the_samall_dataframe>,aes(x=\"\",y=??,fill=??))+\n  geom_bar(width=1,stat=\"identity\",color=\"??\")+\n  coord_polar(\"y\")\n\n#create a pie chart\nggplot(count.smokers,aes(x=\"\",y=prop,fill=smoke))+\n  geom_bar(width=1,stat=\"identity\",color=\"white\")+\n  coord_polar(\"y\",start=0)\n\n##Add the percentage to the pie chart with geom_text\n+geom_text(aes(label=paste0(round(prop*100),\"%\")),position=position_stack(vjust=0.5)) #`prop` is the variable name\n##Remove the theme elements\n+theme(panel.background = element_blank(),axis.text = element_blank(),axis.line = element_blank(),axis.ticks = element_blank(),axis.title = element_blank(),plot.title = element_blank())\n##add title\n+theme(panel.background = element_blank(),axis.text = element_blank(),axis.line = element_blank(),axis.ticks = element_blank(),axis.plot.title = element_blank()) #Remember to remove axis.title = element_blank()!!!\n+labs(title=\"hello_world\")\n```\n\n```R\n# complete example\nggplot(count.occupation,aes(x=\"\",y=prop,fill=Occupation))+\n  geom_bar(width=1,stat=\"identity\",color=\"white\")+\n  coord_polar(\"y\",start=0)+\n  geom_text(aes(label=paste0(round(prop*100),\"%\")),position=position_stack(vjust=0.5))+\n  theme(panel.background = element_blank(),axis.text = element_blank(),axis.line = element_blank(),axis.ticks = element_blank(),axis.title = element_blank())+\n  labs(title = \"Occupation of CUHK SZ students after graduation\")\n```\n\n\n\n## Multiple Bars Chart / Faceting\n\n(Display information about **three** different variables)\n\nprevious bar chart -- two factor var ===> split it according to a third factor var\n\n`+facet_wrap(~third_var)` \n\n```R\n# pay attention to the parameter `fill` and `x`, make sure you understand which is which\n# see the graph in video 32:34\nggplot(Student_BMI_2,aes(fill=`place of birth`,x=Dpt))+\n  geom_bar(position=\"dodge\")+   # can also be \"fill\" or \"stack\"\n  facet_wrap(~Gender)\n\nggplot(Student_BMI_2,aes(fill=Gender,x=BMI))+\n  geom_histogram(position=\"stack\", alpha=0.5,binwidth=2)+\n  facet_wrap(~Dpt) # not necessarily split bar chart, it can split histogram or geom_density as well\n```\n\n---\n\n`subset()` \n\n```R\nsubset(Survey$Followed_GEC_fac, Survey$Gender_fac==\"Male\")\n```\n\n```R\nSurvey_GE_class_choice_1_men<-subset(Survey_GE_class_choice_1,Gender==\"Male\")\n```\n\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062143693"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626935c1d8600f43435fa922"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "GEB2405 - Online Lecture 4",
+  "description": "On-line Lecture 4 - Merge data collected by different interviewers",
+  "contentMD": "# On-line Lecture 4 - Merge data collected by different interviewers\n\n* how to merge answer collected by different coders **(merge rows)**\n* how to add new variables in a dataset by matching the ID **(add/merge columns)**\n* how to manually add observation (one single respondent) in an existing dataframe **(add a row)**\n\n## 1. merge\n\nBefore import the excel data files, make sure the name of the variables are exactly the same in all data files, e.g. one var named `Rank` in file A, while the corresponding var in file B is named `Ranking`.\n\n```R\n# solution 1\n\n# create new var\nSurvey_GE_class_choice_2$Rank <- Survey_GE_class_choice_2$Ranking\n# delete the improperly named variable\nSurvey_GE_class_choice_2 <- Survey_GE_class_choice_2 [,-7]\n# bind the two dataset\ncuhksz_GE_choice <- rbind(Survey_GE_class_choice_1, Survey_GE_class_choice_2)\n```\n\n\n\n`rbind`:\n\nthe two dataframe should have the same variables, but they do not have to be in the same order\n\n-----> if it is not the case:\n\n* delete the extra var in one dataframe\n\n* add the extra var in another dataframe with `NA` \n\n  ```R\n  df$new_var <- NA\n  ```\n\n  \n\n```R\nname_of_the_new_dataframe <- rbind(dataframeA, dataframeB)\n\ncuhksz_student_health<-rbind(SSE_students_data,SME_students_data)\n```\n\n\n\n## 2. add new variables (add/merge a column)\n\nBefore merging we need to make sure we can find a way to match the information correctly.\n\nIn `CUHKSZ_employment_survey-1.xls` and `CUHKSZ_employment_survey-1b.xls`, the `ID` is unique to each respondent and correspond in the two dataframe.\n\n\n\n```R\nname_of_the_new_dataframe <- merge(dataframeA, dataframeB, by=\"variable to identify respondent\")\n\nCUHK_employement_1<-merge(CUHKSZ_employment_survey_1,CUHKSZ_employment_survey_1b, by=\"ID\")\n```\n\n\n\n## 3. add observation (one single respondent) in an existing dataframe (add a row)\n\n```R\nfix(dataframe_name)\n```\n\nclick + arrow\n\ndouble click ----> access already input data\n\n---\n\n\n\n# Tutorial 4\n\nExercise3 Q3: Create a new variable displaying how many kinds of coffee each student drink during the week\n\n```R\n# Arithmetic transformation in Tutorial 1!!!\ntest$total <- test$Cappuccin + test$CafeLatte + test$Americano + test$Expresso\n```\n\n\n\nExercise3 Q4: Create a new variable indicating the different combination of coffee drunk by the students (ex: Americano only, Americano and Capuccino….etc) \n\n```R\ndf$newFactor <- with(df, interaction(df$factorA, df$factorB, df$factorC))\n```\n\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062209773"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6269369bd8600f43435fa9aa"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Git Tricks: Filename Too Long Error",
+  "description": "处理Windows平台下Git: Filename too long报错",
+  "contentMD": "在使用Git时，如果远程仓库中含有名字很长的文件，或是某个文件在多层文件夹中，间接导致其“文件名”太长：\n\nWindows下，克隆时会出现 `warning: Clone succeeded, but checkout failed.` 报错\n\n阅读克隆/版本退回的报错信息可以看到类似 `error: unable to create file XXXXXXXXXXXXXXXXXXXX: Filename too long`的信息\n\n解决方法：\n\n1. Start Git Bash **as Administrator**\n2. Run command `git config --system core.longpaths true`\n\nAnother way (only for this clone):\n`git clone -c core.longpaths=true <repo-url>`\n\n(ref: https://stackoverflow.com/questions/52699177/how-to-fix-filename-too-long-error-during-git-clone/52699496)\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062427424"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693705d8600f43435fa9d1"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Blender Import Material and Setup Material Library",
+  "description": "Blender导入material，并建立material library",
+  "contentMD": "## 使用material library的原因\n\n多人合作时，方便颜色统一（尤其针对统一玻璃之类的复杂材质）\n\n## 如何导入material\n\n1. 打开想要导入material的 blender file\n2. 导航栏选择 File > Append\n3. 找到`material_template_lib.blend`，并双击进入\n4. 进入`Material`文件夹，并双击选择想导入的material\n\n![gif](https://camo.githubusercontent.com/548ea9bd6677b3840b98c2b3ef078787dfec0306e47559ad475b4419735de6bc/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f6141584f772e676966)\n\n![img_1.png](http://note.garychen.top:3000/static/note-pic/fb37e8bd47235dcb8d6710104.png)\n\n这样在Material selector中应该就能找到刚刚导入的material\n\n（注意**重命名**导入的material）\n\n（ref https://blender.stackexchange.com/questions/63018/how-to-import-downloaded-materials-files/63055）\n\n## *合作方式\n\n比如我负责选定玻璃的材质，那么我就\n\n* 下载最新的`material_template_lib.blend`\n* 新建一个cube，后新建并附上调好的玻璃材质\n* commit回GitHub，更新`material_template_lib.blend`\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062533453"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693751d8600f43435faa1c"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Blender Tutorial Notes",
+  "description": "Tutorial Link: https://www.youtube.com/watch?v=1jHUY3qoBu8",
+  "contentMD": "View: Numpad 1 / 3 / 7, or `ctrl` + Numpad 1 / 3 / 7\n\n\n\n`E` to extrude\n\n> `alt` + `E ` face normal\n\n`I` to insert\n\n> double lick `I`\n>\n> `B` while doing insert (if `B` does not work, press `I` again to disable **individual faces**) (e.g. car window)\n\n\n\n`G`\n\n`S`\n\n`R`\n\n\n\n`O` proportional editing (when modeling the tree)\n\n\n\n`ctrl` + `B` Bevel\n\n\n\n`alt` + `S` shrink / flatten\n\n\n\n`shift` + `right click` place 3D curser\n\n> `shift` + `S` > Cursor to selected\n>\n> `shift` + `C` re-center 3D curser \n\n\n\n`L` select linked (in edit mode)\n\n> `shift` + `L` to deselect linked\n\n\n\n## Selection Method\n\n`L`\n\nLoop select: `alt` + click on edge (in **face selection mode**)\n\ncircle select: `C`\n\n> deselect: middle mouse\n\n\n\nring select: `alt` + `ctrl` (in **edge select mode**)\n\nLoop select: `alt` + click on edge (in **edge selection mode**)\n\nselect shortest path: `ctrl` (in **edge select mode**)\n\n\n\nbox select: `B` (in **vertex select mode**)\n\n\n\n`alt` + `Z` enable/disable X-ray (to select the back vertices)\n\n\n\nLasso select (套索): `ctrl` + right mouse button \n\n\n\nGrow selection (select all faces neighboring to the selected face): `ctrl` + Numpad plus `+`\n\n> Shrink selection (opposite to **grow selection**): `ctrl` + `-` \n\n\n\nselect random\n\nselect similar: `shift` + `G` \n\n\n\nchecker deselect (间隔选中效果，像足球那样): `F` \n\n`H` hide selected objects\n\n> `alt` + `H` unhide all\n\n\n\n`ctrl` + `I`: Invert selection (选中所有未被当前选中的东西)\n\n---\n\nLoop cut: `ctrl` + `R` \n\n\n\nKnife tool: `K` \n\n> `ctrl`: snap to center with knife tool \n>\n> `C`: angle constraint with knife tool \n\n\n\n`ctrl` + 1-5: **subdivision modifier** (remember to **apply** this modifier)\n\n> if it make the object **not low-poly**, then use **Decimate modifier** to make it back to low-poly.\n>\n> (see video around 48:00)\n\n\n\n`,`: Orientation\n\n\n\nsnap (上方的磁贴icon) (hotkey: `ctrl` when using `G`) ----> 把两个vertices连在一起 (注意：这样snap后，实际上仍然是两个vertices) ------> two solutions\n\n> 1. use **snap** along with **Auto Merge Vertices**\n> 2. after **snap**, `A` to select all, then `M` to merge `merge by distance` \n\n> snap along an **axis**, instead of snap two vertices, to **align**\n\n\n\nafter delete some faces, use `F` to **Fill / Create face(s)** (自动填补holes)\n\n> 1. select the whole object and `F`\n> 2. select certain edges and `F` \n\n\n\nafter selecting 2 vertices, press `J` / `F` to add an edge between these 2 vertices (`J` will make the object more low-poly, while `F` simply add an edge without affecting the original shape)\n\n\n\nBesides `J`, we can use `ctrl` + `T` to **Triangulate selection** to make a round face more low-poly after using `F` to **Fill a hole**\n\n\n\nsetting: enable **Backface Culling** \n\n`F3` search **flip normal** (or `alt` + `N`)\n\nsome faces are **flipped**, to fix it `alt` + `N` > **recalculate outside** \n\n\n\n`X` dissolve edges\n\n\n\nTo connect two meshes inside one object into one single mesh, select two faces which you want to connect and `F3` > **Bridge Edge Loops** \n\n\n\ntips: `shift` + `D` to duplicate a face, `right mouse` to put the new face exactly the same location as the original one\n\n\n\nSeparate selection to new object: `P` \n\nMerge into a single object: `ctrl` + `J` \n\n\n\n## Modifiers\n\nMirror modifier (use **auto mirror** add-on)\n\n\n\nSubdivision surface modifier: `ctrl` + `5 or other` (subdivide a plane to create low-poly island)\n\n\n\nDisplace modifier (low-poly landscape) \n\n\n\nSkin modifier (use with **extra mesh add-on**, so that we can add **single vertex**, and then build a low-poly tree)\n\n> `A` to select all, and then `ctrl` + `A` to scale\n\n\n\n---\n\n## Tips\n\nIf we scare the object outside edit mode, `ctrl` + `A` > apply scale to make the scare `1, 1, 1` again!\n\n\n\n`Numpad .`: to make viewport rotate around selection\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062609763"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626937b8d8600f43435faa46"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Compile Using CMake",
+  "description": "使用CMake进行编译",
+  "contentMD": "在使用CLion编写C++项目后，IDE会自动生成CMakeLists.txt文件。那么如何手动编译我们写的代码呢？\n\n步骤如下\n\n* 将项目中的所有源文件 + 自动生成的CMakeLists.txt 传入Linux虚拟机（的同一目录下）\n\n* ```shell\n  mkdir build\n  cd build\n  cmake ..\t\t# 用cmake命令将CMakeLists.txt文件转化为make所需要的makefile文件\n  make\t\t\t# 用make命令编译源码生成可执行程序\n  ```\n\n* 运行\n\n  ```shell\n  ./name_of_executable\n  ```\n\n\n\n(ref: https://www.cnblogs.com/cv-pr/p/6206921.html)\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062712359"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626937dcd8600f43435faa6f"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Git Tricks: Set .gitignore for Unity Project & Clear git-ignored files",
+  "description": ".gitignore在Unity工程中的使用 & 清除已被Git追踪但现在处于.gitignore中的文件",
+  "contentMD": "## 1. gitignore在Unity工程中的使用\n\nUnity工程在第一次commit前一定要在工程根目录下放置[正确的`.gitignore`文件](https://github.com/github/gitignore/blob/master/Unity.gitignore)。\n\n如果第一次commit时没有添加`.gitignore`或`.gitignore`放置位置不对，会导致project中许多不必要的中间文件也被版本控制，比如Library文件夹\n\n> **As a user, you should never have to alter the Library folder manually and attempting to do so may affect the functioning of the project in the Unity editor.** However, it is always safe to delete the Library folder (while the project is not open in Unity) as all its data is generated from what is stored in the Assets and ProjectSettings folders. **This also means that the Library folder should not be included in version control .**\n\n(ref: https://stackoverflow.com/questions/59742994/should-i-push-the-unity-library-folder-to-github)\n\n进而导致以下可能的后果：\n\n* 在拉下仓库最新提交后，部分文件无法被unity识别，图标变成空白\n* 单纯用unity打开project，即使没有做任何修改，git status也会提示有改动\n* Git会记录很多奇怪的修改。比如，git显示我们删掉了一个文件，并原封不动地加了回来。同时，这些奇怪而不必要的修改大多发生在Library文件夹。\n\n\n\n## 2. 清除已被Git追踪，但现在处于.gitignore中的文件\n\nHow to make Git “forget” about a file that was tracked but is now in .gitignore?\n\n```\ngit rm -r --cached .\ngit add .\ngit commit -am \"Remove ignored files\"\n```\n\n(ref: https://stackoverflow.com/questions/1274057/how-to-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore)\n\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062748824"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62693805d8600f43435faa99"
+  },
+  "author": {
+    "$oid": "6269059fd7c2a18030dcdf44"
+  },
+  "title": "Unity: Debug With adb",
+  "description": "使用adb命令为Unity调试",
+  "contentMD": "## 先决条件\n### 1. 电脑上\n* 下载adb（建议直接下Android Studio）\n* 配置adb系统环境变量\n    默认路径：`C:\\Users\\<user_name>\\AppData\\Local\\Android\\Sdk\\platform-tools`\n    \n\t[Reference Link](https://www.jianshu.com/p/494216e613eb)\n\n### 2. 手机上\n* 安卓手机进入开发者模式\n    进入开发者模式：settings => about phone => build number (tap seven times)\n\n## 使用\n1. 数据线连接手机（如果之前没连过需要安装驱动）\n2. 允许“USB调试”（应该有指引）\n   \n   [Reference Link](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)\n3. 电脑终端输入以下命令开始adb调试\n    `adb logcat -s Unity ActivityManager PackageManager dalvikvm DEBUG`\n    上一种指令在我(hyy)的电脑上不能过滤信息，导致有很多无用的信息，以下的指令可以只显示Unity debug消息\n    `adb logcat -s Unity` （-s后加入想要过滤的filter log）\n    \n\t[Reference Link](https://answers.unity.com/questions/492681/how-to-use-adb-logcat.html)\n\n## 另一种直观的方式\n\n[Reference Link](https://www.youtube.com/watch?v=eI2GOuEMGfQ)\n\n1. 打开monitor.bat文件：路径: 'C:\\Users\\<user_name>\\AppData\\Local\\Android\\Sdk\\tools'\n2. 手机连接电脑(手机进入开发者模式)\n3. 点击图中的绿色加号，在log处设置filter为Unity，在filter name处设置所需的filter的名字，点击确定\n    \n![](1.png)\n4. 点击刚刚设置的filter space，就能看见被过滤过的log消息（若filter log设置为Unity，则看到的log为Unity debug消息）\n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651062789624"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a3c0fa748fac4daaebbce"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "empty long long long long long title",
+  "description": "description",
+  "contentMD": "<h1>TESTING</h1>\nHi, there!\nWelcome to Note-squared!\n\nHere is some suggestions for u ~ :laughing: :blush: :smiley: :)\n\n==Markdown Guide==\n\nDetailed:  [Markdown Guide Link](http://commonmark.org/help/)\n\n\n\n<h3>1. Some font style</h3>\n\n- Bold **bold**  \n- Italic *italic*\n- ++underline++ ~~strikethrough~~\n\n<h3>2. Some formula</h3>\n\n1. super x^2^  \n2. sub H~2~0\n3. $\\frac{d}{dx}e^{ax}=ae^{ax}\\quad \\sum_{i=1}^{n}{(X_i - \\overline{X})^2}$\n\n<h3>3. Insert table and to-do list</h3>\n\n| th1 | th2 | th3 |\n| :--  | :--: | ----: |\n| left | center | right |\n\n- [x] task 1\n- [ ] task 2\n\n\n<h3>4. Insert code</h3>\n\n``` type\nint main()\n{\n    printf(\"hello world!\");\n\n```\n\n` code `\n\n<h3>5. Insert picture</h3>\n\n![avatar_1.jpg](http://localhost:3000/static/note-pic/846bdc4ccc2aa64a107ba7202.jpg) \n",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651129359274"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "626a3ceaa748fac4daaebc78"
+  },
+  "author": {
+    "$oid": "625d7425ab4f23d61b9f3e9c"
+  },
+  "title": "A Cute Game Recommendation: Animal Crossing it is my note",
+  "description": "Animal Crossing is a social simulation video game series developed and published by Nintendo.",
+  "contentMD": "==Animal Crossing== is a social simulation video game series developed and published by ++Nintendo++. The series was conceptualized and created by Katsuya Eguchi and Hisashi Nogami. In Animal Crossing, the player character is a human who lives in a village inhabited by various anthropomorphic animals and can do various activities like fishing, bug catching, and fossil hunting. The series is notable for its open-ended gameplay and use of the video game console's internal clock and calendar to simulate the real passage of time. :laughing: :laughing: :laughing:\n![u=2031255258,3368505111fm=253fmt=autoapp=138f=JPEG.png](http://note.garychen.top:3000/static/note-pic/b2b62090e6ca0e2b225ad8105.png)\nSince its initial release in 2001, five Animal Crossing games have been released worldwide, one each for the Nintendo 64/iQue Player (enhanced and reissued for the GameCube), Nintendo DS, Wii, Nintendo 3DS, and Nintendo Switch. The series has been both critically and commercially successful and has sold over 60 million units worldwide. \nit is my note!!",
+  "visibility": "public",
+  "like": 0,
+  "fork": 0,
+  "score": 0,
+  "publishDate": {
+    "$date": {
+      "$numberLong": "1651129578701"
+    }
+  },
+  "__v": 0
+}]
