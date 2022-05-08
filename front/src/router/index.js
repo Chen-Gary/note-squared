@@ -3,18 +3,14 @@ import Router from 'vue-router'
 import Register from "../components/Register";
 import Editor from "../components/Editor";
 import Login from "../components/Login";
-//import Login from "../components/Login2";
 import Forget_password from "../components/Forget_password";
 import Home from "../components/Home";
 import HomeNavBar from "../components/HomeNavBar"
-import Bookshelf from "../components/bookshelf/Bookshelf";
 import NoteEdit from "../components/note/NoteEdit";
-import NoteDetail from "../components/note/NoteDetail";
 import Community from "../components/note_community/Community";
 import Admin_ChangeProfile from "../components/admin/Admin_ChangeProfile";
 import ViewArticle from "../components/note/ViewArticle";
 import PersonalCenter from "../pages/UserCenter"
-import UserInfo from "../pages/UserInfo"
 Vue.use(Router)
 export default new Router({
   routes: [

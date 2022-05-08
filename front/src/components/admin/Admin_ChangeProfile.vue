@@ -11,13 +11,6 @@
     style="margin-right:-90%"
   >Log out</el-button>
   <h1>User Profile Management</h1>
-  <!--
-  <el-row class = "search_box">
-    <el-col >
-      <el-input v-model="search_keyword" style="width: 30%"></el-input>
-      <el-button type="primary" icon="el-icon-search" style="margin-left:1%">Search</el-button>
-    </el-col>
-  </el-row>-->
   <br>
   <el-table
     :data="tableData"
@@ -96,9 +89,9 @@ export default {
   },
   data() {
       return {
-      search_keyword:"",
-      tableData: [],
-      currentPage: 1,
+      search_keyword:"", //搜索的关键词
+      tableData: [],  //表格内容
+      currentPage: 1,  //当前页面页码
       page:{
             currentPage:1, //当前页
             pagesize:10,    // 每页的数据
@@ -106,8 +99,8 @@ export default {
             totalPage:5, //总页数
       },
       option:options,
-      dialogVisible:false,
-      form:{
+      dialogVisible:false,  //弹窗是否开启
+      form:{           //存放被修改用户的信息
         _id:"",
         name:"",
         password:"",
@@ -120,7 +113,7 @@ export default {
     methods:{
     handleSizeChange: function (size) {
         this.page.pagesize = size;
-        console.log(this.page.pagesize)  //每页下拉显示数据多少条，默认10条，所以不需要这个函数
+        console.log(this.page.pagesize)  //每页下拉显示数据多少条，默认10条
     },
     
     handleCurrentChange: function(currentPage){
@@ -131,10 +124,10 @@ export default {
 
     log_out: function() {
         localStorage.clear();
-        this.$router.replace('/home');
+        this.$router.replace('/home');  //退出登录，跳转到home
     },
 
-    handleDialogValue:function(row)
+    handleDialogValue:function(row)     //获取当前行信息
     {
       this.dialogVisible = true
       this.form._id = row._id
@@ -146,7 +139,7 @@ export default {
       this.form.role = state
     },
 
-    handleConfirm(){
+    handleConfirm(){        //向后端提交修改后的用户信息
       this.dialogVisible = false;
       //如果更改的是密码
       console.log(this.activeName)
@@ -205,7 +198,7 @@ export default {
 
       }
     },
-    change_admin_state(row){
+    change_admin_state(row){     //改变某用户的属性（admin或者normal）
       let state = ""
       if (row.role) state = "admin"
       else state = "normal"
@@ -234,9 +227,7 @@ export default {
         })
       
     },
-    ChangeUserList: function() {    
-      //等待后端完善所有每个页面
-       // console.log(localStorage.elementToken)
+    ChangeUserList: function() {        //更新表格
         this.$axios.get("/admin/userlist/"+this.page.currentPage,{
           headers: {Authorization:localStorage.elementToken},
         })
