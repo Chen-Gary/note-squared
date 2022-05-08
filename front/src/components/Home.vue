@@ -181,8 +181,9 @@ import NavMenu from "./common/NavMenu";
         name: "Home",
         data() {
         return {
-          Logo:require("../assets/Logo.png"),
+          Logo:require("../assets/Logo.png"), //logo
 
+          //一些的图片
           imgUrl:require("../assets/Home/home_pic1.png"),
           imgUrl2:require("../assets/Home/home_pic2.png"),
           imgUrl3:require("../assets/Home/home_pic3.png"),
@@ -193,16 +194,17 @@ import NavMenu from "./common/NavMenu";
           imgIcon1:require("../assets/Home/Icon1.png"),
           imgIcon2:require("../assets/Home/Icon2.png"),
           imgIcon3:require("../assets/Home/Icon3.png"),
-         // imgIcon4:require("../assets/Home/Icon4.png"),
         }
         },
       components:{
         NavMenu
       },
       methods:{
+        //跳转到注册界面
         toRegister(){
           this.$router.replace('/register')
         },
+        //跳转到登录界面或者自动登录
         toLogin(){
           //本地已经登录过
           if (localStorage.elementToken){
@@ -257,24 +259,6 @@ import NavMenu from "./common/NavMenu";
 </script>
 
 <style scoped>
-  /*.first_text3.container {
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    top:0;
-    background-color:beige;
-    background-image: url("../../../static/homeMask.png");
-    background-image: url('../assets/Home/Header.png');
-    background-image: url("../../../static/homeMask.png");
-    background-size: 100%
-    color:#000000;
-    font-size: 100px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    margin-top: 15px;
-  }*/
   .container {
     width: 100%;
     overflow: hidden;
@@ -353,26 +337,19 @@ import NavMenu from "./common/NavMenu";
     height: 48px;
     border-radius: 6px;
     background: #367BF5;
-    /* Shadow Blue · 16dp */
     box-shadow: 0px 16px 24px rgba(54, 123, 245, 0.16), 0px 6px 12px rgba(54, 123, 245, 0.16);
     border-radius: 6px;
     font-size:14px;
   }
   .login_button{
     margin-top: 30px;
-    /* margin-right: 70%; */
     width: 176px;
     height: 48px;
     border-radius: 6px;
     background: #ffffff;
-    
-    /* Shadow Blue · 16dp */
-    /* box-shadow: 0px 16px 24px rgba(54, 123, 245, 0.16), 0px 6px 12px rgba(54, 123, 245, 0.16);*/
     border-radius: 6px;
     text-transform: uppercase;
-    /* Blue Base */
     color: #367BF5;
-    /* Shadow Blue · 8dp */
     text-shadow: 0px 8px 16px rgba(54, 123, 245, 0.1), 0px 4px 8px rgba(54, 123, 245, 0.16);
   }
   .first_pic{
@@ -418,7 +395,6 @@ import NavMenu from "./common/NavMenu";
     font-weight: 400;
     font-size: 20px;
     line-height: 40px;
-/* or 150% */
     margin-left:55%; 
     letter-spacing: 0.15px;
     text-align: start;
@@ -439,7 +415,6 @@ import NavMenu from "./common/NavMenu";
   }
   .sub_feature_text2{
     margin-top:2%;
-    /* margin-left:0%; */
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -447,7 +422,6 @@ import NavMenu from "./common/NavMenu";
     display: flex;
     align-items: center;
     letter-spacing: -0.01em;
-    /* Dark Color */
     color: rgba(0, 0, 0, 0.87);
 
   }

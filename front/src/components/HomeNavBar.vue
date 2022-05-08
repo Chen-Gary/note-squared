@@ -6,6 +6,7 @@
 </template>
 
 <script>
+//navbar，导航栏component
   import NavMenu from "./common/NavMenu";
     export default {
       name: "HomeNavBar",

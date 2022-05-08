@@ -4,7 +4,6 @@
     <el-divider></el-divider>
 
     <!--笔记标题-->
-     <!--!!!!!!!!跳转链接-->
     <div class = "title">
       <el-button type="text" class = "title_text" @click="handle_router_change">{{noteItem.title}}</el-button>
     </div>
@@ -27,6 +26,7 @@
 </template>
 
 <script>
+ //存放某页笔记的每一行的component
 export default {
   name:"CommunityItem",
   props:{

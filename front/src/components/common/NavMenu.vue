@@ -7,7 +7,6 @@
       active-text-color="#25567A">
 
       <el-menu-item @click="to_home">
-        <!--   v-for="(item,i) in navList" :index="item.url" :key="i" -->
         <el-image
         class="logo"
         :src="require('@/assets/Logo.png')"
@@ -41,9 +40,9 @@
       name: "NavMenu",
       data() {
         return {
-          url: "../../assets/Logo.png",
-          isLogin:'none',
-          userFlag: {
+          url: "../../assets/Logo.png",  //navbar 图标
+          isLogin:'none',   
+          userFlag: {       //存放一些用户信息
             name: '',
             menuList: []
           },
@@ -58,7 +57,7 @@
 
       mounted() {
         console.log("login status")
-        if (window.localStorage.getItem("email") != null )
+        if (window.localStorage.getItem("email") != null )  //如果localstorage有存放信息，自动登录
         {
           this.login_status = "Log Out"
         }
@@ -68,7 +67,7 @@
       },
 
       methods: {
-        fullScreen(ev) {
+        fullScreen(ev) {   //全屏按钮
           const isFull=!!(document.webkitIsFullScreen || document.mozFullScreen ||
             document.msFullscreenElement || document.fullscreenElement
           )
@@ -96,7 +95,7 @@
             }
           }
         },
-        note_log_out(){
+        note_log_out(){    //退出登录，回到home界面
             if (this.login_status == "Log Out"){
               localStorage.clear();
               this.$router.replace('/home');
@@ -106,7 +105,7 @@
                 this.$router.replace('/login');
             }
         },
-        auto_login(){
+        auto_login(){   //登录，和后端相连接
           this.$axios.post("/user/login",{
             email:localStorage.email,
             password:localStorage.password,
@@ -138,17 +137,17 @@
             console.log(error)
           })
         },
-        to_personal_center()
+        to_personal_center() //跳转到personal center
         {
           if (localStorage.elementToken) this.$router.replace('/personal-center');
           else this.$router.replace('/login');
         },
-        to_community()
+        to_community()  //跳转到note community
         {
            if (localStorage.elementToken) this.$router.replace('/community');
            else this.$router.replace('/login');
         },
-        to_home() {
+        to_home() {    //跳转到home
           this.$router.replace('/home')
         }
       }

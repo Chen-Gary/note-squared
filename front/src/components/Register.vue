@@ -100,6 +100,7 @@
         }
       },
       created() {
+        //按验证码按钮之后倒计时
         if(window.sessionStorage.getItem("X_no_time")==null){
           this.sendCode = true
         }else{
@@ -149,6 +150,7 @@
           })
           
         },
+        //倒计时
         toLoading(){
           this.sendCode = false;
           this.interCounter = setInterval(this.fusn, 1000);
@@ -197,12 +199,6 @@
   .container{
     height: 100%;
     width: 100%;
-    /*background-image: url("../../static/homeMask.png");*/
-   /* background-size: cover;
-    position: fixed;
-    left: 0px;
-    top:0px;
-    padding-top: 30px;*/
   }
   .form-body{
     position: absolute;
@@ -214,15 +210,11 @@
     width: 27%;
     min-width: 300px;
     padding: 30px 30px 15px 30px;
-    /*background-color: rgba(255,255,255,0.8);
-    box-shadow: 5px 3px 10px rgba(0,0,0,0.9);*/
   }
   .form-confirm{
     width: 100%;
     height: 150%;
     background-color: #457DED;
-   /* border: 2px solid #484848;*/
-    /* border-radius: 4px; */
     border-radius: 15px;
     font-weight: bolder;
   }
