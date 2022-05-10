@@ -11,6 +11,7 @@
 </template>
 
 <script>
+//存放某页笔记的列表component
 import CommunityItem from './CommunityItem'
 export default {
   name: "CommunityList",

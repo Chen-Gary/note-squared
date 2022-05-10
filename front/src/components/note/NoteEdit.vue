@@ -73,7 +73,6 @@
 
 <script>
   import TypeWriter from '../../assets/Note/typewriter.png'
-  import { Message } from 'element-ui';
   import { hostAddr } from '../../utils/const'
   export default {
     name: "NoteEdit",

@@ -108,7 +108,6 @@ export default {
     
     },
      
-    //https://www.bilibili.com/video/BV1hA41187dE?spm_id_from=333.337.search-card.all.click   47:21
 
     // 初始页currentPage、初始每页数据数pagesize和数据data
     handleSizeChange: function (size) {
@@ -116,6 +115,7 @@ export default {
         console.log(this.page.pagesize)  //每页下拉显示数据
     },
     
+    //点击分页最下面的页码时，更新其页码内容
     handleCurrentChange: function(currentPage){
         this.page.currentPage = currentPage;
         localStorage.community_page = currentPage;
@@ -124,17 +124,19 @@ export default {
         this.scrollTop(".tabledns");
     },
     
+    //更新界面，分为搜索模式或者整个笔记社区模式
     UpdatePage() {    
       if (this.mode === "search"){
         this.search();
       }
-      //等待后端完善所有数据库的返回
       else{
         this.show_all_note();
         this.keyword = ""
       }
         
     },
+
+    //获取笔记社区所有笔记信息（笔记名，笔记上传时间，笔记点赞数，笔记描述，笔记ID等）
     show_all_note()
     {
         this.$axios.get("/admin/notelist/"+this.page.currentPage,{
@@ -174,6 +176,7 @@ export default {
       //所有数据库的返回
       this.show_all_note();
     },
+    //跳转回personal center
     back_to_personal_center()
     {
       this.$router.replace('/personal-center')

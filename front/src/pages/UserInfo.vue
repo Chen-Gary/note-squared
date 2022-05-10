@@ -78,7 +78,6 @@
 </template>
 
 <script>
-  import qs from 'qs'
   import { hostAddr } from '../utils/const'
   export default {
     name: "UserInfo",
@@ -90,23 +89,22 @@
       return {
         imageUrl: '',
         file_info :"",
-        squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
-        username:"12345678910",
-        new_username:"",
-        nickname_dialogVisible:false,
-        avatar_dialogVisible:false,
-        obj:{
-          Authorization:localStorage.elementToken,
-        }
+        squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",//头像图片链接
+        username:"12345678910",//当前用户名
+        new_username:"",//新的用户名
+        nickname_dialogVisible:false, //修改用户名弹窗是否显示
+        avatar_dialogVisible:false,   //修改头像弹窗是否显示
       };
     },
     methods: {
+      //头像成功上传到vue
       handleAvatarSuccess(res, file) {
         console.log("file success");
         console.log(file);
         this.imageUrl = URL.createObjectURL(file.raw);
         this.file_info = file.raw;
       },
+      //头像上传到vue失败
       handleAvatarFail(res,file, fileList)
       {
         console.log("file fail")
@@ -114,6 +112,7 @@
         this.imageUrl = URL.createObjectURL(file.raw);
         this.file_info = file.raw;
       },
+      //在图片上传时检查图片一些属性
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
         const isLt2M = file.size / 1024 / 1024 < 2;
@@ -235,7 +234,7 @@
         this.squareUrl = this.imageUrl;
         this.avatar_dialogVisible = false;
       },
-
+      
       onchange(file,fileList){
           var _this = this;
           var event = event || window.event;
@@ -248,11 +247,13 @@
           console.log(reader);
 
       },
+      //退出登录
       log_out()
       {
         localStorage.clear();
         this.$router.replace('/home');
       },
+      //跳转到笔记社区
       to_note_community()
       {
         this.$router.replace('/community');
