@@ -67,6 +67,13 @@
         callback();
         }
         };
+        var checkEmail = (rule, value, callback) => {
+          const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          if (regEmail.test(value)) {
+            return callback();
+          }
+          callback(new Error("Please enter correct email!"));
+        };
         return {
           //注册信息，邮箱，两次密码，用户名（name），验证码
           registerData:{
@@ -79,7 +86,8 @@
           //错误输入提示
           rules:{
             email:[{required:true, message:'Empty Email',trigger:'blur'},
-                      {min:3,max:32,message:'The length is between 3 and 32',trigger:'blur'}
+                      {min:3,max:32,message:'The length is between 3 and 32',trigger:'blur'},
+                      {validator: checkEmail}
             ],
             password:[{required:true, message:'Empty password',trigger:'blur'},
                       {min:3,max:32,message:'The length is between 3 and 32',trigger:'blur'}
