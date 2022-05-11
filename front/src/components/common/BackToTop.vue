@@ -1,13 +1,12 @@
 <template>
   <el-backtop target=".nav-bar"></el-backtop>
-</template>  
+</template>
 
 <script>
 export default {
-    name: "BackToTop"
-}
+  // the back to top button fixed in the right-bottom corner of the page
+  name: "BackToTop",
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

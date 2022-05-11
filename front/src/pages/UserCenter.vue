@@ -1,7 +1,7 @@
 <template>
   <div class="personal-center">
     <div class="user-info">
-      <UserInfo/>
+      <UserInfo />
     </div>
     <el-tabs type="card" v-model="activeName">
       <el-tab-pane label="My Articles" name="first">
@@ -9,30 +9,29 @@
       </el-tab-pane>
       <!-- <el-tab-pane label="Saved" name="second">Saved</el-tab-pane> -->
       <el-tab-pane label="Liked" name="second">
-        <Like/>
+        <Like />
       </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 
 <script>
-import Folders from "../components/usercenter/Folders.vue"
-import Like from "../components/usercenter/Like.vue"
-import UserInfo from "./UserInfo.vue"
+import Folders from "../components/usercenter/Folders.vue";
+import Like from "../components/usercenter/Like.vue";
+import UserInfo from "./UserInfo.vue";
 export default {
   name: "UserCenter",
-  components:{
+  components: {
     Folders,
     Like,
     UserInfo,
   },
   data() {
     return {
-      activeName: "first"
+      activeName: "first",
     };
   },
-
-}
+};
 </script>
 
 <style scoped>
@@ -44,13 +43,12 @@ export default {
   flex-direction: row;
   justify-content: left;
 }
-.article-container{
+.article-container {
   padding: 30px;
   display: flex;
   flex-direction: row;
-    
 }
 .articles {
-    width: 100%;
+  width: 100%;
 }
 </style>
