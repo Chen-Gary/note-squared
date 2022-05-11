@@ -1,5 +1,6 @@
 <template>
   <div class="article-cards-box">
+    <!-- similar to that written in folders.vue -->
     <div class="single-article" v-for="(item, i) in LikedList" :key="i">
       <div>
         <div @click="navigateToView(item.id)" class="single-article-title">
@@ -35,13 +36,14 @@ export default {
       LikedList: [],
     };
   },
+  // when created, get the liked-note
   created() {
     this.$axios.get("/note/likeNote-get").then((res) => {
       this.LikedList = res.data.list;
-      console.log("liked list is", this.LikedList);
     });
   },
   methods: {
+    // navigate to the note view
     navigateToView(id) {
       this.$router
         .push({
@@ -54,6 +56,7 @@ export default {
           err;
         });
     },
+    // cancel the like of note
     cancelLike(id) {
       let modifiedLikeList = this.LikedList;
       this.LikedList = modifiedLikeList.filter((item) => item.id !== id);

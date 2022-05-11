@@ -1,5 +1,6 @@
 <template>
   <div class="personal-center">
+    <!-- operation box, displaying the actions of folders -->
     <div class="operation-box">
       <el-tooltip effect="dark" content="Create">
         <el-button
@@ -27,6 +28,7 @@
         ></el-button>
       </el-tooltip>
     </div>
+    <!-- article box -->
     <div class="article-container">
       <div class="folder">
         <el-tabs v-model="currentFolder" tab-position="left">
@@ -163,6 +165,7 @@
 <script>
 export default {
   name: "Folders",
+  // when created, get the folders and the notes under each folder
   created() {
     this.$axios
       .post("/note/local-folder-notes-get", { withNote: "true" })
@@ -186,20 +189,19 @@ export default {
     };
   },
   computed: {
+    // compute the current notes
     currentNotes() {
       let curNotes = [];
       this.folders.forEach((folder) => {
         if (folder.folder_id === this.currentFolder) {
           curNotes = folder.note;
-          console.log("current id is ", folder.folder_id);
-          console.log(folder.note);
         }
       });
-      console.log("cur note is ", curNotes);
       return curNotes;
     },
   },
   methods: {
+    // when removing one folder, show the confirm dialog
     showConfirmRemove() {
       if (this.folders.length != 0) {
         if (this.folders[0].folder_id != this.currentFolder) {
@@ -211,6 +213,7 @@ export default {
         alert("No folder to be deleted!");
       }
     },
+    // if the remove instruction is confirmed, post request to backend, also delete the folder when rendering
     removeFolder() {
       let tabs = this.folders;
       let activeName = this.currentFolder;
@@ -222,9 +225,9 @@ export default {
           }
         }
       });
-      console.log("current folder is ", this.currentFolder);
+      // delete the folder
       this.folders = tabs.filter((tab) => tab.folder_id !== this.currentFolder);
-      console.log(this.folders);
+      // send request
       this.$axios
         .post("/note/delete-folder", {
           folderId: this.currentFolder,
@@ -235,6 +238,7 @@ export default {
         });
       this.dialogVisibleDel = false;
     },
+    // create new folder function
     createFolder() {
       if (this.newFolderName) {
         this.$axios
@@ -243,7 +247,6 @@ export default {
             mode: "new",
           })
           .then((res) => {
-            console.log("response is ,", res);
             let newFolderItem = {
               folder_id: res.data.data._id,
               folder_title: res.data.data.title,
@@ -257,6 +260,7 @@ export default {
         alert("the folder name cannot be empty");
       }
     },
+    // rename the folder function
     renameFolder() {
       if (this.newFolderName) {
         let newFolders = [];
@@ -288,6 +292,7 @@ export default {
         this.dialogVisibleRename = false;
       }
     },
+    // navigate to note-create page
     navigateToCreate() {
       this.$router
         .push({
@@ -301,10 +306,8 @@ export default {
         });
       // this.$router.push('/note/edit').catch(err => {err})
     },
+    // move article to other folder function
     moveArticle(command, id) {
-      console.log("folder id is", command);
-      console.log("note id is", id);
-      console.log("temp folder is", this.currentFolder);
       if (command == this.currentFolder) {
         alert("cannot move to the same folder");
       } else {
@@ -337,6 +340,7 @@ export default {
           });
       }
     },
+    // delete the article function
     deleteArticle(id) {
       console.log(id);
       let modifiedFolder = this.folders;
@@ -356,6 +360,7 @@ export default {
         });
       this.folders = modifiedFolder;
     },
+    // navigate to note view function
     navigateToView(id) {
       this.$router
         .push({
@@ -368,6 +373,7 @@ export default {
           err;
         });
     },
+    // carry params to note view, including the visibility and folder (for display)
     withParamsToView(id, visibility) {
       this.$router
         .push({

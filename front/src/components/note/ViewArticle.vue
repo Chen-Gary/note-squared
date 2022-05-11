@@ -271,6 +271,7 @@ export default {
           }
         });
     },
+    // the function that will be triggered when click the fork button (show the dialog)
     displayForkDialog() {
       this.$axios
         .post("/note/local-folder-notes-get", { withNote: "false" })
@@ -280,6 +281,7 @@ export default {
         });
       this.dialogVisibleFork = true;
     },
+    // finish the note fork function
     note_fork() {
       this.$axios
         .post("/note/fork-note", {
@@ -301,11 +303,13 @@ export default {
         });
       this.dialogVisibleFork = false;
     },
+    // navigate to community
     navigateToCom() {
       this.$router.push("/community").catch((err) => {
         err;
       });
     },
+    // navigate to note view
     navigateToView(id) {
       this.$router
         .push({
@@ -318,6 +322,7 @@ export default {
           err;
         });
     },
+    // navigate to the article edit page
     navigateToEdit(id) {
       this.$router
         .push({
@@ -331,6 +336,7 @@ export default {
         });
       console.log("id in view page is ", id);
     },
+    // get the recommendation list of notes
     get_note_recommendation: function () {
       this.$axios.get("/note/recommendation-get", {}).then((response) => {
         console.log("get rec", response);
