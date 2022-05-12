@@ -4,6 +4,7 @@ const { isAdmin, isNormalLogin } = require('../middleware/authentication')
 
 const router = express.Router()
 
+
 // get user info list
 router.get('/userlist/:page', isAdmin, require('./admin/userlist'))
 

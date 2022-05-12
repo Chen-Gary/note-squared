@@ -30,6 +30,11 @@ module.exports = async (req, res) => {
     // const userCheck_1 = await User.findOne({username: newUserInfo.username})
     // if (userCheck_1) { return res.status(409).send('username already exists') }
 
+    // check password complexity
+    if (newUserInfo.password.length < 3 || newUserInfo.password.length > 32) {
+        return res.status(409).send({message: 'password length should be between 3 and 32'})
+    }
+
     // check if the email is already registered
     const userCheck = await User.findOne({email: newUserInfo.email})
     if (userCheck) { return res.status(409).send({message: 'email already registered'}) }

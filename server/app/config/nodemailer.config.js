@@ -19,7 +19,7 @@ const sendVerificationCode_register = (name, email, confirmationCode) => {
         subject: "Please confirm your account",
         html: `<h1>Email Confirmation</h1>
         <h2>Hello ${name},</h2>
-        <p>Thank you for registering Note^2. Please use the following verification code to confirm your email address: </p>
+        <p>Thank you for registering Note Squared. Please use the following verification code to confirm your email address: </p>
         <br>
         <p><b>${confirmationCode}</b></p>
         <br>

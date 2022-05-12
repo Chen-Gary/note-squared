@@ -1,4 +1,4 @@
-// this file encapsulate the subroutines to delete the notes, folders, likes and comments
+// this file encapsulates the subroutines to delete the notes, folders, likes and comments
 const User = require("../model/User");
 const Note = require("../model/Note");
 const Folder = require("../model/Folder");
