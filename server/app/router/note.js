@@ -4,6 +4,8 @@ const { isNormalLogin } = require('../middleware/authentication');
 
 const router = express.Router();
 
+
+// upload picture to a note
 router.post('/upload-pic', isNormalLogin, require('./note/upload-pic'));
 
 // user modify the folder: modify & create
@@ -44,4 +46,6 @@ router.get('/recommendation-get', require('./note/recommendation-get'));
 
 // get the like note list of a user
 router.get('/likeNote-get', isNormalLogin, require('./note/likeNote-get'));
+
+
 module.exports = router;
