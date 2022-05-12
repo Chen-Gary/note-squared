@@ -1,4 +1,5 @@
 const ShortUniqueId = require('short-unique-id');
+const validator = require("email-validator");
 const  nodemailer = require('../../config/nodemailer.config');
 
 const User = require("../../model/User");
@@ -10,7 +11,8 @@ const uid = new ShortUniqueId({ length: 4 });
 module.exports = async (req, res) => {
     const _email = req.body.email
 
-    //TODO: check email syntax
+    // check email syntax
+    if (!validator.validate(_email)) { return res.status(409).send({message: 'invalid email syntax'}) }
 
     // check if the email is already registered
     const userCheck = await User.findOne({email: _email})
