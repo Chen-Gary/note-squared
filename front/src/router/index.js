@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Register from "../components/Register";
-import Editor from "../components/Editor";
 import Login from "../components/Login";
 import Forget_password from "../components/Forget_password";
 import Home from "../components/Home";
