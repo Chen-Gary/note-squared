@@ -2,15 +2,25 @@
 
 ## 1. Introduction
 
-*Note*$^2$ (Note Squared) is a web-based note-taking application.
+*Note*$^2$ (Note Squared) is a web-based note-taking application. It creates a platform for users to create, manage, and share their notes.
 
-This is a group project of *CSC4001-Software Engineering*, at CUHK(SZ).
+![](./docs/README_img/1_intro/motivation.png)
 
 
 
 ## 2. Features & Demo
 
-Feel free to play with our demo following this link: http://note.garychen.top/
+More UI demo images and system architecture design figures (e.g. UML class diagrams, UML sequence diagrams, Data Flow Diagrams, etc.) can be found in `docs/README_img` directory.
+
+![](./docs/README_img/UserInterface/homepage.jpg)
+
+![](./docs/README_img/UserInterface/personalCenter_page.jpg)
+
+![](./docs/README_img/UserInterface/editor_page.jpg)
+
+![](./docs/README_img/UserInterface/community_page.jpg)
+
+![](./docs/README_img/UserInterface/view_article_page.jpg)
 
 
 
@@ -19,6 +29,8 @@ Feel free to play with our demo following this link: http://note.garychen.top/
 * Front-end: [Vue.js](https://vuejs.org/)
 * Server-side: [Node.js - Express](http://expressjs.com/)
 * Database: [MongoDB](https://www.mongodb.com/)
+
+![](./docs/README_img/1_intro/tech_stack.png)
 
 
 
